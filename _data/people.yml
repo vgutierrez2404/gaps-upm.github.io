@@ -4,7 +4,7 @@ faculty:
   - name: "Alejandro Almodóvar Espeso"
     title: ""
     email: "alejandro.almodovar@upm.es"
-    photo: "/images/people/almo.png"
+    photo: "/images/people/new_images/AAE.png"
     links:
       - label: "UPM"
         url: "https://portalcientifico.upm.es/en/ipublic/researcher/335796"
@@ -15,7 +15,7 @@ faculty:
   - name: "José Luis Blanco Murillo"
     title: ""
     email: "jl.blanco@upm.es"
-    photo: "/images/people/jl.jpg"
+    photo: "/images/people/new_images/JLBM.png"
     links:
       - label: "UPM"
         url: "https://portalcientifico.upm.es/es/ipublic/researcher/309256"
@@ -24,7 +24,7 @@ faculty:
   - name: "Mateo José Cámara Largo"
     title: ""
     email: "mateo.camara@upm.es"
-    photo: "/images/people/mateo.jpeg"
+    photo: "/images/people/new_images/MCL.png"
     links:
       - label: "UPM"
         url: "https://portalcientifico.upm.es/es/ipublic/researcher/310341"
@@ -42,19 +42,19 @@ faculty:
   - name: "Miguel Ángel García Izquierdo"
     title: ""
     email: "miguelangel.garcia.izquierdo@upm.es"
-    photo: "/images/people/miguel_angel.jpg"
+    photo: "/images/people/new_images/MAGI.png"
     links:
       - label: "UPM"
         url: "https://portalcientifico.upm.es/es/ipublic/researcher/304656"
   - name: "Juan Gutiérrez Navarro"
     title: ""
     email: "juan.gutierrez@upm.es"
-    photo: "/images/people/juan.jpeg"
+    photo: "/images/people/new_images/JGN.png"
     links: []
   - name: "Luis Alfonso Hernández Gómez"
     title: ""
     email: "luisalfonso.hernandez@upm.es"
-    photo: "/images/people/luis.jpg"
+    photo: "/images/people/new_images/LHG.png"
     links:
       - label: "UPM"
         url: "https://portalcientifico.upm.es/es/ipublic/researcher/309177"
@@ -63,7 +63,7 @@ faculty:
   - name: "Eduardo López Gonzalo"
     title: ""
     email: "eduardo.lopez@upm.es"
-    photo: "/images/people/eduardo.jpg"
+    photo: "/images/people/new_images/ELG.png"
     links:
       - label: "UPM"
         url: "https://portalcientifico.upm.es/es/ipublic/researcher/304067"
@@ -79,7 +79,7 @@ faculty:
   - name: "Juan Parras Moral"
     title: ""
     email: "j.parras@upm.es"
-    photo: "/images/people/parras.png"
+    photo: "/images/people/new_images/JPM.png"
     links:
       - label: "UPM"
         url: "https://portalcientifico.upm.es/es/ipublic/researcher/312317"
@@ -90,7 +90,7 @@ faculty:
   - name: "Santiago Zazo Bello"
     title: ""
     email: "santiago.zazo@upm.es"
-    photo: "/images/people/zazo.jpg"
+    photo: "/images/people/new_images/SZB.png"
     links:
       - label: "UPM"
         url: "https://portalcientifico.upm.es/es/ipublic/researcher/309899"
@@ -99,22 +99,22 @@ faculty:
 non_faculty:
   - name: "Patricia Alonso de Apellániz"
     email: "patricia.alonsod@upm.es"
-    photo: "/images/people/pati.jpeg"
+    photo: "/images/people/new_images/PAA.png"
     links:
       - label: "UPM"
         url: "https://portalcientifico.upm.es/es/ipublic/researcher/332427"
 phd_students:
   - name: "María Pilar Daza Llin"
     email: "m.dllin@alumnos.upm.es"
-    photo: "/images/people/mpilar.jpeg"
+    photo: "/images/people/new_images/MPDL.png"
     links: []
   - name: "Luis Fernando Fernández Salvador"
     email: ""
-    photo: ""
+    photo: "/images/people/new_images/FFS.png"
     links: []
   - name: "Víctor Gutiérrez García"
     email: "v.ggarcia@upm.es"
-    photo: "/images/people/victor.jpeg"
+    photo: "/images/people/new_images/VGG.png"
     links: []
   - name: "Santiago Loza Morcillo"
     email: "santiago.loza.morcillo@alumnos.upm.es"
@@ -122,14 +122,15 @@ phd_students:
     links: []
   - name: "Fernando Marcos Macías"
     email: "fernando.marcos.macias@upm.es"
-    photo: "/images/people/fer.jpeg"
+    photo: "/images/people/new_images/FMM.png"
     links: []
   - name: "Alba Garrido López"
     email: "alba.garrido.lopez@upm.es"
-    photo: "/images/people/alba.jpeg"
+    photo: "/images/people/new_images/AGL.png"
     links: []
   - name: "Mar Elizo Alonso"
     email: "mar.ealonso@upm.es"
+    photo: "/images/people/new_images/MEA.png"
     links: []
 
 distinguished_professors:

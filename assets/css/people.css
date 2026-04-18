@@ -66,8 +66,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #274690 0%, #576ca8 100%);
-  color: #f6f8ff;
+  background-color: #ffffff;
+  border: 1px solid rgba(200, 200, 200, 0.5);
+  color: #274690;
   font-weight: 600;
   font-size: 1.75rem;
   text-transform: uppercase;
