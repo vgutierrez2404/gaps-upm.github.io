@@ -103,6 +103,8 @@ non_faculty:
     links:
       - label: "UPM"
         url: "https://portalcientifico.upm.es/es/ipublic/researcher/332427"
+      - label: "Web"
+        url: "https://patricia-a-apellaniz.github.io/"
 phd_students:
   - name: "María Pilar Daza Llin"
     email: "m.dllin@alumnos.upm.es"

@@ -5,7 +5,7 @@ permalink: /people/
 author_profile: true
 ---
 
-<link rel="stylesheet" href="{{ '/assets/css/people.css' | relative_url }}?v=11">
+<link rel="stylesheet" href="{{ '/assets/css/people.css' | relative_url }}?v=13">
 
 <div id="people-directory"></div>
 
@@ -16,4 +16,4 @@ author_profile: true
 <script>
 	window.peopleData = {{ site.data.people | jsonify }};
 </script>
-<script src="{{ '/assets/js/people.js' | relative_url }}?v=11" defer></script>
+<script src="{{ '/assets/js/people.js' | relative_url }}?v=13" defer></script>

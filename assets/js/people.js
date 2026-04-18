@@ -167,9 +167,11 @@
     if (person.photo) {
       const avatar = document.createElement("div");
       avatar.className = "person-avatar";
+      avatar.style.backgroundColor = "#fff";
       const img = document.createElement("img");
       img.src = person.photo;
       img.alt = `${person.name || "Person"} portrait`;
+      img.style.backgroundColor = "#fff";
       avatar.appendChild(img);
       return avatar;
     }
