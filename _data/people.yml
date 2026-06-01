@@ -50,7 +50,11 @@ faculty:
     title: ""
     email: "juan.gutierrez@upm.es"
     photo: "/images/people/new_images/JGN.png"
-    links: []
+    links: 
+      - label: "Web"
+        url: "https://jgnav.github.io/"
+      - label: "Scholar"
+        url: "https://scholar.google.es/citations?user=wT7WzX8AAAAJ&hl=es&authuser=1"
   - name: "Luis Alfonso Hernández Gómez"
     title: ""
     email: "luisalfonso.hernandez@upm.es"
@@ -105,6 +109,9 @@ non_faculty:
         url: "https://portalcientifico.upm.es/es/ipublic/researcher/332427"
       - label: "Web"
         url: "https://patricia-a-apellaniz.github.io/"
+      - label: "Scholar"
+        url: "https://scholar.google.com/citations?user=HgKLtFEAAAAJ&hl=en"
+        
 phd_students:
   - name: "María Pilar Daza Llin"
     email: "m.dllin@alumnos.upm.es"
@@ -117,7 +124,11 @@ phd_students:
   - name: "Víctor Gutiérrez García"
     email: "v.ggarcia@upm.es"
     photo: "/images/people/new_images/VGG.png"
-    links: []
+    links: 
+      - label: "Web"
+        url: "https://vgutierrez2404.github.io/"
+      - label: "Scholar"
+        url: "https://scholar.google.com/citations?user=c_Y49J8AAAAJ&hl=es"
   - name: "Santiago Loza Morcillo"
     email: "santiago.loza.morcillo@alumnos.upm.es"
     photo: ""
@@ -125,7 +136,9 @@ phd_students:
   - name: "Fernando Marcos Macías"
     email: "fernando.marcos.macias@upm.es"
     photo: "/images/people/new_images/FMM.png"
-    links: []
+    links: 
+      - label: "Scholar"
+        url: "https://scholar.google.com/citations?user=QM-zcTYAAAAJ&hl=es"
   - name: "Alba Garrido López"
     email: "alba.garrido.lopez@upm.es"
     photo: "/images/people/new_images/AGL.png"
