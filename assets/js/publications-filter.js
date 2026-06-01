@@ -27,7 +27,10 @@ document.addEventListener('DOMContentLoaded', function() {
         if (selectedAuthor === 'all') {
           pub.classList.remove('hidden');
         } else {
-          const authors = pub.dataset.authors || '';
+          const authors = (pub.dataset.authors || '')
+            .split(',')
+            .map(author => author.trim());
+
           if (authors.includes(selectedAuthor)) {
             pub.classList.remove('hidden');
           } else {

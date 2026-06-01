@@ -13,6 +13,8 @@
   label: "Fernández Salvador, L. F."
 - key: gutierrez-navarro
   label: "Gutiérrez Navarro, J."
+- key: gutierrez-garcia
+  label: "Gutiérrez García, V."
 - key: hernandez
   label: "Hernández Gómez, L. A."
 - key: loza-morcillo
@@ -25,3 +27,5 @@
   label: "Yagüe Jiménez, V."
 - key: zazo
   label: "Zazo Bello, S."
+- key: elizo
+  label: "Elizo, M."
