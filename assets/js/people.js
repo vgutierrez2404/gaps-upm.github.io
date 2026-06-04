@@ -108,6 +108,7 @@
   function renderCard(person) {
     const card = document.createElement("article");
     card.className = "person-card";
+    const profileUrl = getProfileUrl(person);
 
     const header = document.createElement("div");
     header.className = "person-header";
@@ -116,7 +117,16 @@
     media.className = "person-media";
 
     const avatar = renderAvatar(person);
-    media.appendChild(avatar);
+    if (profileUrl) {
+      const avatarLink = document.createElement("a");
+      avatarLink.className = "person-profile-link person-profile-link--media";
+      avatarLink.href = profileUrl;
+      avatarLink.setAttribute("aria-label", `View ${person.name || "person"} profile`);
+      avatarLink.appendChild(avatar);
+      media.appendChild(avatarLink);
+    } else {
+      media.appendChild(avatar);
+    }
 
     const linkList = buildLinkList(person);
     if (linkList) {
@@ -133,7 +143,14 @@
 
     const nameEl = document.createElement("h3");
     nameEl.className = "person-name";
-    nameEl.textContent = person.name || "Unnamed";
+    if (profileUrl) {
+      const nameLink = document.createElement("a");
+      nameLink.href = profileUrl;
+      nameLink.textContent = person.name || "Unnamed";
+      nameEl.appendChild(nameLink);
+    } else {
+      nameEl.textContent = person.name || "Unnamed";
+    }
     meta.appendChild(nameEl);
 
     if (person.title) {
@@ -240,5 +257,14 @@
 
   function isExternal(url) {
     return /^https?:\/\//i.test(url) && !url.includes(window.location.host);
+  }
+
+  function getProfileUrl(person) {
+    if (!person || !person.slug) {
+      return "";
+    }
+
+    const baseUrl = window.peopleBaseUrl || "/people/";
+    return `${baseUrl.replace(/\/?$/, "/")}${person.slug}/`;
   }
 })();

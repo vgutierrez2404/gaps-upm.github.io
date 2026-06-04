@@ -88,6 +88,15 @@
   transition: filter 180ms ease;
 }
 
+.person-profile-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.person-profile-link--media {
+  display: block;
+}
+
 .person-links-overlay {
   position: absolute;
   inset: 0;
@@ -136,6 +145,17 @@
   font-size: 0.85rem;
   font-weight: 375;
   margin: 0;
+}
+
+.person-name a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.person-name a:hover,
+.person-name a:focus {
+  color: #274690;
+  text-decoration: underline;
 }
 
 .person-title {

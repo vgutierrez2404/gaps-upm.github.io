@@ -2,6 +2,7 @@
 # Photos can point to an asset path (e.g. /images/people/name.jpg). Leave blank for placeholder initials.
 faculty:
   - name: "Alejandro Almodóvar Espeso"
+    slug: "alejandro-almodovar-espeso"
     title: ""
     email: "alejandro.almodovar@upm.es"
     photo: "/images/people/new_images/AAE.png"
@@ -13,6 +14,7 @@ faculty:
       - label: "Scholar"
         url: "https://scholar.google.com/citations?user=3rVo9hUAAAAJ&hl=en"
   - name: "José Luis Blanco Murillo"
+    slug: "jose-luis-blanco-murillo"
     title: ""
     email: "jl.blanco@upm.es"
     photo: "/images/people/new_images/JLBM.png"
@@ -22,6 +24,7 @@ faculty:
       - label: "Scholar"
         url: "https://scholar.google.es/citations?user=J-zt09cAAAAJ&hl=es&oi=ao"
   - name: "Mateo José Cámara Largo"
+    slug: "mateo-jose-camara-largo"
     title: ""
     email: "mateo.camara@upm.es"
     photo: "/images/people/new_images/MCL.png"
@@ -33,6 +36,7 @@ faculty:
       - label: "Scholar"
         url: "https://scholar.google.es/citations?hl=en&user=muINbiEAAAAJ&view_op=list_works&sortby=pubdate"
   - name: "Francisco Javier Casajús de Quirós"
+    slug: "francisco-javier-casajus-de-quiros"
     title: ""
     email: "javier.casajus@upm.es"
     photo: "/images/people/casajus.jpg"
@@ -40,6 +44,7 @@ faculty:
       - label: "UPM"
         url: "https://portalcientifico.upm.es/es/ipublic/researcher/302866"
   - name: "Miguel Ángel García Izquierdo"
+    slug: "miguel-angel-garcia-izquierdo"
     title: ""
     email: "miguelangel.garcia.izquierdo@upm.es"
     photo: "/images/people/new_images/MAGI.png"
@@ -47,6 +52,7 @@ faculty:
       - label: "UPM"
         url: "https://portalcientifico.upm.es/es/ipublic/researcher/304656"
   - name: "Juan Gutiérrez Navarro"
+    slug: "juan-gutierrez-navarro"
     title: ""
     email: "juan.gutierrez@upm.es"
     photo: "/images/people/new_images/JGN.png"
@@ -56,6 +62,7 @@ faculty:
       - label: "Scholar"
         url: "https://scholar.google.es/citations?user=wT7WzX8AAAAJ&hl=es&authuser=1"
   - name: "Luis Alfonso Hernández Gómez"
+    slug: "luis-alfonso-hernandez-gomez"
     title: ""
     email: "luisalfonso.hernandez@upm.es"
     photo: "/images/people/new_images/LHG.png"
@@ -65,6 +72,7 @@ faculty:
       - label: "Scholar"
         url: "https://scholar.google.es/citations?user=EilwjX0AAAAJ&hl=es&oi=ao"
   - name: "Eduardo López Gonzalo"
+    slug: "eduardo-lopez-gonzalo"
     title: ""
     email: "eduardo.lopez@upm.es"
     photo: "/images/people/new_images/ELG.png"
@@ -72,6 +80,7 @@ faculty:
       - label: "UPM"
         url: "https://portalcientifico.upm.es/es/ipublic/researcher/304067"
   - name: "José Parera Bermúdez"
+    slug: "jose-parera-bermudez"
     title: ""
     email: "jose.parera@upm.es"
     photo: "/images/people/parera.jpg"
@@ -81,6 +90,7 @@ faculty:
       - label: "Scholar"
         url: "https://scholar.google.es/citations?user=3MXue_oAAAAJ&hl=es&oi=ao"
   - name: "Juan Parras Moral"
+    slug: "juan-parras-moral"
     title: ""
     email: "j.parras@upm.es"
     photo: "/images/people/new_images/JPM.png"
@@ -92,6 +102,7 @@ faculty:
       - label: "Scholar"
         url: "https://scholar.google.es/citations?user=AQcxu7MAAAAJ&hl=es"
   - name: "Santiago Zazo Bello"
+    slug: "santiago-zazo-bello"
     title: ""
     email: "santiago.zazo@upm.es"
     photo: "/images/people/new_images/SZB.png"
@@ -102,6 +113,7 @@ faculty:
         url: "https://scholar.google.es/citations?user=kNhqGMwAAAAJ&hl=es&oi=ao"
 non_faculty:
   - name: "Patricia Alonso de Apellániz"
+    slug: "patricia-alonso-de-apellaniz"
     email: "patricia.alonsod@upm.es"
     photo: "/images/people/new_images/PAA.png"
     links:
@@ -114,14 +126,17 @@ non_faculty:
         
 phd_students:
   - name: "María Pilar Daza Llin"
+    slug: "maria-pilar-daza-llin"
     email: "m.dllin@alumnos.upm.es"
     photo: "/images/people/new_images/MPDL.png"
     links: []
   - name: "Luis Fernando Fernández Salvador"
+    slug: "luis-fernando-fernandez-salvador"
     email: ""
     photo: "/images/people/new_images/FFS.png"
     links: []
   - name: "Víctor Gutiérrez García"
+    slug: "victor-gutierrez-garcia"
     email: "v.ggarcia@upm.es"
     photo: "/images/people/new_images/VGG.png"
     links: 
@@ -130,26 +145,31 @@ phd_students:
       - label: "Scholar"
         url: "https://scholar.google.com/citations?user=c_Y49J8AAAAJ&hl=es"
   - name: "Santiago Loza Morcillo"
+    slug: "santiago-loza-morcillo"
     email: "santiago.loza.morcillo@alumnos.upm.es"
     photo: ""
     links: []
   - name: "Fernando Marcos Macías"
+    slug: "fernando-marcos-macias"
     email: "fernando.marcos.macias@upm.es"
     photo: "/images/people/new_images/FMM.png"
     links: 
       - label: "Scholar"
         url: "https://scholar.google.com/citations?user=QM-zcTYAAAAJ&hl=es"
   - name: "Alba Garrido López"
+    slug: "alba-garrido-lopez"
     email: "alba.garrido.lopez@upm.es"
     photo: "/images/people/new_images/AGL.png"
     links: []
   - name: "Mar Elizo Alonso"
+    slug: "mar-elizo-alonso"
     email: "mar.ealonso@upm.es"
     photo: "/images/people/new_images/MEA.png"
     links: []
 
 distinguished_professors:
   - name: "Mariano García Otero"
+    slug: "mariano-garcia-otero"
     email: "mariano.garciao@upm.es"
     photo: "/images/people/mariano.jpg"
     links:

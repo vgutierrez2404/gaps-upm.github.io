@@ -1,0 +1,109 @@
+---
+layout: default
+---
+
+{% include base_path %}
+
+{% assign person_record = nil %}
+{% assign person_group = nil %}
+{% assign group_configs = "faculty::Faculty|non_faculty::Non-faculty|phd_students::PhD Student|distinguished_professors::Distinguished former professor" | split: "|" %}
+
+{% for group_config in group_configs %}
+  {% assign group_parts = group_config | split: "::" %}
+  {% assign group_key = group_parts[0] %}
+  {% assign group_label = group_parts[1] %}
+  {% assign group_people = site.data.people[group_key] %}
+
+  {% for person in group_people %}
+    {% if person.slug == page.person_slug %}
+      {% assign person_record = person %}
+      {% assign person_group = group_label %}
+    {% endif %}
+  {% endfor %}
+{% endfor %}
+
+{% assign display_name = page.title %}
+{% assign display_role = person_group %}
+{% assign display_description = page.profile_description | default: "Short biography coming soon." %}
+
+{% if person_record %}
+  {% assign display_name = person_record.name | default: page.title %}
+  {% if person_record.title and person_record.title != "" %}
+    {% assign display_role = person_record.title %}
+  {% endif %}
+  {% if person_record.description and person_record.description != "" %}
+    {% assign display_description = person_record.description %}
+  {% endif %}
+{% endif %}
+
+<link rel="stylesheet" href="{{ '/assets/css/person-profile.css' | relative_url }}?v=3">
+
+<div id="main" role="main">
+  <article class="page person-profile-page" itemscope itemtype="https://schema.org/Person">
+    <div class="page__inner-wrap">
+      <section class="person-profile">
+        <div class="person-profile__intro">
+          <div class="person-profile__photo-wrap">
+            {% if person_record.photo %}
+              <img class="person-profile__photo" src="{{ person_record.photo | relative_url }}" alt="{{ display_name }} portrait" itemprop="image">
+            {% else %}
+              <div class="person-profile__photo person-profile__photo--placeholder" aria-hidden="true">
+                {{ display_name | slice: 0, 1 }}
+              </div>
+            {% endif %}
+          </div>
+
+          <div class="person-profile__summary">
+            <p class="person-profile__back"><a href="{{ '/people/' | relative_url }}">People</a></p>
+            <h1 class="person-profile__name" itemprop="name">{{ display_name }}</h1>
+
+            {% if display_role %}
+              <p class="person-profile__role" itemprop="jobTitle">{{ display_role }}</p>
+            {% endif %}
+
+            <div class="person-profile__address" itemprop="affiliation" itemscope itemtype="https://schema.org/Organization">
+              <p itemprop="name">Signal Processing Applications Group (GAPS)</p>
+              <p>Universidad Politécnica de Madrid</p>
+              <p>Madrid, Spain</p>
+            </div>
+
+            <ul class="person-profile__contacts">
+              {% if person_record.email %}
+                <li>
+                  <a href="mailto:{{ person_record.email }}" itemprop="email">
+                    <i class="fa fa-fw fa-envelope" aria-hidden="true"></i>
+                    {{ person_record.email }}
+                  </a>
+                </li>
+              {% endif %}
+
+              {% if person_record.links %}
+                {% for link in person_record.links %}
+                  {% if link.url %}
+                    <li>
+                      <a href="{{ link.url }}" target="_blank" rel="noreferrer noopener">
+                        {% assign link_label = link.label | downcase %}
+                        {% if link_label contains "scholar" %}
+                          <i class="ai ai-google-scholar-square" aria-hidden="true"></i>
+                        {% elsif link_label contains "web" %}
+                          <i class="fa fa-fw fa-id-card" aria-hidden="true"></i>
+                        {% else %}
+                          <i class="fa fa-fw fa-external-link-alt" aria-hidden="true"></i>
+                        {% endif %}
+                        {{ link.label | default: "Profile" }}
+                      </a>
+                    </li>
+                  {% endif %}
+                {% endfor %}
+              {% endif %}
+            </ul>
+          </div>
+        </div>
+
+        <div class="person-profile__bio" itemprop="description">
+          {{ display_description | markdownify }}
+        </div>
+      </section>
+    </div>
+  </article>
+</div>
