@@ -1,0 +1,9 @@
+# Manual news feed for the About page.
+# Add newest items first. The content field supports Markdown links.
+#
+# Example:
+# - date: "2026-06-08"
+#   content: "Our paper was accepted at [Conference Name](https://example.com)."
+
+- date: "2026-06-08"
+  content: "Students and researchers interested in joining GAPS can check our [open positions, TFG/TFM opportunities, and research lines](/positions/)."
