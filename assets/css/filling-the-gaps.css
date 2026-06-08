@@ -1,0 +1,247 @@
+.ftg-page {
+  --ftg-ink: #233241;
+  --ftg-muted: #5f6f7d;
+  --ftg-rule: #d8e1e8;
+  --ftg-panel: #f7fafc;
+  --ftg-accent: #2878a8;
+  --ftg-accent-dark: #1d5e83;
+  color: var(--ftg-ink);
+}
+
+.ftg-page h2,
+.ftg-page h3,
+.ftg-page h4 {
+  letter-spacing: 0;
+}
+
+.ftg-intro {
+  margin: 0 0 2rem;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--ftg-muted);
+}
+
+.ftg-next {
+  display: grid;
+  grid-template-columns: minmax(120px, 0.32fr) 1fr;
+  gap: 1.25rem;
+  margin: 1.5rem 0 2.25rem;
+  padding: 1.25rem;
+  border-left: 5px solid var(--ftg-accent);
+  background: var(--ftg-panel);
+}
+
+.ftg-next__label {
+  margin: 0 0 0.45rem;
+  color: var(--ftg-accent-dark);
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.ftg-next__date {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.ftg-next__title {
+  margin: 0 0 0.45rem;
+  font-size: 1.2rem;
+  line-height: 1.35;
+}
+
+.ftg-next__speaker,
+.ftg-next__description {
+  margin: 0.2rem 0 0;
+  color: var(--ftg-muted);
+}
+
+.ftg-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.ftg-card {
+  min-height: 100%;
+  padding: 1rem;
+  border: 1px solid var(--ftg-rule);
+  border-radius: 8px;
+  background: #fff;
+}
+
+.ftg-card h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1.05rem;
+}
+
+.ftg-card p {
+  margin: 0;
+  color: var(--ftg-muted);
+  font-size: 0.92rem;
+  line-height: 1.55;
+}
+
+.ftg-section-title {
+  margin-top: 2.4rem;
+  padding-top: 1.3rem;
+  border-top: 1px solid var(--ftg-rule);
+}
+
+.ftg-season {
+  margin: 2rem 0 0.75rem;
+  color: var(--ftg-accent-dark);
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.ftg-session {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  gap: 1.4rem;
+  padding: 1.5rem 0;
+  border-top: 1px solid var(--ftg-rule);
+}
+
+.ftg-session:first-of-type {
+  border-top: 0;
+}
+
+.ftg-session__image {
+  width: 150px;
+  aspect-ratio: 1;
+  border-radius: 8px;
+  object-fit: contain;
+  object-position: center;
+  background: #FFFFFF;
+}
+
+.ftg-session__image--placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--ftg-accent-dark);
+  font-size: 2.2rem;
+  font-weight: 700;
+}
+
+.ftg-session__date {
+  margin: 0 0 0.45rem;
+  color: var(--ftg-accent-dark);
+  font-weight: 700;
+}
+
+.ftg-session__speaker {
+  margin: 0;
+  font-size: 1.25rem;
+  line-height: 1.35;
+}
+
+.ftg-session__affiliation {
+  margin: 0.1rem 0 0.65rem;
+  color: var(--ftg-muted);
+  font-size: 0.92rem;
+}
+
+.ftg-session__title {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  flex-wrap: wrap;
+  margin: 0 0 0.65rem;
+  font-size: 1.08rem;
+  font-weight: 400;
+  line-height: 1.45;
+}
+
+.ftg-session__presentation-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #f1d900;
+  text-decoration: none;
+  line-height: 1;
+}
+
+.ftg-session__presentation-link:hover {
+  color: #d6bf00;
+}
+
+.ftg-session__presentation-icon {
+  font-size: 1rem;
+}
+
+.ftg-session__abstract {
+  margin: 0 0 1rem;
+  color: #364957;
+  line-height: 1.65;
+}
+
+.ftg-session__topic {
+  margin: 0 0 0.8rem;
+  color: var(--ftg-muted);
+  line-height: 1.55;
+}
+
+.ftg-session__about-title {
+  margin: 0 0 0.35rem;
+  font-size: 0.88rem;
+  text-transform: uppercase;
+  color: var(--ftg-muted);
+}
+
+.ftg-session__about {
+  margin: 0;
+  color: #364957;
+  line-height: 1.6;
+}
+
+.ftg-agenda {
+  display: grid;
+  gap: 0.75rem;
+  margin: 1rem 0 0;
+}
+
+.ftg-agenda__item {
+  display: grid;
+  grid-template-columns: 84px 1fr;
+  gap: 1rem;
+  padding: 0.9rem 1rem;
+  border: 1px solid var(--ftg-rule);
+  border-radius: 8px;
+}
+
+.ftg-agenda__duration {
+  color: var(--ftg-accent-dark);
+  font-weight: 700;
+}
+
+.ftg-agenda__activity {
+  margin: 0 0 0.15rem;
+  font-weight: 700;
+}
+
+.ftg-agenda__detail {
+  margin: 0;
+  color: var(--ftg-muted);
+}
+
+@media (max-width: 900px) {
+  .ftg-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .ftg-next,
+  .ftg-session,
+  .ftg-agenda__item {
+    grid-template-columns: 1fr;
+  }
+
+  .ftg-session__image {
+    width: 112px;
+  }
+}
