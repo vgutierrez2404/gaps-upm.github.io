@@ -25,7 +25,7 @@
   }
 
   @include breakpoint($x-large) {
-    max-width: $x-large;
+    max-width: $site-content-width;
   }
 
   ol {
@@ -174,7 +174,8 @@
 
 .greedy-nav {
   position: relative;
-  min-width: 250px;
+  flex: 1 1 0;
+  min-width: 0;
   background: $background-color;
 
   a {
@@ -305,6 +306,32 @@
         border-bottom: none;
       }
     }
+  }
+}
+
+@include breakpoint(max-width $small) {
+  .greedy-nav {
+    order: 3;
+    flex-basis: 100%;
+  }
+
+  .greedy-nav button {
+    display: none;
+  }
+
+  .greedy-nav .visible-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem 1rem;
+  }
+
+  .greedy-nav .visible-links li {
+    display: block;
+  }
+
+  .greedy-nav a {
+    margin: 0;
+    padding: 0.15rem 0;
   }
 }
 

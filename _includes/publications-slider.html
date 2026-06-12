@@ -7,33 +7,19 @@
   <div class="zoom-hint" id="zoomHint">Click image to zoom • ESC to close</div>
 </div>
 
+{% assign poster_files = site.static_files | where_exp: "file", "file.path contains '/images/posters/'" | sort: "path" %}
+
 <div class="publications-slider">
   <button class="slider-nav prev" onclick="moveSlide(-1)">❮</button>
   <button class="slider-nav next" onclick="moveSlide(1)">❯</button>
   
   <div class="slider-container" id="sliderContainer">
-    <!-- Slide 1 -->
-    <div class="slide" data-pub-link="../publications/#decaflow">
-      <img src="../images/posters/decaflow.png" alt="Publication Poster 1" onclick="event.stopPropagation(); openZoom(this.src)">
-      <div class="slide-caption" onclick="event.stopPropagation(); goToPublication(this.parentElement.dataset.pubLink)">
-        <h3>DeCaFlow: A Deconfounding Causal Generative Model</h3>
-        <p>Almodóvar, A., et al. - NeurIPS 2025 • Click to view publication →</p>
+    {% for poster in poster_files %}
+      {% assign poster_title = poster.basename | replace: "-", " " | replace: "_", " " | capitalize %}
+      <div class="slide">
+        <img src="{{ poster.path | relative_url }}" alt="{{ poster_title }} poster" onclick="event.stopPropagation(); openZoom(this.src)">
       </div>
-    </div>
-    <!-- Slide 2 -->
-    <div class="slide" data-pub-link="../publications/#biological-informed">
-      <img src="../images/posters/mateo.png" alt="Publication Poster 2" onclick="event.stopPropagation(); openZoom(this.src)">
-      <div class="slide-caption" onclick="event.stopPropagation(); goToPublication(this.parentElement.dataset.pubLink)">
-        <h3>Biologically Informed Neural Speech Synthesis</h3>
-        <p>In Proc. IberSPEECH 2024 (pp. 261-265) • Click to view publication →</p>
-      </div>
-    </div>
-    <div class="slide" >
-      <img src="../images/posters/santi.jpg" alt="Publication Poster 3" onclick="event.stopPropagation(); openZoom(this.src)">
-      <div class="slide-caption" onclick="event.stopPropagation(); goToPublication(this.parentElement.dataset.pubLink)">
-      </div>
-    </div>
-    <!-- Add more slides as needed -->
+    {% endfor %}
   </div>
   
   <div class="slider-dots" id="sliderDots"></div>

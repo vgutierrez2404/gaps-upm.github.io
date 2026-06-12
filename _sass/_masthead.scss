@@ -18,7 +18,7 @@
     font-family: $sans-serif-narrow;
 
     @include breakpoint($x-large) {
-      max-width: $x-large;
+      max-width: $site-content-width;
     }
 
     nav {
@@ -32,6 +32,9 @@
 }
 
 .masthead__menu {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
 
   ul {
     margin: 0;
@@ -41,13 +44,71 @@
   }
 }
 
+.masthead__logo-link {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  margin-left: 0;
+  padding: 0;
+}
+
+.masthead__logo {
+  display: block;
+  width: auto;
+  height: 64px;
+}
+
+.masthead__social {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 0.65rem;
+  margin-left: auto;
+  font-size: $type-size-5;
+  white-space: nowrap;
+
+  a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.5rem;
+    height: 1.5rem;
+    margin: 0;
+    color: $masthead-link-color;
+
+    &:hover {
+      color: $masthead-link-color-hover;
+    }
+  }
+}
+
 .masthead__menu-item {
   display: block;
   list-style-type: none;
   white-space: nowrap;
 
   &--lg {
-    padding-right: 2em;
+    padding-right: 1.25em;
     font-weight: 700;
+  }
+}
+
+@include breakpoint(max-width $small) {
+  .masthead__inner-wrap {
+    padding-top: 0.75em;
+    padding-bottom: 0.75em;
+  }
+
+  .masthead__menu {
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+
+  .masthead__logo {
+    height: 48px;
+  }
+
+  .masthead__social {
+    gap: 0.45rem;
   }
 }
