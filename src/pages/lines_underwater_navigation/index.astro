@@ -1,0 +1,7 @@
+---
+import Base from '../../layouts/Base.astro';
+import { readPage } from '../../lib/content';
+import { marked } from 'marked';
+const page = await readPage('lines_underwater_navigation.md');
+---
+<Base title="Underwater navigation"><article class="page-content" set:html={marked.parse(page.content)} /></Base>

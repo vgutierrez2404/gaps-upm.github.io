@@ -1,0 +1,20 @@
+---
+import Base from '../../layouts/Base.astro';
+import { readCollection } from '../../lib/content';
+import { marked } from 'marked';
+const people = await readCollection('people');
+export async function getStaticPaths() {
+  const collection = await readCollection('people');
+  return collection.map(({slug}) => ({params: {slug}}));
+}
+const person = people.find((item) => item.slug === Astro.params.slug)!;
+---
+<Base title={person.data.title}>
+  <article class="person-profile"><a href="/people/">← All people</a><h1>{person.data.title}</h1>
+    {person.data.photo && <img class="person-photo" src={person.data.photo} alt={person.data.title} />}
+    {person.data.role && <p><strong>{person.data.role}</strong></p>}
+    {person.data.email && <p><a href={`mailto:${person.data.email}`}>{person.data.email}</a></p>}
+    {person.data.links && <ul>{person.data.links.map((link: any) => <li><a href={link.url}>{link.label}</a></li>)}</ul>}
+    <div class="profile-content" set:html={marked.parse(person.content)} />
+  </article>
+</Base>

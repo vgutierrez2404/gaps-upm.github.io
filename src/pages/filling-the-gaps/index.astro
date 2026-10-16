@@ -1,0 +1,29 @@
+---
+import Base from '../../layouts/Base.astro';
+import { readYaml } from '../../lib/content';
+const group = await readYaml<any>('filling_the_gaps.yml');
+---
+<Base title="Filling the Gaps">
+  <link slot="head" rel="stylesheet" href="/assets/css/filling-the-gaps.css" />
+  <div class="ftg-page">
+    <p class="ftg-intro">{group.summary}</p>
+    <section class="ftg-next" aria-labelledby="ftg-next-title">
+      <div><p class="ftg-next__label">{group.next_session.label}</p><p class="ftg-next__date">{group.next_session.date}</p></div>
+      <div><h2 class="ftg-next__title" id="ftg-next-title">{group.next_session.title}</h2><p class="ftg-next__speaker"><strong>Speaker:</strong> {group.next_session.speaker}</p><p class="ftg-next__description">{group.next_session.description}</p></div>
+    </section>
+    <h2 class="ftg-section-title">Reading Group Sessions</h2>
+    {group.seasons.map((season: any) => <>
+      <h3 class="ftg-season">{season.title}</h3>
+      {season.sessions.map((session: any) => <article class="ftg-session">
+        <div>{session.image ? <img class="ftg-session__image" src={session.image} alt={session.speaker} /> : <div class="ftg-session__image ftg-session__image--placeholder" aria-hidden="true">{session.speaker.slice(0, 1)}</div>}</div>
+        <div>
+          <p class="ftg-session__date">{session.date}</p><h4 class="ftg-session__speaker">{session.speaker}</h4>
+          {session.affiliation && <p class="ftg-session__affiliation">{session.affiliation}</p>}
+          {session.title && <p class="ftg-session__title"><span>{session.title}</span>{session.presentation_url && <a class="ftg-session__presentation-link" href={session.presentation_url} target="_blank" rel="noopener noreferrer" aria-label="Open presentation" title="Open presentation"><i class="fas fa-file-powerpoint ftg-session__presentation-icon" aria-hidden="true"></i></a>}</p>}
+          {session.abstract && <p class="ftg-session__abstract">{session.abstract}</p>}
+          {session.about && <><h5 class="ftg-session__about-title">About the Speaker</h5><p class="ftg-session__about">{session.about}</p></>}
+        </div>
+      </article>)}
+    </>)}
+  </div>
+</Base>

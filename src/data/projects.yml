@@ -302,8 +302,9 @@
 
 # ── Regional projects ──────────────────────────────────────────────────────────
 
-- name: "REACT: Espacio de datos y sistemas inteligentes de ayuda a la decisión para pandemias, con apoyo a personal
-sanitario, epidemiológico, investigador, autoridades sanitarias y pacientes - MadridDataSpace4Pandemics-CM"
+- name: >-
+    REACT: Espacio de datos y sistemas inteligentes de ayuda a la decisión para pandemias, con apoyo a personal
+    sanitario, epidemiológico, investigador, autoridades sanitarias y pacientes - MadridDataSpace4Pandemics-CM
   acronym: REACT
   funding_type: regional
   role: PI

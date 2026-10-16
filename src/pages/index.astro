@@ -1,0 +1,82 @@
+---
+import Base from '../layouts/Base.astro';
+import { readYaml } from '../lib/content';
+import { marked } from 'marked';
+
+const news = (await readYaml<any[]>('news.yml'))
+  .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+  .slice(0, 5);
+const featured = await readYaml<any[]>('home_publications.yml');
+const prettyDate = (value: string) => {
+  const date = new Date(`${value}T00:00:00`);
+  return {
+    monthDay: date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' }),
+    year: date.getFullYear(),
+  };
+};
+---
+<Base title="Signal Processing Applications Group">
+  <link slot="head" rel="stylesheet" href="/assets/css/home.css" />
+  <link slot="head" rel="stylesheet" href="/assets/css/news-feed.css" />
+  <link slot="head" rel="stylesheet" href="/assets/css/publications-slider.css" />
+
+  <section class="page__content home-section home-about" aria-labelledby="home-about-heading">
+    <h2 id="home-about-heading">About GAPS</h2>
+    <p>At GAPS, we advance signal processing and intelligent systems through research that bridges theory, data, and applications across speech and sound, sensing, communications, and system modelling.</p>
+    <p>Founded in 1988 at Universidad Politécnica de Madrid, GAPS brings together decades of research experience in signal processing, combining a strong academic foundation with sustained activity in competitive research projects, technology transfer, and collaboration with industry and public institutions.</p>
+    <div class="home-hero__actions" aria-label="Main links">
+      <a href="/projects/">Explore our research <span aria-hidden="true">-&gt;</span></a>
+      <a href="/people/">Meet the team <span aria-hidden="true">-&gt;</span></a>
+    </div>
+  </section>
+
+  <section class="news-feed" aria-labelledby="news-heading">
+    <h2 id="news-heading">News</h2>
+    {news.length > 0 ? <div class="news-feed__items">
+      {news.map((item) => {
+        const date = prettyDate(item.date);
+        return <article class="news-feed__item">
+          <time class="news-feed__date" datetime={item.date}><span>{date.monthDay},</span><span>{date.year}</span></time>
+          <div class="news-feed__content">
+            {item.label && <p class="news-feed__label">{item.label}</p>}
+            <p set:html={marked.parseInline(item.content)} />
+          </div>
+        </article>;
+      })}
+    </div> : <p class="news-feed__empty">No news items yet.</p>}
+  </section>
+
+  <div class="zoom-modal" id="zoomModal" role="dialog" aria-modal="true" aria-label="Publication poster">
+    <button class="zoom-close" type="button" onclick="closeZoom()" aria-label="Close poster">&times;</button>
+    <div class="zoom-container">
+      <img id="zoomedImage" src="" alt="Zoomed publication poster" onclick="toggleZoomLevel(event)" />
+    </div>
+    <div class="zoom-hint" id="zoomHint">Click image to zoom • ESC to close</div>
+  </div>
+
+  <section class="home-publications" aria-labelledby="publications-slider-heading">
+    <div class="home-publications__header"><h2 id="publications-slider-heading">Recent Publications</h2></div>
+    <div class="publications-slider">
+      <button class="slider-nav prev" type="button" onclick="moveSlide(-1)" aria-label="Previous publications"><span aria-hidden="true">&lsaquo;</span></button>
+      <button class="slider-nav next" type="button" onclick="moveSlide(1)" aria-label="Next publications"><span aria-hidden="true">&rsaquo;</span></button>
+      <div class="slider-container" id="sliderContainer">
+        {featured.map((publication) => <article class="slide publication-card">
+          <button class="publication-card__image-button" type="button" onclick={`event.stopPropagation(); openZoom('${publication.image}')`} aria-label={`Zoom poster for ${publication.title}`}>
+            <img src={publication.image} alt={`${publication.title} poster`} loading="lazy" />
+          </button>
+          <div class="publication-card__body">
+            <p class="publication-card__venue">{publication.venue}</p>
+            <h3>{publication.title}</h3>
+            {publication.subtitle && <p class="publication-card__subtitle">{publication.subtitle}</p>}
+            <p class="publication-card__authors">{publication.authors}</p>
+            <a href={`/publications/#${publication.publication_id}`}>View publication <span aria-hidden="true">-&gt;</span></a>
+          </div>
+        </article>)}
+      </div>
+      <div class="slider-dots" id="sliderDots" aria-label="Choose publication slide"></div>
+    </div>
+    <div class="home-publications__footer"><a class="home-publications__all" href="/publications/">View all <span aria-hidden="true">-&gt;</span></a></div>
+  </section>
+
+  <script is:inline src="/assets/js/publications-slider.js"></script>
+</Base>

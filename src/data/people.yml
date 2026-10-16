@@ -1,5 +1,5 @@
 # Roster order for the People page.
-# Person metadata lives in the matching _people/<slug>.md file.
+# Person metadata lives in the matching src/content/people/<slug>.md file.
 faculty:
 - alejandro-almodovar-espeso
 - eduardo-lopez-gonzalo

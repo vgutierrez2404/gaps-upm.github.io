@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """Import missing publications from Google Scholar profiles.
 
-This script reads Scholar profile links from the _people collection, compares
-the fetched works with _data/publications.yml by normalized title, and appends
+This script reads Scholar profile links from the Astro people content, compares
+the fetched works with src/data/publications.yml by normalized title, and appends
 new entries grouped by year.
 
 Examples:
@@ -28,9 +28,9 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
-DEFAULT_PEOPLE = ROOT / "_data" / "people.yml"
-DEFAULT_PUBLICATIONS = ROOT / "_data" / "publications.yml"
-DEFAULT_PUBLICATION_AUTHORS = ROOT / "_data" / "publication_authors.yml"
+DEFAULT_PEOPLE = ROOT / "src" / "data" / "people.yml"
+DEFAULT_PUBLICATIONS = ROOT / "src" / "data" / "publications.yml"
+DEFAULT_PUBLICATION_AUTHORS = ROOT / "src" / "data" / "publication_authors.yml"
 
 
 @dataclass
@@ -144,7 +144,7 @@ def yaml_double_quote(value: str) -> str:
 
 
 def extract_people_profiles(path: Path, author_tags: dict[str, str], known_tags: set[str]) -> list[ScholarProfile]:
-    collection_profiles = extract_people_profiles_from_collection(path.parent.parent / "_people", author_tags, known_tags)
+    collection_profiles = extract_people_profiles_from_collection(ROOT / "src" / "content" / "people", author_tags, known_tags)
     if collection_profiles:
         return collection_profiles
 
@@ -482,7 +482,7 @@ def main() -> int:
         return 0
 
     if not args.apply or args.dry_run:
-        print("\nDry run only. Re-run with --apply to update _data/publications.yml.")
+        print("\nDry run only. Re-run with --apply to update src/data/publications.yml.")
         return 0
 
     backup = args.publications.with_suffix(args.publications.suffix + ".bak")

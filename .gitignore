@@ -1,8 +1,8 @@
-_site/
-
-/Gemfile.lock
-
-*vendor 
-*venv 
-.bundle 
+/dist/
+/node_modules/
+/.astro/
+/.astro-public/
+/vendor/
+/venv/
+/.bundle/
 .DS_Store

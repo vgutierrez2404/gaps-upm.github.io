@@ -1,0 +1,73 @@
+---
+import { readYaml } from '../lib/content';
+interface Props { title: string; description?: string }
+const { title, description = 'Signal Processing Applications Group at Universidad Politécnica de Madrid' } = Astro.props;
+const navigation = await readYaml<{main: {title: string; url: string}[]}>('navigation.yml');
+---
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#ffffff" />
+    <title>{title} | GAPS</title>
+    <script is:inline>document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/assets/css/main.css" />
+    <link rel="stylesheet" href="/assets/css/astro-shell.css" />
+    <link rel="stylesheet" href="/assets/css/academicons.css" />
+    <link rel="apple-touch-icon" sizes="60x60" href="/images/apple-touch-icon-60x60.png" />
+    <link rel="apple-touch-icon" sizes="76x76" href="/images/apple-touch-icon-76x76.png" />
+    <link rel="apple-touch-icon" sizes="120x120" href="/images/apple-touch-icon-120x120.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="/images/apple-touch-icon-152x152.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-180x180.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/images/android-chrome-192x192.png" />
+    <link rel="manifest" href="/images/manifest.json" />
+    <link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#000000" />
+    <link rel="shortcut icon" href="/images/favicon.ico" />
+    <meta name="msapplication-TileColor" content="#000000" />
+    <meta name="msapplication-TileImage" content="/images/mstile-144x144.png" />
+    <meta name="msapplication-config" content="/images/browserconfig.xml" />
+    <slot name="head" />
+  </head>
+  <body>
+    <div class="masthead">
+      <div class="masthead__inner-wrap">
+        <div class="masthead__menu">
+          <a class="masthead__logo-link" href="/" aria-label="GAPS home">
+            <img class="masthead__logo" src="/images/04_logotipo_GAPS.png" alt="GAPS" />
+          </a>
+          <nav id="site-nav" class="greedy-nav" aria-label="Main navigation">
+            <ul class="visible-links">
+              {navigation.main.map((link) => <li class="masthead__menu-item"><a href={link.url}>{link.title}</a></li>)}
+            </ul>
+            <ul class="hidden-links hidden"></ul>
+          </nav>
+          <div class="masthead__social social-icons" aria-label="Social links">
+            <a href="https://www.linkedin.com/company/grupo-de-procesado-de-aplicaciones-de-se%C3%B1al-gaps/" aria-label="LinkedIn"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
+            <a href="https://github.com/gaps-upm" aria-label="GitHub"><i class="fab fa-github" aria-hidden="true"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="main" role="main"><slot /></div>
+    <div class="page__footer">
+      <footer>
+        <div class="page__footer-follow">
+          <ul class="social-icons">
+            <li><a href="https://github.com/gaps-upm"><i class="fab fa-github" aria-hidden="true"></i> GitHub</a></li>
+            <li><a href="https://www.linkedin.com/company/grupo-de-procesado-de-aplicaciones-de-se%C3%B1al-gaps/"><i class="fab fa-linkedin" aria-hidden="true"></i> LinkedIn</a></li>
+            <li><a href="/feed.xml"><i class="fa fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+            <li><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Avenida Complutense, 30, Madrid, Community of Madrid 28040, ES</li>
+          </ul>
+        </div>
+        <div class="page__footer-copyright">© 2026 GAPS. Signal Processing Applications Group at Universidad Politécnica de Madrid.</div>
+      </footer>
+    </div>
+  </body>
+</html>

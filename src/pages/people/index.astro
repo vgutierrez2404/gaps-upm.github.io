@@ -1,0 +1,14 @@
+---
+import Base from '../../layouts/Base.astro';
+import { readCollection, readYaml } from '../../lib/content';
+const people = await readCollection('people');
+const roster = await readYaml<Record<string, string[]>>('people.yml');
+const records = Object.fromEntries(people.map(({slug, data}) => [slug, {name: data.title, slug, title: data.role || '', email: data.email || '', photo: data.photo || '', affiliation: data.affiliation || '', links: data.links || []}]));
+---
+<Base title="People"><h1>People</h1><div id="people-directory"></div><noscript><p>The interactive directory requires JavaScript.</p></noscript>
+<script is:inline define:vars={{ roster, records }}>
+  window.peopleData = roster;
+  window.peopleRecords = records;
+  window.peopleBaseUrl = '/people/';
+</script>
+<script src="/assets/js/people.js" defer></script></Base>

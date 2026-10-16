@@ -1,0 +1,11 @@
+/* Responsive navigation for the Astro shell, retaining the original masthead styling. */
+.greedy-nav { flex: 1 1 auto; }
+.greedy-nav .visible-links { display: flex; flex-wrap: wrap; align-items: center; }
+.greedy-nav .visible-links li { display: block; }
+
+@media (max-width: 760px) {
+  .masthead__menu { flex-wrap: wrap; justify-content: center; }
+  .greedy-nav { flex: 1 0 100%; }
+  .greedy-nav .visible-links { justify-content: center; }
+  .masthead__social { margin-left: 0; }
+}

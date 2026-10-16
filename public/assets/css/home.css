@@ -9,7 +9,7 @@
 }
 
 #main {
-  margin-top: 2.5rem;
+  margin-top: 1rem;
 }
 
 .page__content .home-hero a,
@@ -87,6 +87,12 @@
   width: 100%;
   max-width: none;
   margin: 4.75rem 0 5.25rem;
+}
+
+/* The About section is the first content below the masthead on the homepage. */
+.home-about {
+  margin-top: 1rem;
+  margin-bottom: 2.5rem;
 }
 
 .home-section h2 {

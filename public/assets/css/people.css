@@ -9,6 +9,10 @@
   --gaps-section-title-size: 2rem;
 }
 
+#main {
+  margin-top: 1rem;
+}
+
 .archive .page__title {
   margin: 0 0 3rem;
   color: var(--gaps-ink);
@@ -32,8 +36,8 @@
 .people-directory {
   display: flex;
   flex-direction: column;
-  gap: 4.5rem;
-  padding-block: 0 3.5rem;
+  gap: 2.5rem;
+  padding-block: 0 2.5rem;
   color: var(--gaps-text);
 }
 
@@ -331,6 +335,6 @@
   }
 
   .people-directory {
-    gap: 3.25rem;
+    gap: 2.5rem;
   }
 }

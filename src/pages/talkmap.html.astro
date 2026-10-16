@@ -1,0 +1,12 @@
+---
+import Base from '../layouts/Base.astro';
+---
+<Base title="Talk map">
+  <article class="page__content">
+    <p>This map shows the locations of talks and presentations by GAPS members.</p>
+    <iframe class="talk-map-frame" src="/talkmap/map.html" title="Map of GAPS talks and presentations" loading="lazy"></iframe>
+  </article>
+  <style>
+    .talk-map-frame { width: 100%; min-height: 700px; border: 0; }
+  </style>
+</Base>

@@ -1,0 +1,6 @@
+---
+import Base from '../../layouts/Base.astro';
+import { readYaml } from '../../lib/content';
+const positions = await readYaml<any[]>('positions.yml');
+---
+<Base title="Open positions"><h1>Ofertas de Trabajo de Fin de Grado/Máster</h1><div class="content-grid">{positions.map((position) => <article class="content-card"><h2>{position.title}</h2><p>{position.description}</p>{position.contact_person && <p><strong>Persona de contacto:</strong> {position.contact_person.name} · <a href={`mailto:${position.contact_person.email}`}>{position.contact_person.email}</a></p>}</article>)}</div></Base>

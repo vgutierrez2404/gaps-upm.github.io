@@ -1,0 +1,55 @@
+---
+import Base from '../../layouts/Base.astro';
+import { readYaml } from '../../lib/content';
+const projects = await readYaml<any[]>('projects.yml');
+const categories = [
+  { id: 'european', title: 'European projects' },
+  { id: 'national', title: 'National projects' },
+  { id: 'regional', title: 'Regional projects' },
+  { id: 'private', title: 'Other / private projects' },
+];
+const professors = [...new Set(projects.map((project) => project.professor).filter(Boolean))].sort();
+const professorName = (slug: string) => ({
+  'jose-luis-blanco-murillo': 'José Luis Blanco Murillo',
+  'juan-parras-moral': 'Juan Parras Moral',
+}[slug] || slug.replaceAll('-', ' ').replace(/\b\w/g, (letter) => letter.toUpperCase()));
+---
+<Base title="Projects">
+  <link slot="head" rel="stylesheet" href="/assets/css/projects.css" />
+  <h1>Research projects</h1>
+  <div class="filter-section project-filter-section">
+    <h3>Filter by Project Type:</h3>
+    <div class="filter-buttons" aria-label="Project type filters">
+      <button class="filter-btn active" data-project-filter="all">All Projects</button>
+      {categories.map(({id, title}) => <button class="filter-btn" data-project-filter={id}>{title.replace(' projects', '').replace('Other / private', 'Other / Private')}</button>)}
+    </div>
+  </div>
+  <div class="filter-section project-filter-section">
+    <h3>Filter by Professor:</h3>
+    <div class="filter-buttons" aria-label="Professor filters">
+      <button class="filter-btn active" data-project-professor-filter="all">All Professors</button>
+      {professors.map((slug) => <button class="filter-btn" data-project-professor-filter={slug}>{professorName(slug)}</button>)}
+    </div>
+  </div>
+  <div class="projects-list">
+    {categories.map(({id, title}) => {
+      const entries = projects.filter((project) => project.funding_type === id);
+      return entries.length > 0 && <section class="project-group" data-project-group={id}>
+        <h2>{title}</h2>
+        {entries.map((project) => <article class:list={['project-item', {'project-item--active': project.active}]} data-funding-type={project.funding_type} data-professor={project.professor || 'none'}>
+          <header class="project-header"><div class="project-heading">
+            <p class="project-meta"><span>{project.year_start}{project.year_end ? `-${project.year_end}` : project.active ? '-present' : ''}</span>{project.active && <span class="project-status">Active</span>}</p>
+            <h3>{project.name}</h3>
+            {project.professor && <p class="project-owner-mini"><span>Prof. {professorName(project.professor)}</span><span class="project-role-tag">{project.role?.toUpperCase()}</span></p>}
+          </div></header>
+          {project.description && <p class="project-description">{project.description}</p>}
+          {project.partners && <p class="project-detail"><strong>Partners:</strong> {project.partners}</p>}
+          {project.area && <p class="project-areas">{project.area.map((area: string) => <span>{area}</span>)}</p>}
+          {(project.url || project.doi) && <p class="project-links">{project.url && <a href={project.url} target="_blank" rel="noreferrer noopener">Project website</a>}{project.doi && <a href={project.doi} target="_blank" rel="noreferrer noopener">DOI</a>}</p>}
+        </article>)}
+      </section>;
+    })}
+  </div>
+  <noscript><p>The interactive filters require JavaScript. Enable it to explore projects by type.</p></noscript>
+  <script src="/assets/js/projects-filter.js" defer></script>
+</Base>

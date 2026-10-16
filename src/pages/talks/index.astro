@@ -1,0 +1,6 @@
+---
+import Base from '../../layouts/Base.astro';
+import { readCollection } from '../../lib/content';
+const talks = (await readCollection('talks')).reverse();
+---
+<Base title="Talks and presentations"><h1>Talks and presentations</h1><div class="content-grid">{talks.map((talk) => <article class="content-card"><h2>{talk.data.title}</h2>{talk.data.date && <time>{talk.data.date}</time>}<div set:html={talk.content} /></article>)}</div></Base>

@@ -1,0 +1,12 @@
+---
+import Base from '../../layouts/Base.astro';
+import { readYaml } from '../../lib/content';
+import { marked } from 'marked';
+const groups = await readYaml<any[]>('publications.yml');
+const authors = await readYaml<any[]>('publication_authors.yml');
+---
+<Base title="Publications"><h1>Publications</h1>
+  <section class="filter-section"><h2>Filter by researcher</h2><div class="filter-buttons"><button class="filter-btn active" data-author="all">All Publications</button>{authors.map((author) => <button class="filter-btn" data-author={author.key}>{author.label}</button>)}</div></section>
+  {groups.map((group) => <section class="year-group"><h2>{group.year}</h2><ul class="publication-list">{group.items.map((publication: any) => <li class="publication-item" id={publication.id} data-authors={publication.authors_tags?.join(',')}><div class="publication-citation" set:html={marked.parseInline(publication.citation)} />{publication.links && <div class="publication-links">{publication.links.map((link: any) => <a href={link.url}>{link.label}</a>)}</div>}</li>)}</ul></section>)}
+  <script src="/assets/js/publications-filter.js" defer></script>
+</Base>
