@@ -20,6 +20,12 @@ const prettyDate = (value: string) => {
   <link slot="head" rel="stylesheet" href="/assets/css/news-feed.css" />
   <link slot="head" rel="stylesheet" href="/assets/css/publications-slider.css" />
 
+  <div class="home-wave-backdrop" slot="background" aria-hidden="true">
+    <svg class="home-sinc-svg" viewBox="0 0 1440 620" preserveAspectRatio="none" focusable="false">
+      <path class="home-sinc" id="home-sinc-path" d="" />
+    </svg>
+  </div>
+
   <section class="page__content home-section home-about" aria-labelledby="home-about-heading">
     <h2 id="home-about-heading">About GAPS</h2>
     <p>At GAPS, we advance signal processing and intelligent systems through research that bridges theory, data, and applications across speech and sound, sensing, communications, and system modelling.</p>
@@ -79,4 +85,57 @@ const prettyDate = (value: string) => {
   </section>
 
   <script is:inline src="/assets/js/publications-slider.js"></script>
+  <script is:inline>
+    (() => {
+      const path = document.getElementById('home-sinc-path');
+      if (!path) return;
+
+      const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+      const centerX = 720;
+      const centerY = 250;
+      const amplitude = 175;
+      const samples = 560;
+      const minFrequency = Math.PI * 2.5;
+      const maxFrequency = Math.PI * 22;
+      const cycleDuration = 36000;
+      let startedAt = null;
+      let animationFrame = null;
+
+      function draw(frequency, opacity) {
+        const points = [];
+        for (let i = 0; i <= samples; i += 1) {
+          const x = (i / samples) * 1440;
+          const phase = frequency * ((x - centerX) / centerX);
+          const sinc = Math.abs(phase) < 0.0001 ? 1 : Math.sin(phase) / phase;
+          const y = centerY - amplitude * sinc;
+          points.push(`${i === 0 ? 'M' : 'L'}${x.toFixed(2)},${y.toFixed(2)}`);
+        }
+        path.setAttribute('d', points.join(' '));
+        path.style.opacity = String(opacity);
+      }
+
+      function animate(now) {
+        if (startedAt === null) startedAt = now;
+        const progress = ((now - startedAt) % cycleDuration) / cycleDuration;
+        const frequencyProgress = (1 - Math.cos(progress * Math.PI * 2)) / 2;
+        const frequency = minFrequency + (maxFrequency - minFrequency) * frequencyProgress;
+        draw(frequency, 0.72);
+        animationFrame = window.requestAnimationFrame(animate);
+      }
+
+      function setMotionMode() {
+        if (animationFrame !== null) window.cancelAnimationFrame(animationFrame);
+        animationFrame = null;
+        startedAt = null;
+        if (reducedMotion.matches) {
+          draw(minFrequency, 0.72);
+        } else {
+          animationFrame = window.requestAnimationFrame(animate);
+        }
+      }
+
+      reducedMotion.addEventListener('change', setMotionMode);
+      setMotionMode();
+    })();
+  </script>
 </Base>

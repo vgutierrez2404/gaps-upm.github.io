@@ -36,6 +36,7 @@ const navigation = await readYaml<{main: {title: string; url: string}[]}>('navig
     <slot name="head" />
   </head>
   <body>
+    <slot name="background" />
     <div class="masthead">
       <div class="masthead__inner-wrap">
         <div class="masthead__menu">

@@ -9,7 +9,54 @@
 }
 
 #main {
+  position: relative;
   margin-top: 1rem;
+}
+
+.masthead {
+  position: relative;
+  z-index: 2;
+}
+
+.page__footer {
+  position: relative;
+  z-index: 1;
+}
+
+.home-wave-backdrop {
+  position: fixed;
+  z-index: 0;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh;
+  overflow: hidden;
+  pointer-events: none;
+  opacity: 0.72;
+}
+
+.home-sinc-svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100vw;
+  height: 100%;
+  max-width: none;
+}
+
+.home-sinc {
+  fill: none;
+  stroke: var(--gaps-blue);
+  stroke-opacity: 0.48;
+  stroke-width: 2;
+  stroke-linecap: round;
+  vector-effect: non-scaling-stroke;
+}
+
+#main > :not(.home-wave-backdrop) {
+  position: relative;
+  z-index: 1;
 }
 
 .page__content .home-hero a,
@@ -139,7 +186,12 @@
     font-size: 1.08rem;
   }
 
+  .home-wave-backdrop {
+    opacity: 0.62;
+  }
+
   .home-section {
     margin: 3.25rem 0 3.75rem;
   }
 }
+

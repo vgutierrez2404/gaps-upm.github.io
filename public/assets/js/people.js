@@ -11,8 +11,7 @@
     { key: "faculty", title: "Faculty" },
     { key: "non_faculty", title: "Non-faculty" },
     { key: "phd_students", title: "PhD Students" },
-    { key: "distinguished_professors", title: "Distinguished former professors" },
-    { key: "former", title: "Former Members" }
+    { key: "distinguished_professors", title: "Distinguished former professors" }
   ];
 
   const fragment = document.createDocumentFragment();
@@ -23,12 +22,7 @@
       return;
     }
 
-    // Render former members as a simple list, others as cards
-    if (section.key === "former") {
-      fragment.appendChild(renderFormerMembersSection(section, entries));
-    } else {
-      fragment.appendChild(renderSection(section, entries));
-    }
+    fragment.appendChild(renderSection(section, entries));
   });
 
   if (!fragment.childNodes.length) {
@@ -52,45 +46,8 @@
 
         return entry;
       })
-      .filter(Boolean);
-  }
-
-  function renderFormerMembersSection(sectionConfig, entries) {
-    const section = document.createElement("section");
-    section.className = "people-section former-members-section";
-    if (sectionConfig.key) {
-      section.classList.add(`people-section--${sectionConfig.key}`);
-    }
-    if (sectionConfig.key) {
-      section.id = sectionConfig.key;
-    }
-
-    const heading = document.createElement("h2");
-    heading.className = "people-section__title";
-    heading.textContent = sectionConfig.title;
-    section.appendChild(heading);
-
-    const list = document.createElement("ul");
-    list.className = "former-members-list";
-
-    entries.forEach((person) => {
-      const li = document.createElement("li");
-      li.className = "former-member-item";
-
-      if (person.email) {
-        const link = document.createElement("a");
-        link.href = `mailto:${person.email}`;
-        link.textContent = person.name || "Unnamed";
-        li.appendChild(link);
-      } else {
-        li.textContent = person.name || "Unnamed";
-      }
-
-      list.appendChild(li);
-    });
-
-    section.appendChild(list);
-    return section;
+      .filter(Boolean)
+      .sort((a, b) => (a.name || '').localeCompare(b.name || '', undefined, { sensitivity: 'base' }));
   }
 
   function renderSection(sectionConfig, entries) {
