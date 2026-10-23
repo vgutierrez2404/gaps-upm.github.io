@@ -2,6 +2,7 @@
   const container = document.getElementById("people-directory");
   const data = window.peopleData || {};
   const records = window.peopleRecords || {};
+  const directorSlug = "jose-luis-blanco-murillo";
 
   if (!container || Object.keys(data).length === 0) {
     return;
@@ -10,27 +11,28 @@
   const sections = [
     { key: "faculty", title: "Faculty" },
     { key: "non_faculty", title: "Non-faculty" },
-    { key: "phd_students", title: "PhD Students" },
-    { key: "distinguished_professors", title: "Distinguished former professors" }
+    { key: "phd_students", title: "PhD Student" },
+    { key: "distinguished_professors", title: "Distinguished Former Professor" }
   ];
 
-  const fragment = document.createDocumentFragment();
+  const populatedSections = sections
+    .map((section) => ({ ...section, entries: resolveEntries(data[section.key]) }))
+    .filter((section) => section.entries.length > 0);
 
-  sections.forEach((section) => {
-    const entries = resolveEntries(data[section.key]);
-    if (entries.length === 0) {
-      return;
-    }
+  const people = populatedSections
+    .flatMap((section) => section.entries.map((person) => ({ person, section })));
 
-    fragment.appendChild(renderSection(section, entries));
-  });
-
-  if (!fragment.childNodes.length) {
+  if (people.length === 0) {
     return;
   }
 
   container.classList.add("people-directory");
-  container.appendChild(fragment);
+  const grid = document.createElement("div");
+  grid.className = "people-grid";
+  people.forEach(({ person, section }) => {
+    grid.appendChild(renderCard(person, section));
+  });
+  container.appendChild(grid);
 
   function resolveEntries(entries) {
     if (!Array.isArray(entries)) {
@@ -47,39 +49,27 @@
         return entry;
       })
       .filter(Boolean)
-      .sort((a, b) => (a.name || '').localeCompare(b.name || '', undefined, { sensitivity: 'base' }));
+      .sort((a, b) => {
+        if (a.slug === directorSlug) return -1;
+        if (b.slug === directorSlug) return 1;
+        return (a.name || '').localeCompare(b.name || '', undefined, { sensitivity: 'base' });
+      });
   }
 
-  function renderSection(sectionConfig, entries) {
-    const section = document.createElement("section");
-    section.className = "people-section";
-    if (sectionConfig.key) {
-      section.classList.add(`people-section--${sectionConfig.key}`);
-    }
-    if (sectionConfig.key) {
-      section.id = sectionConfig.key;
-    }
-
-    const heading = document.createElement("h2");
-    heading.className = "people-section__title";
-    heading.textContent = sectionConfig.title;
-    section.appendChild(heading);
-
-    const grid = document.createElement("div");
-    grid.className = "people-grid";
-
-    entries.forEach((person) => {
-      grid.appendChild(renderCard(person));
-    });
-
-    section.appendChild(grid);
-    return section;
-  }
-
-  function renderCard(person) {
+  function renderCard(person, section) {
     const card = document.createElement("article");
     card.className = "person-card";
+    card.classList.add(`person-card--${section.key}`);
     const profileUrl = getProfileUrl(person);
+    if (profileUrl) {
+      card.classList.add("person-card--profile-link");
+      card.addEventListener("click", (event) => {
+        if (event.target.closest("a, button")) {
+          return;
+        }
+        window.location.assign(profileUrl);
+      });
+    }
 
     const header = document.createElement("div");
     header.className = "person-header";
@@ -101,9 +91,16 @@
 
     const linkList = buildLinkList(person);
     if (linkList) {
+      card.classList.add("person-card--has-links");
       const overlay = document.createElement("div");
       overlay.className = "person-links-overlay";
       overlay.appendChild(linkList);
+      const profileHint = document.createElement("span");
+      profileHint.className = "person-profile-hint";
+      profileHint.textContent = "i";
+      profileHint.title = "Click the card to open the personal profile";
+      profileHint.setAttribute("aria-hidden", "true");
+      overlay.appendChild(profileHint);
       media.appendChild(overlay);
     }
 
@@ -124,10 +121,13 @@
     }
     meta.appendChild(nameEl);
 
-    if (person.title) {
+    const displayedRole = person.slug === directorSlug
+      ? `${section.title} · Group Director`
+      : person.title || section.title;
+    if (displayedRole) {
       const titleEl = document.createElement("span");
       titleEl.className = "person-title";
-      titleEl.textContent = person.title;
+      titleEl.textContent = displayedRole;
       meta.appendChild(titleEl);
     }
 

@@ -1,69 +1,55 @@
-// Publications filter and highlight functionality
+// Search publications by author, citation, year, journal, or link label.
 document.addEventListener('DOMContentLoaded', function() {
-  const filterButtons = document.querySelectorAll('.filter-btn');
-  const publications = document.querySelectorAll('.publication-item');
+  const searchInput = document.getElementById('publication-search');
+  const status = document.getElementById('publication-search-status');
+  const publications = Array.from(document.querySelectorAll('.publication-item'));
   const yearGroups = document.querySelectorAll('.publication-year-group');
-  
-  function updateYearGroups() {
-    yearGroups.forEach(group => {
-      const hasVisiblePubs = Array.from(group.querySelectorAll('.publication-item')).some(
-        (item) => !item.classList.contains('hidden')
-      );
 
-      group.style.display = hasVisiblePubs ? 'block' : 'none';
-    });
+  function normalize(value) {
+    return String(value || '')
+      .toLocaleLowerCase()
+      .normalize('NFD')
+      .replace(/[\u0300-\u036f]/g, '')
+      .replace(/[^a-z0-9]+/g, ' ')
+      .trim();
   }
-  
-  filterButtons.forEach(button => {
-    button.addEventListener('click', function() {
-      // Update active button
-      filterButtons.forEach(btn => btn.classList.remove('active'));
-      this.classList.add('active');
-      
-      const selectedAuthor = this.dataset.author;
-      
-      // Filter publications
-      publications.forEach(pub => {
-        if (selectedAuthor === 'all') {
-          pub.classList.remove('hidden');
-        } else {
-          const authors = (pub.dataset.authors || '')
-            .split(',')
-            .map(author => author.trim());
 
-          if (authors.includes(selectedAuthor)) {
-            pub.classList.remove('hidden');
-          } else {
-            pub.classList.add('hidden');
-          }
-        }
-      });
-      
-      // Update year headers visibility
-      updateYearGroups();
+  function updateResults() {
+    const terms = normalize(searchInput?.value).split(/\s+/).filter(Boolean);
+    let visibleCount = 0;
+
+    publications.forEach((publication) => {
+      const searchText = normalize(publication.dataset.search);
+      const matches = terms.every((term) => searchText.includes(term));
+      publication.classList.toggle('hidden', !matches);
+      if (matches) visibleCount += 1;
     });
-  });
-  
-  // Initial update
-  updateYearGroups();
-  
-  // Highlight publication if coming from slider with hash
+
+    yearGroups.forEach((group) => {
+      const hasVisiblePublications = Array.from(group.querySelectorAll('.publication-item'))
+        .some((publication) => !publication.classList.contains('hidden'));
+      group.style.display = hasVisiblePublications ? 'block' : 'none';
+    });
+
+    if (status) {
+      status.textContent = visibleCount === 0
+        ? 'No publications found.'
+        : `${visibleCount} ${visibleCount === 1 ? 'publication' : 'publications'}`;
+    }
+  }
+
+  searchInput?.addEventListener('input', updateResults);
+  updateResults();
+
+  // Highlight publications linked from the homepage slider.
   window.addEventListener('load', function() {
-    const hash = window.location.hash;
-    if (hash) {
-      const targetElement = document.querySelector(hash);
-      if (targetElement && targetElement.classList.contains('publication-item')) {
-        // Scroll to the element
-        targetElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        
-        // Add highlight class
-        targetElement.classList.add('highlight');
-        
-        // Remove highlight after animation completes (4 seconds)
-        setTimeout(() => {
-          targetElement.classList.remove('highlight');
-        }, 4000);
-      }
+    const targetElement = window.location.hash
+      ? document.querySelector(window.location.hash)
+      : null;
+    if (targetElement?.classList.contains('publication-item')) {
+      targetElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      targetElement.classList.add('highlight');
+      setTimeout(() => targetElement.classList.remove('highlight'), 4000);
     }
   });
 });

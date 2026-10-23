@@ -13,6 +13,10 @@
   margin-top: 1rem;
 }
 
+#main .home-wave-backdrop {
+  top: -1rem;
+}
+
 .people-archive {
   float: none;
   width: 100%;
@@ -41,108 +45,82 @@
 }
 
 .people-directory {
-  display: flex;
-  flex-direction: column;
-  gap: 3rem;
-  padding-block: 0 2.5rem;
-  color: var(--gaps-text);
-}
-
-.people-section {
-  display: flex;
-  flex-direction: column;
-  gap: 1.4rem;
-}
-
-.people-section__title {
-  margin: 0;
-  color: var(--gaps-ink);
-  font-family: "Manrope", "Inter", sans-serif;
-  font-size: 1.65rem;
-  font-weight: 800;
-  line-height: 1.22;
-  letter-spacing: 0;
-}
-
-.people-section__title::after {
-  content: "";
   display: block;
-  width: 38px;
-  height: 3px;
-  margin-top: 0.8rem;
-  background: var(--gaps-blue);
-  border-radius: 2px;
+  padding-block: 0 1.5rem;
+  color: var(--gaps-text);
 }
 
 .people-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(min(100%, 210px), 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 330px), 1fr));
   justify-content: start;
-  gap: 1.15rem;
+  gap: 0;
 }
 
 .person-card {
-  --person-accent: var(--gaps-blue);
-  --person-wash: #eaf6fc;
+  --person-accent: #89939d;
+  --person-wash: #f3f5f6;
+  --person-overlay: #36566a;
   position: relative;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   width: 100%;
-  gap: 0.75rem;
+  gap: 0.85rem;
   height: 100%;
-  padding: 1.25rem 1rem 1.4rem;
-  border: 1px solid #e9eef3;
-  border-radius: 1.1rem;
-  background: linear-gradient(180deg, var(--person-wash) 0 5.5rem, #fff 5.5rem 100%);
+  padding: 0.65rem 0.55rem;
+  align-items: center;
+  border: 0;
+  border-radius: 0;
+  background: #fff;
   overflow: hidden;
-  box-shadow: 0 5px 18px rgba(23, 33, 43, 0.045);
-  transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
-}
-
-.people-section--non_faculty .person-card {
-  --person-accent: var(--gaps-orange);
-  --person-wash: #fff3e6;
-}
-
-.people-section--phd_students .person-card {
-  --person-accent: #20a58a;
-  --person-wash: #e9f7f3;
-}
-
-.people-section--faculty .person-card,
-.people-section--distinguished_professors .person-card {
-  --person-accent: var(--gaps-blue);
-  --person-wash: #eaf6fc;
+  transition: border-color 180ms ease, background-color 180ms ease;
 }
 
 .person-card:focus-within,
 .person-card:hover {
-  transform: translateY(-6px) rotate(-0.6deg);
-  border-color: color-mix(in srgb, var(--person-accent) 32%, white);
-  box-shadow: 0 18px 34px -20px rgba(23, 33, 43, 0.34);
+  z-index: 2;
 }
 
-.person-card:nth-child(even):hover {
-  transform: translateY(-6px) rotate(0.6deg);
+.person-card--profile-link {
+  cursor: pointer;
+}
+
+.person-card--faculty {
+  --person-overlay: #0b6593;
+}
+
+.person-card--non_faculty {
+  --person-overlay: #985000;
+}
+
+.person-card--phd_students {
+  --person-overlay: #147460;
+}
+
+.person-card--distinguished_professors {
+  --person-overlay: #4b5563;
 }
 
 .person-header {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  gap: 1rem;
+  gap: 0.85rem;
+  min-width: 0;
+  width: 100%;
 }
 
 .person-media {
-  position: relative;
-  width: min(100%, 154px);
-  margin: 0 auto;
+  position: static;
+  flex: 0 0 68px;
+  width: 68px;
+  margin: 0;
   aspect-ratio: 1;
-  border: 5px solid #fff;
+  border: 3px solid #fff;
   border-radius: 50%;
-  overflow: hidden;
+  overflow: visible;
   background: var(--person-wash);
-  box-shadow: 0 3px 14px rgba(23, 33, 43, 0.13), 0 0 0 2px color-mix(in srgb, var(--person-accent) 24%, white);
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--person-accent) 24%, white);
 }
 
 .person-avatar,
@@ -188,11 +166,13 @@
 .person-links-overlay {
   position: absolute;
   inset: 0;
+  z-index: 2;
   display: flex;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
-  padding: 1rem;
-  background: rgba(0, 0, 0, 0.25);
+  padding: 0.65rem 2.4rem 0.65rem 1rem;
+  background: var(--person-overlay);
   opacity: 0;
   pointer-events: none;
   transform: translateY(8px);
@@ -204,29 +184,48 @@
   justify-content: center;
 }
 
-.person-card:hover .person-links-overlay,
-.person-card:focus-within .person-links-overlay,
+.person-profile-hint {
+  position: absolute;
+  top: 50%;
+  right: 0.8rem;
+  display: grid;
+  width: 1.2rem;
+  height: 1.2rem;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  border-radius: 50%;
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  line-height: 1;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.person-card--has-links:hover .person-links-overlay,
+.person-card--has-links:focus-within .person-links-overlay,
 .person-links-overlay:focus-within {
   opacity: 1;
   pointer-events: auto;
   transform: translateY(0);
 }
 
-.person-card:hover .person-avatar,
-.person-card:hover .person-avatar-placeholder,
-.person-card:hover .person-avatar img,
-.person-card:focus-within .person-avatar,
-.person-card:focus-within .person-avatar-placeholder,
-.person-card:focus-within .person-avatar img {
+.person-card--has-links:hover .person-avatar,
+.person-card--has-links:hover .person-avatar-placeholder,
+.person-card--has-links:hover .person-avatar img,
+.person-card--has-links:focus-within .person-avatar,
+.person-card--has-links:focus-within .person-avatar-placeholder,
+.person-card--has-links:focus-within .person-avatar img {
   filter: blur(3px) brightness(0.82);
 }
 
 .person-meta {
   display: flex;
   flex-direction: column;
-  gap: 0.45rem;
-  align-items: center;
-  text-align: center;
+  gap: 0.2rem;
+  align-items: flex-start;
+  min-width: 0;
+  text-align: left;
 }
 
 .people-directory .person-name {
@@ -291,6 +290,7 @@
   color: var(--gaps-ink);
 }
 
+
 .person-links-overlay .person-links a {
   border-color: rgba(255, 255, 255, 0.6);
   color: #ffffff;
@@ -312,14 +312,6 @@
 }
 
 @media (max-width: 640px) {
-  .people-directory {
-    gap: 2.5rem;
-  }
-
-  .person-card {
-    padding: 1.1rem 0.8rem 1.2rem;
-  }
-
   .person-avatar,
   .person-avatar-placeholder {
     font-size: 1.5rem;
@@ -328,12 +320,12 @@
 }
 
 @media (max-width: 600px) {
-  .archive .page__title {
-    margin-bottom: 2.25rem;
-    font-size: 2.35rem;
+  .people-grid {
+    grid-template-columns: 1fr;
   }
 
-  .people-directory {
-    gap: 2.5rem;
+  .person-media {
+    flex-basis: 58px;
+    width: 58px;
   }
 }

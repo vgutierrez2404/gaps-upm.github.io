@@ -56,7 +56,17 @@ const navigation = await readYaml<{main: {title: string; url: string}[]}>('navig
         </div>
       </div>
     </div>
-    <div id="main" role="main"><slot /></div>
+    <div id="main" role="main">
+      <div class="home-wave-backdrop" aria-hidden="true">
+        <svg class="home-sinc-svg home-sinc-svg--left" viewBox="0 0 620 1440" preserveAspectRatio="none" focusable="false">
+          <path class="home-sinc home-sinc--orange" id="home-sinc-left" d="" />
+        </svg>
+        <svg class="home-sinc-svg home-sinc-svg--right" viewBox="0 0 620 1440" preserveAspectRatio="none" focusable="false">
+          <path class="home-sinc" id="home-sinc-right" d="" />
+        </svg>
+      </div>
+      <slot />
+    </div>
     <div class="page__footer">
       <footer>
         <div class="page__footer-follow">
@@ -70,5 +80,63 @@ const navigation = await readYaml<{main: {title: string; url: string}[]}>('navig
         <div class="page__footer-copyright">© 2026 GAPS. Signal Processing Applications Group at Universidad Politécnica de Madrid.</div>
       </footer>
     </div>
+    <script is:inline>
+      (() => {
+        const paths = [
+          document.getElementById('home-sinc-left'),
+          document.getElementById('home-sinc-right'),
+        ];
+        if (paths.some((path) => !path)) return;
+
+        const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+        const centerX = 310;
+        const centerY = 720;
+        const amplitude = 175;
+        const samples = 560;
+        const minFrequency = Math.PI * 2.5;
+        const maxFrequency = Math.PI * 22;
+        const cycleDuration = 36000;
+        let startedAt = null;
+        let animationFrame = null;
+
+        function draw(frequency, opacity) {
+          paths.forEach((path, index) => {
+            const points = [];
+            for (let i = 0; i <= samples; i += 1) {
+              const y = (i / samples) * 1440;
+              const phase = frequency * ((y - centerY) / centerY);
+              const sinc = Math.abs(phase) < 0.0001 ? 1 : Math.sin(phase) / phase;
+              const x = centerX + (index === 0 ? -1 : 1) * amplitude * sinc;
+              points.push(`${i === 0 ? 'M' : 'L'}${x.toFixed(2)},${y.toFixed(2)}`);
+            }
+            path.setAttribute('d', points.join(' '));
+            path.style.opacity = String(opacity);
+          });
+        }
+
+        function animate(now) {
+          if (startedAt === null) startedAt = now;
+          const progress = ((now - startedAt) % cycleDuration) / cycleDuration;
+          const frequencyProgress = (1 - Math.cos(progress * Math.PI * 2)) / 2;
+          const frequency = minFrequency + (maxFrequency - minFrequency) * frequencyProgress;
+          draw(frequency, 0.72);
+          animationFrame = window.requestAnimationFrame(animate);
+        }
+
+        function setMotionMode() {
+          if (animationFrame !== null) window.cancelAnimationFrame(animationFrame);
+          animationFrame = null;
+          startedAt = null;
+          if (reducedMotion.matches) {
+            draw(minFrequency, 0.72);
+          } else {
+            animationFrame = window.requestAnimationFrame(animate);
+          }
+        }
+
+        reducedMotion.addEventListener('change', setMotionMode);
+        setMotionMode();
+      })();
+    </script>
   </body>
 </html>

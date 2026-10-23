@@ -59,6 +59,9 @@
 }
 
 .person-profile__back {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
   margin: 0 0 0.75rem;
   font-size: 0.85rem;
 }
@@ -152,6 +155,120 @@
 
 .person-profile__bio p {
   margin: 0 0 1.2rem;
+}
+
+.person-profile__keywords h2 {
+  margin: 0 0 0.75rem;
+  color: var(--gaps-ink);
+  font-family: "Manrope", "Inter", sans-serif;
+  font-size: 1.2rem;
+  line-height: 1.25;
+}
+
+.person-profile__keywords {
+  padding: 0.45rem 0 0.45rem 1rem;
+  border-left: 3px solid #aebdc7;
+}
+
+.person-profile__keywords h2::after {
+  content: none;
+}
+
+.person-profile__keywords h2 {
+  margin: 0 0 0.35rem;
+  font-size: 1.12rem;
+  font-weight: 700;
+  color: var(--gaps-ink);
+}
+
+.person-profile__keywords p {
+  margin: 0;
+  color: var(--gaps-text);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.person-profile__publications h2 {
+  margin: 0 0 1rem;
+  color: var(--gaps-ink);
+  font-family: "Manrope", "Inter", sans-serif;
+  font-size: 1.45rem;
+  line-height: 1.2;
+}
+
+.person-profile__publications h2::after {
+  content: "";
+  display: block;
+  width: 38px;
+  height: 3px;
+  margin-top: 0.8rem;
+  background: var(--gaps-blue);
+  border-radius: 2px;
+}
+
+.person-profile__publication-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 290px), 1fr));
+  gap: 0.65rem;
+}
+
+.person-publication-card {
+  padding: 0.8rem 0.9rem;
+  border: 1px solid var(--gaps-border);
+  border-radius: 5px;
+  background: #fff;
+}
+
+.person-publication-year {
+  margin: 0 0 0.3rem;
+  color: var(--gaps-blue);
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.person-publication-citation {
+  color: var(--gaps-text);
+  font-size: 0.84rem;
+  line-height: 1.5;
+}
+
+.person-publication-citation p {
+  margin: 0 0 0.45rem;
+}
+
+.person-publication-card > a,
+.person-profile__see-all,
+.person-project-card > a {
+  display: inline-block;
+  margin-top: 0.45rem;
+  color: var(--gaps-blue);
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.person-publication-card > a:hover,
+.person-profile__see-all:hover,
+.person-project-card > a:hover {
+  text-decoration: underline;
+}
+
+.person-profile__see-all {
+  margin-top: 0.85rem;
+}
+
+.person-project-years {
+  margin: 0.4rem 0 0;
+  color: var(--gaps-muted);
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.person-project-description {
+  margin: 0.45rem 0 0;
+  color: var(--gaps-text);
+  font-size: 0.78rem;
+  line-height: 1.45;
 }
 
 .person-profile__projects {

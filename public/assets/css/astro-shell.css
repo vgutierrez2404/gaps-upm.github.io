@@ -3,6 +3,86 @@
 .greedy-nav .visible-links { display: flex; flex-wrap: wrap; align-items: center; }
 .greedy-nav .visible-links li { display: block; }
 
+.page__footer {
+  position: relative;
+  bottom: auto;
+  float: none;
+  clear: both;
+  flex: 0 0 auto;
+  width: 100%;
+  margin-top: 3rem;
+  background-color: #fff;
+  border-top: 0;
+  z-index: 1;
+}
+
+body:has(.home-wave-backdrop) {
+  display: flex;
+  min-height: 100vh;
+  min-height: 100dvh;
+  flex-direction: column;
+  padding-bottom: 0;
+}
+
+#main {
+  position: relative;
+  /* Keep the flex item at the site's content width despite legacy auto margins. */
+  width: 100%;
+}
+
+body:has(.home-wave-backdrop) #main {
+  flex: 1 0 auto;
+}
+
+.masthead {
+  position: relative;
+  z-index: 2;
+}
+
+.home-wave-backdrop {
+  position: absolute;
+  z-index: 0;
+  /* Bridge #main's default top margin and the footer's top margin. */
+  inset: -2em auto -3rem 50%;
+  width: 100vw;
+  transform: translateX(-50%);
+  overflow: hidden;
+  pointer-events: none;
+  opacity: 0.72;
+}
+
+.home-sinc-svg {
+  position: absolute;
+  top: 0;
+  display: block;
+  width: clamp(190px, 24vw, 340px);
+  height: 100%;
+  max-width: none;
+}
+
+.home-sinc-svg--left { left: 0; }
+.home-sinc-svg--right { right: 0; }
+
+.home-sinc {
+  fill: none;
+  stroke: var(--gaps-blue);
+  stroke-opacity: 0.48;
+  stroke-width: 2;
+  stroke-linecap: round;
+  vector-effect: non-scaling-stroke;
+}
+
+.home-sinc--orange { stroke: var(--gaps-orange); }
+
+#main > :not(.home-wave-backdrop) {
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 900px) {
+  .home-sinc-svg { display: none; }
+}
+
 @media (max-width: 760px) {
   .masthead__menu { flex-wrap: wrap; justify-content: center; }
   .greedy-nav { flex: 1 0 100%; }

@@ -30,7 +30,7 @@
 
     - id: optimizing-ai-models-haematological-malignancies-federated-learning-simulations
       authors_tags: [apellaniz, parras, zazo]
-      citation: "L Carota, F Casadei, G Asti, D Piscia, R Biondi, C Sala, C Rollo,  (2026). **Optimizing AI models for haematological malignancies with federated learning: simulations and experiments.** *Physica Medica: European Journal of Medical Physics 142, 2026.*"
+      citation: "L Carota, F Casadei, G Asti, D Piscia, S D'Amico, R Biondi, C Sala, C Rollo, T Sanavia, P Fariselli, S Zazo, P A Apellániz, J Parras, C Merleau Nono, F Alvarez García, M Della Porta, E Giampieri, G Castellani (2026). **Optimizing AI models for haematological malignancies with federated learning: simulations and experiments.** *Physica Medica: European Journal of Medical Physics 142, 2026.*"
       links:
         - label: Scholar
           url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=AQcxu7MAAAAJ&pagesize=30&sortby=pubdate&citation_for_view=AQcxu7MAAAAJ:hMod-77fHWUC

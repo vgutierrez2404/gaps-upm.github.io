@@ -1,12 +1,57 @@
 ---
 import Base from '../../layouts/Base.astro';
-import { readYaml } from '../../lib/content';
+import { readCollection, readYaml } from '../../lib/content';
 import { marked } from 'marked';
 const groups = await readYaml<any[]>('publications.yml');
 const authors = await readYaml<any[]>('publication_authors.yml');
+const authorLabels = Object.fromEntries(authors.map((author) => [author.key, author.label]));
+const people = await readCollection('people');
+const authorSlugByKey: Record<string, string> = {
+  almodovar: 'alejandro-almodovar-espeso',
+  apellaniz: 'patricia-alonso-de-apellaniz',
+  blanco: 'jose-luis-blanco-murillo',
+  camara: 'mateo-jose-camara-largo',
+  daza: 'maria-pilar-daza-llin',
+  fernandez: 'luis-fernando-fernandez-salvador',
+  'gutierrez-navarro': 'juan-gutierrez-navarro',
+  'gutierrez-garcia': 'victor-gutierrez-garcia',
+  hernandez: 'luis-alfonso-hernandez-gomez',
+  'loza-morcillo': 'santiago-loza-morcillo',
+  marcos: 'fernando-marcos-macias',
+  parras: 'juan-parras-moral',
+  zazo: 'santiago-zazo-bello',
+  elizo: 'mar-elizo-alonso',
+};
+const peopleNamesBySlug = Object.fromEntries(people.map(({slug, data}) => [slug, data.title]));
+const authorSearchNames = Object.fromEntries(authors.map((author) => [
+  author.key,
+  [author.label, peopleNamesBySlug[authorSlugByKey[author.key]]].filter(Boolean).join(' '),
+]));
+
+function iconForLink(label: string) {
+  const normalized = label.toLowerCase();
+  if (normalized.includes('scholar')) return 'ai ai-google-scholar-square';
+  if (normalized.includes('pdf')) return 'far fa-file-pdf';
+  if (normalized.includes('doi')) return 'fas fa-link';
+  if (normalized.includes('code')) return 'fas fa-code';
+  return 'fas fa-arrow-up-right-from-square';
+}
+
 ---
-<Base title="Publications"><h1>Publications</h1>
-  <section class="filter-section"><h2>Filter by researcher</h2><div class="filter-buttons"><button class="filter-btn active" data-author="all">All Publications</button>{authors.map((author) => <button class="filter-btn" data-author={author.key}>{author.label}</button>)}</div></section>
-  {groups.map((group) => <section class="year-group"><h2>{group.year}</h2><ul class="publication-list">{group.items.map((publication: any) => <li class="publication-item" id={publication.id} data-authors={publication.authors_tags?.join(',')}><div class="publication-citation" set:html={marked.parseInline(publication.citation)} />{publication.links && <div class="publication-links">{publication.links.map((link: any) => <a href={link.url}>{link.label}</a>)}</div>}</li>)}</ul></section>)}
+<Base title="Publications">
+  <link slot="head" rel="stylesheet" href="/assets/css/publications.css" />
+  <section class="filter-section publication-search" aria-label="Search publications">
+    <label for="publication-search">Search publications</label>
+    <div class="publication-search__control">
+      <i class="fas fa-search" aria-hidden="true"></i>
+      <input id="publication-search" type="search" autocomplete="off" placeholder="Author, title, journal, or year" aria-describedby="publication-search-status" />
+    </div>
+    <p id="publication-search-status" class="publication-search__status" aria-live="polite"></p>
+  </section>
+  {groups.map((group) => <section class="publication-year-group"><h2 class="publication-year">{group.year}</h2><ul class="publication-list">{group.items.map((publication: any) => {
+    const publicationAuthors = (publication.authors_tags || []).map((key: string) => authorSearchNames[key] || authorLabels[key] || key).join(' ');
+    const linkLabels = (publication.links || []).map((link: any) => link.label).join(' ');
+    return <li class="publication-item" id={publication.id} data-authors={publication.authors_tags?.join(',')} data-search={`${publication.citation} ${publicationAuthors} ${group.year} ${linkLabels}`}><div class="publication-citation" set:html={marked.parseInline(publication.citation)} />{publication.links && <div class="publication-links">{publication.links.map((link: any) => <a href={link.url} target="_blank" rel="noreferrer noopener"><i class={iconForLink(link.label)} aria-hidden="true"></i>{link.label}</a>)}</div>}</li>;
+  })}</ul></section>)}
   <script src="/assets/js/publications-filter.js" defer></script>
 </Base>

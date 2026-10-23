@@ -1,20 +1,144 @@
 ---
 import Base from '../../layouts/Base.astro';
-import { readCollection } from '../../lib/content';
+import { readCollection, readYaml } from '../../lib/content';
 import { marked } from 'marked';
+
 const people = await readCollection('people');
+const projectData = await readYaml<any[]>('projects.yml');
+const publicationGroups = await readYaml<any[]>('publications.yml');
 export async function getStaticPaths() {
   const collection = await readCollection('people');
   return collection.map(({slug}) => ({params: {slug}}));
 }
+
 const person = people.find((item) => item.slug === Astro.params.slug)!;
+const categoryTitles: Record<string, string> = {
+  faculty: 'Faculty',
+  non_faculty: 'Non-faculty',
+  phd_students: 'PhD Student',
+  distinguished_professors: 'Distinguished Former Professor',
+};
+const role = person.data.role || categoryTitles[person.data.group] || '';
+const authorKeyBySlug: Record<string, string> = {
+  'alejandro-almodovar-espeso': 'almodovar',
+  'patricia-alonso-de-apellaniz': 'apellaniz',
+  'jose-luis-blanco-murillo': 'blanco',
+  'mateo-jose-camara-largo': 'camara',
+  'maria-pilar-daza-llin': 'daza',
+  'luis-fernando-fernandez-salvador': 'fernandez',
+  'juan-gutierrez-navarro': 'gutierrez-navarro',
+  'victor-gutierrez-garcia': 'gutierrez-garcia',
+  'luis-alfonso-hernandez-gomez': 'hernandez',
+  'santiago-loza-morcillo': 'loza-morcillo',
+  'fernando-marcos-macias': 'marcos',
+  'juan-parras-moral': 'parras',
+  'santiago-zazo-bello': 'zazo',
+  'mar-elizo-alonso': 'elizo',
+};
+const authorKey = authorKeyBySlug[person.slug];
+const recentPublications = publicationGroups
+  .flatMap((group) => group.items.map((publication: any) => ({...publication, year: group.year})))
+  .filter((publication) => authorKey && publication.authors_tags?.includes(authorKey))
+  .sort((a, b) => Number(b.year) - Number(a.year))
+  .slice(0, 3);
+const relatedProjects = projectData
+  .filter((project) => project.professor === person.slug)
+  .sort((a, b) => Number(b.active) - Number(a.active) || Number(b.year_start) - Number(a.year_start))
+  .slice(0, 3);
+const keywordMatch = person.content.match(/\*\*Research keywords\*\*\s*\n+\*([^*]+)\*/i);
+const researchKeywords = keywordMatch
+  ? keywordMatch[1].split(';').map((keyword: string) => keyword.trim()).filter(Boolean)
+  : [];
+const keywordDescription = researchKeywords.length < 2
+  ? researchKeywords[0] || ''
+  : `${researchKeywords.slice(0, -1).join(', ')}, and ${researchKeywords.at(-1)}`;
+const bioContent = person.content
+  .replace(/\n*\*\*Research keywords\*\*\s*\n+\*[^*]+\*\.?\s*/i, '\n\n')
+  .trim();
+const initials = String(person.data.title || '')
+  .split(/\s+/)
+  .filter(Boolean)
+  .slice(0, 2)
+  .map((part) => part[0])
+  .join('');
+
+function iconFor(label: string) {
+  const normalized = label.toLowerCase();
+  if (normalized.includes('scholar')) return 'ai ai-google-scholar-square';
+  if (normalized.includes('upm')) return 'fas fa-external-link-alt';
+  return 'fas fa-globe';
+}
 ---
 <Base title={person.data.title}>
-  <article class="person-profile"><a href="/people/">← All people</a><h1>{person.data.title}</h1>
-    {person.data.photo && <img class="person-photo" src={person.data.photo} alt={person.data.title} />}
-    {person.data.role && <p><strong>{person.data.role}</strong></p>}
-    {person.data.email && <p><a href={`mailto:${person.data.email}`}>{person.data.email}</a></p>}
-    {person.data.links && <ul>{person.data.links.map((link: any) => <li><a href={link.url}>{link.label}</a></li>)}</ul>}
-    <div class="profile-content" set:html={marked.parse(person.content)} />
-  </article>
+  <link slot="head" rel="stylesheet" href="/assets/css/person-profile.css" />
+
+  <div class="person-profile-page">
+    <article class="person-profile">
+      <header class="person-profile__intro">
+        <div class="person-profile__photo-wrap">
+          {person.data.photo
+            ? <img class="person-profile__photo" src={person.data.photo} alt={person.data.title} />
+            : <div class="person-profile__photo person-profile__photo--placeholder" aria-hidden="true">{initials}</div>}
+        </div>
+
+        <div class="person-profile__summary">
+          <nav class="person-profile__back" aria-label="Breadcrumb">
+            <a href="/">Home</a><span aria-hidden="true">/</span><a href="/people/">People</a>
+          </nav>
+          <h1 class="person-profile__name">{person.data.title}</h1>
+          {role && <p class="person-profile__role">{role}</p>}
+
+          <div class="person-profile__address">
+            <p>Signal Processing Applications Group (GAPS)</p>
+            <p>Universidad Politécnica de Madrid</p>
+            <p>Madrid, Spain</p>
+          </div>
+
+          {(person.data.email || person.data.links?.length > 0) && <ul class="person-profile__contacts">
+            {person.data.email && <li><a href={`mailto:${person.data.email}`}><i class="fas fa-envelope" aria-hidden="true"></i>{person.data.email}</a></li>}
+            {person.data.links?.map((link: {label: string; url: string}) => <li>
+              <a href={link.url} target="_blank" rel="noreferrer noopener">
+                <i class={iconFor(link.label)} aria-hidden="true"></i>{link.label}
+              </a>
+            </li>)}
+          </ul>}
+        </div>
+      </header>
+
+      {researchKeywords.length > 0 && <section class="person-profile__keywords" aria-labelledby="profile-keywords-title">
+        <h2 id="profile-keywords-title">Research interests</h2>
+        <p>{keywordDescription}.</p>
+      </section>}
+
+      {bioContent && <div class="person-profile__bio" set:html={marked.parse(bioContent)} />}
+
+      {recentPublications.length > 0 && <section class="person-profile__projects person-profile__publications" aria-labelledby="profile-publications-title">
+        <h2 id="profile-publications-title">Latest publications</h2>
+        <div class="person-profile__publication-list">
+          {recentPublications.map((publication) => <article class="person-publication-card">
+            <p class="person-publication-year">{publication.year}</p>
+            <div class="person-publication-citation" set:html={marked.parseInline(publication.citation)} />
+            {publication.links?.map((link: {label: string; url: string}) => <a href={link.url} target="_blank" rel="noreferrer noopener">{link.label}</a>)}
+          </article>)}
+        </div>
+        <a class="person-profile__see-all" href="/publications/">All publications <span aria-hidden="true">→</span></a>
+      </section>}
+
+      {relatedProjects.length > 0 && <section class="person-profile__projects" aria-labelledby="profile-projects-title">
+        <h2 id="profile-projects-title">Research projects</h2>
+        <div class="person-profile__projects-list">
+          {relatedProjects.map((project) => <article class:list={['person-project-card', {'person-project-card--active': project.active}]}>
+            <div class="person-project-header">
+              <h3>{project.name}</h3>
+              <span class:list={['project-status', {'project-status--inactive': !project.active}]}>{project.active ? 'Active' : 'Completed'}</span>
+            </div>
+            <p class="person-project-years">{project.year_start}{project.year_end ? `–${project.year_end}` : project.active ? '–present' : ''}</p>
+            {project.description && <p class="person-project-description">{project.description}</p>}
+            {(project.url || project.doi) && <a href={project.url || project.doi} target="_blank" rel="noreferrer noopener">Project information <span aria-hidden="true">↗</span></a>}
+          </article>)}
+        </div>
+        <a class="person-profile__see-all" href="/projects/">All projects <span aria-hidden="true">→</span></a>
+      </section>}
+    </article>
+  </div>
 </Base>
