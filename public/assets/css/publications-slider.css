@@ -8,10 +8,6 @@ body.modal-open .page__footer {
 }
 
 .zoom-modal img.zoomed {
-  max-width: none;
-  max-height: none;
-  width: auto;
-  height: auto;
   cursor: move;
 }
 .publications-slider {
@@ -41,7 +37,7 @@ body.modal-open .page__footer {
   padding-bottom: 0;
   border-bottom: 0;
   color: #17212b;
-  font-family: "Manrope", "Inter", sans-serif;
+  font-family: "IBM Plex Sans", "IBM Plex Sans", sans-serif;
   font-size: var(--gaps-section-title-size, 2rem);
   line-height: 1.22;
   letter-spacing: 0;
@@ -58,8 +54,33 @@ body.modal-open .page__footer {
 }
 
 .home-publications__footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem 1.5rem;
   margin-top: 1.15rem;
   text-align: left;
+}
+
+.home-publications__posters {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.65rem 1rem;
+  border: 1px solid #076b9d;
+  border-radius: 4px;
+  background: #076b9d;
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.home-publications__posters:hover,
+.home-publications__posters:focus-visible {
+  background: #05547c;
+  color: #fff;
+  text-decoration: none;
 }
 
 .home-publications__all {
@@ -165,7 +186,7 @@ body.modal-open .page__footer {
 .publication-card h3 {
   margin: 0;
   color: #17212b;
-  font-family: "Manrope", "Inter", sans-serif;
+  font-family: "IBM Plex Sans", "IBM Plex Sans", sans-serif;
   font-size: 1.08rem;
   line-height: 1.32;
   letter-spacing: 0;
@@ -322,10 +343,6 @@ body.modal-open .page__footer {
 }
 
 .zoom-modal img.zoomed {
-  max-width: none;
-  max-height: none;
-  width: auto;
-  height: auto;
   cursor: move;
 }
 

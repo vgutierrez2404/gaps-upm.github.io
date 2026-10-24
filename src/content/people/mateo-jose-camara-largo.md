@@ -3,7 +3,7 @@ title: Mateo José Cámara Largo
 person_slug: mateo-jose-camara-largo
 group: faculty
 email: mateo.camara@upm.es
-photo: "/images/people/new_images/MCL.png"
+photo: "/src/assets/people/new_images/MCL.png"
 links:
 - label: UPM
   url: https://portalcientifico.upm.es/es/ipublic/researcher/310341

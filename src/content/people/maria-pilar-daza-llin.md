@@ -3,7 +3,7 @@ title: María Pilar Daza Llin
 person_slug: maria-pilar-daza-llin
 group: phd_students
 email: m.dllin@alumnos.upm.es
-photo: "/images/people/new_images/MPDL.png"
+photo: "/src/assets/people/new_images/MPDL.png"
 ---
 Mi nombre es María Pilar Daza LLin y mi actividad académica e investigadora se desarrolla en el ámbito del procesado de señal, inteligencia artificial aplicada al habla y las comunicaciones, con especial interés en los sistemas de síntesis, traducción y análisis multimodal. Tras completar el Grado en Ingeniería y Sistemas de Datos y el Máster en Teoría de la Señal y Comunicaciones en la Universidad Politécnica de Madrid, inicié el Programa de Doctorado en Tecnologías y Sistemas de Comunicaciones, en el que continúo actualmente.
 

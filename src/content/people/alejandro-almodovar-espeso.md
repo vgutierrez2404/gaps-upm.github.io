@@ -3,7 +3,7 @@ title: Alejandro Almodóvar Espeso
 person_slug: alejandro-almodovar-espeso
 group: faculty
 email: alejandro.almodovar@upm.es
-photo: "/images/people/new_images/AAE.png"
+photo: "/src/assets/people/new_images/AAE.png"
 links:
 - label: UPM
   url: https://portalcientifico.upm.es/en/ipublic/researcher/335796

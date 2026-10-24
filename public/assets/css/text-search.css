@@ -1,0 +1,56 @@
+/* Shared search controls for publications and projects. */
+.text-search {
+  max-width: 720px;
+}
+
+.text-search label {
+  display: block;
+  margin: 0 0 0.9rem;
+  color: var(--gaps-ink);
+  font-family: "IBM Plex Sans", "IBM Plex Sans", sans-serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.text-search__control {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.text-search__control i {
+  position: absolute;
+  left: 0.9rem;
+  color: var(--gaps-muted);
+}
+
+.text-search input {
+  width: 100%;
+  min-height: 2.35rem;
+  padding: 0.4rem 0.9rem 0.4rem 2.5rem;
+  border: 1px solid #cbd5dc;
+  border-radius: 5px;
+  background: #fff;
+  color: var(--gaps-ink);
+  font: inherit;
+  font-size: 0.95rem;
+  transition: border-color 160ms ease, box-shadow 160ms ease;
+}
+
+.text-search input:focus {
+  border-color: var(--gaps-blue);
+  outline: 0;
+  box-shadow: 0 0 0 3px rgba(7, 131, 197, 0.12);
+}
+
+.text-search__status {
+  min-height: 1.2em;
+  margin: 0.45rem 0 0;
+  color: var(--gaps-muted);
+  font-size: 0.78rem;
+}
+
+
+
+.text-search { margin-bottom: 2.5rem; }

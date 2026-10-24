@@ -1,0 +1,70 @@
+---
+import Base from '../../layouts/Base.astro';
+import { readYaml } from '../../lib/content';
+import { marked } from 'marked';
+interface Poster { id: string; title: string; subtitle?: string; venue: string; authors: string; image: string; thumbnail: string; publication_id: string }
+interface Publication { id?: string; citation: string; links?: { label: string; url: string }[] }
+const posters = await readYaml<Poster[]>('posters.yml');
+const groups = await readYaml<{year: number; items: Publication[]}[]>('publications.yml');
+const publications = new Map(groups.flatMap(group => group.items.filter(item => item.id).map(item => [item.id, {...item, year: group.year}] as const)));
+for (const poster of posters) {
+  if (!publications.has(poster.publication_id)) throw new Error(`Missing publication for poster ${poster.id}`);
+}
+---
+<Base title="Posters" description="Explore GAPS research through our poster gallery. Open a poster to inspect the details and discover the associated publication.">
+  <link slot="head" rel="stylesheet" href="/assets/css/posters.css" />
+  <section class="poster-page" aria-label="Research posters">
+    <header class="poster-page-header">
+      <p>Research posters from GAPS. Select a poster to explore it in detail.</p>
+    </header>
+    <div class="poster-gallery">
+      {posters.map((poster) => <article class="poster-card" id={poster.id}>
+        <div class="poster-mount">
+          <a class="poster-open" href={poster.image} data-poster={poster.id} aria-label={`Explore poster: ${poster.title}`}>
+            <img src={poster.thumbnail} alt={`${poster.title} — research poster`} loading="lazy" />
+          </a>
+        </div>
+        <template data-poster-details={poster.id}>
+          <p class="poster-eyebrow">{poster.venue}</p>
+          <h2 id="poster-viewer-title">{poster.title}</h2>
+          <p class="poster-detail-authors">{poster.authors}</p>
+          {poster.subtitle && <p class="poster-description">{poster.subtitle}</p>}
+          <h3>Associated publication</h3>
+          <div class="poster-citation" set:html={marked.parseInline(publications.get(poster.publication_id)!.citation)} />
+          <div class="poster-resource-links">
+            <a href={`/publications/#${poster.publication_id}`}>Publication record <span aria-hidden="true">→</span></a>
+            {publications.get(poster.publication_id)!.links?.map(link => <a href={link.url} target="_blank" rel="noopener noreferrer">{link.label} <span aria-hidden="true">↗</span></a>)}
+            <a href={poster.image} target="_blank" rel="noopener noreferrer">Original poster <span aria-hidden="true">↗</span></a>
+          </div>
+        </template>
+      </article>)}
+    </div>
+  </section>
+  <dialog id="poster-viewer" class="poster-viewer" aria-labelledby="poster-viewer-title">
+    <div class="poster-viewer-toolbar">
+      <div class="poster-pagination">
+        <button type="button" data-action="previous" aria-label="Previous poster">←</button>
+        <span id="poster-position" aria-live="polite"></span>
+        <button type="button" data-action="next" aria-label="Next poster">→</button>
+      </div>
+      <button type="button" data-action="close" class="poster-close" aria-label="Close poster viewer">Close <span aria-hidden="true">×</span></button>
+    </div>
+    <div class="poster-viewer-layout">
+      <section class="poster-inspection" aria-label="Poster image viewer">
+        <div class="poster-zoom-toolbar" aria-label="Zoom controls">
+          <button type="button" data-action="out" aria-label="Zoom out">−</button>
+          <output id="poster-zoom-label" aria-live="polite">100%</output>
+          <button type="button" data-action="in" aria-label="Zoom in">+</button>
+          <button type="button" data-action="fit">Fit to view</button>
+        </div>
+        <div class="poster-viewport" tabindex="0" aria-label="Poster. Use zoom buttons to enlarge and scroll or drag to explore.">
+          <div class="poster-image-stage"><img id="poster-full-image" alt="" draggable="false" /></div>
+        </div>
+        <p class="poster-viewer-hint">Zoom to read · Drag or scroll to explore · Esc to close</p>
+        <p id="poster-image-status" role="status"></p>
+      </section>
+      <aside id="poster-details" class="poster-details"></aside>
+    </div>
+  </dialog>
+  <script is:inline src="/assets/js/posters.js"></script>
+</Base>

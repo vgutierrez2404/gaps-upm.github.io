@@ -3,7 +3,7 @@ title: Juan Parras Moral
 person_slug: juan-parras-moral
 group: faculty
 email: j.parras@upm.es
-photo: "/images/people/new_images/JPM.png"
+photo: "/src/assets/people/new_images/JPM.png"
 links:
 - label: UPM
   url: https://portalcientifico.upm.es/es/ipublic/researcher/312317

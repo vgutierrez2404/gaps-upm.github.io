@@ -3,7 +3,7 @@ title: Juan Gutiérrez Navarro
 person_slug: juan-gutierrez-navarro
 group: faculty
 email: juan.gutierrez@upm.es
-photo: "/images/people/new_images/JGN.png"
+photo: "/src/assets/people/new_images/JGN.png"
 links:
 - label: Web
   url: https://jgnav.github.io/

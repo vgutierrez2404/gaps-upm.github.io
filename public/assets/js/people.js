@@ -151,6 +151,12 @@
       avatar.style.backgroundColor = "#fff";
       const img = document.createElement("img");
       img.src = person.photo;
+      img.srcset = person.photoSrcset || "";
+      img.sizes = "68px";
+      img.width = person.photoWidth;
+      img.height = person.photoHeight;
+      img.loading = "lazy";
+      img.decoding = "async";
       img.alt = `${person.name || "Person"} portrait`;
       img.style.backgroundColor = "#fff";
       avatar.appendChild(img);

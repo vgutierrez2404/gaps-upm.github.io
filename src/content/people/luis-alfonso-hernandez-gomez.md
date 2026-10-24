@@ -3,7 +3,7 @@ title: Luis Alfonso Hernández Gómez
 person_slug: luis-alfonso-hernandez-gomez
 group: faculty
 email: luisalfonso.hernandez@upm.es
-photo: "/images/people/new_images/LHG.png"
+photo: "/src/assets/people/new_images/LHG.png"
 links:
 - label: UPM
   url: https://portalcientifico.upm.es/es/ipublic/researcher/309177

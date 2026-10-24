@@ -40,13 +40,14 @@ function iconForLink(label: string) {
 ---
 <Base title="Publications">
   <link slot="head" rel="stylesheet" href="/assets/css/publications.css" />
-  <section class="filter-section publication-search" aria-label="Search publications">
+  <link slot="head" rel="stylesheet" href="/assets/css/text-search.css" />
+  <section class="filter-section text-search" aria-label="Search publications">
     <label for="publication-search">Search publications</label>
-    <div class="publication-search__control">
+    <div class="text-search__control">
       <i class="fas fa-search" aria-hidden="true"></i>
       <input id="publication-search" type="search" autocomplete="off" placeholder="Author, title, journal, or year" aria-describedby="publication-search-status" />
     </div>
-    <p id="publication-search-status" class="publication-search__status" aria-live="polite"></p>
+    <p id="publication-search-status" class="text-search__status" aria-live="polite"></p>
   </section>
   {groups.map((group) => <section class="publication-year-group"><h2 class="publication-year">{group.year}</h2><ul class="publication-list">{group.items.map((publication: any) => {
     const publicationAuthors = (publication.authors_tags || []).map((key: string) => authorSearchNames[key] || authorLabels[key] || key).join(' ');

@@ -1,0 +1,109 @@
+# Instructors: profile slugs from src/content/people/; add only confirmed assignments.
+# Optional course url: official course or learning-guide page.
+# DCSE, SRFC and APMC names checked against UPM MUTSC teaching programme:
+# https://www.etsit.upm.es/fileadmin/documentos/estudios/masteres_oficiales/09AT_MUTSC/PD_09AT_MUTSC_201920_I_v1.pdf
+# APMC and MIMO were separate entries in the original list; confirm before merging.
+- id: telecommunication-technologies
+  level: Bachelor’s degree
+  name: Telecommunication Technologies and Systems
+  url: https://www.etsit.upm.es/estudios/grado-en-ingenieria-de-tecnologias-y-servicios-de-telecomunicacion.html
+  courses:
+    - code: SALT
+      name: Señales Aleatorias
+      instructors: []
+    - code: SSIT
+      name: Señales y Sistemas
+      instructors: []
+    - code: TDSÑ
+      name: Tratamiento Digital de Señales
+      instructors: []
+    - code: TRDG
+      name: Transmisión Digital
+      instructors: []
+    - code: EQSA
+      name: Equipos y Sistemas Audiovisuales
+      instructors: []
+    - code: PROD
+      name: Producción Audiovisual
+      instructors: []
+    - code: TDVA
+      name: Tratamiento Digital de Voz y Audio
+      instructors: []
+    - code: HCOV
+      name: Herramientas para la Computación y Visualización
+      instructors: []
+- id: data-engineering
+  level: Bachelor’s degree
+  name: Data Engineering and Systems
+  url: https://www.etsit.upm.es/estudios/grado-en-ingenieria-y-sistemas-de-datos.html
+  courses:
+    - code: PSAL
+      name: Probabilidad y Señales Aleatorias
+      instructors: []
+    - code: SCID
+      name: Sistemas de Comunicaciones para Ingeniería de Datos
+      instructors: []
+    - code: PASD
+      name: Procesado Avanzado de Señales y Datos
+      instructors: []
+- id: telecommunication-engineering
+  level: Master’s degree
+  name: Telecommunication Engineering
+  url: https://www.etsit.upm.es/estudios/master-universitario-en-ingenieria-de-telecomunicacion.html
+  courses:
+    - code: ASEC
+      name: Análisis de Señal en Comunicaciones
+      instructors: []
+    - code: MEDS
+      name: Media Data System Design
+      instructors: []
+    - code: DLAS
+      name: Deep Learning for Acoustic Signal Processing
+      instructors: []
+    - code: DSFA
+      name: Data Science Foundations and Applications
+      instructors: []
+    - code: PRDL
+      name: Predictive and Descriptive Learning
+      instructors: []
+    - code: MLLB
+      name: Machine Learning Lab
+      instructors: []
+- id: signal-theory
+  level: Master’s degree
+  name: Signal Theory and Communications
+  url: https://ssr.upm.es/mutsc/
+  courses:
+    - code: PRDL
+      name: Predictive and Descriptive Learning
+      instructors: []
+    - code: MLLB
+      name: Machine Learning Lab
+      instructors: []
+    - code: DSFA
+      name: Data Science Foundations and Applications
+      instructors: []
+    - code: APPR
+      name: Application Projects
+      instructors: []
+    - code: DCSE
+      name: Design of Communication Systems and Equipment
+      instructors: []
+    - code: SRFC
+      name: Secure RF Communications
+      instructors: []
+    - code: TSAN
+      name: Time Series Analysis
+      instructors: []
+    - code: REIL
+      name: Reinforcement Learning
+      instructors: []
+    - code: OTBD
+      name: Optimization Techniques for Big Data Analysis
+      instructors: []
+    - code: APMC
+      name: From Array Processing to MIMO Communications
+      instructors: []
+    - code: MIMO
+      name: From Array Processing to MIMO Communications
+      instructors: []

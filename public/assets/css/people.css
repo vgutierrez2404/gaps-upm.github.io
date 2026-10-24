@@ -27,7 +27,7 @@
 .archive .page__title {
   margin: 0 0 3rem;
   color: var(--gaps-ink);
-  font-family: "Manrope", "Inter", sans-serif;
+  font-family: "IBM Plex Sans", "IBM Plex Sans", sans-serif;
   font-size: 3.1rem;
   font-weight: 800;
   line-height: 1.08;
@@ -229,7 +229,7 @@
 }
 
 .people-directory .person-name {
-  font-family: "Inter", sans-serif;
+  font-family: "IBM Plex Sans", sans-serif;
   font-size: 1rem;
   font-weight: 700;
   line-height: 1.25;

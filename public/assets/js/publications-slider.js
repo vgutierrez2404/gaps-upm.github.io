@@ -118,6 +118,19 @@ let isZoomed = false;
 let zoomCenterX = 0.5;
 let zoomCenterY = 0.5;
 
+// The same screen-fitted baseline is used regardless of original resolution.
+function fitZoomImage() {
+  const image = document.getElementById('zoomedImage');
+  const container = document.querySelector('.zoom-container');
+  if (!image.naturalWidth || !image.naturalHeight || !container.clientWidth || !container.clientHeight) return;
+  const scale = Math.min((container.clientWidth - 48) / image.naturalWidth, (container.clientHeight - 48) / image.naturalHeight);
+  image.style.width = `${image.naturalWidth * scale}px`;
+  image.style.height = `${image.naturalHeight * scale}px`;
+  if (isZoomed) updateImagePosition(zoomCenterX, zoomCenterY);
+}
+
+document.getElementById('zoomedImage').addEventListener('load', fitZoomImage);
+
 function openZoom(imageSrc) {
   const modal = document.getElementById('zoomModal');
   const zoomedImage = document.getElementById('zoomedImage');
@@ -138,6 +151,7 @@ function openZoom(imageSrc) {
   zoomCenterY = 0.5;
   document.body.classList.add('modal-open');
   modal.classList.add('active');
+  fitZoomImage();
   
   // Show hint for 3 seconds
   zoomHint.style.opacity = '1';
@@ -216,24 +230,16 @@ function handleMouseMove(event) {
 }
 
 function updateImagePosition(mouseX, mouseY) {
-  const zoomedImage = document.getElementById('zoomedImage');
-  
-  // Use a scale of 1.4 for subtle zoom (perfect for high-res images)
+  const image = document.getElementById('zoomedImage');
+  const container = document.querySelector('.zoom-container');
+  zoomCenterX = mouseX;
+  zoomCenterY = mouseY;
   const zoomScale = 1.4;
-  
-  // Calculate the maximum translation needed to show all parts of the zoomed image
-  // We need a larger translation range to compensate for the viewport constraints
-  // Use a multiplier to ensure full coverage of the image
-  const maxTranslate = ((zoomScale - 1) / 2) * 100 * 2.5; // Increased multiplier for full coverage with smaller zoom
-  
-  // Map mouse position (0-1) to translation range
-  // When mouse is at 0 (top/left), show top/left of image (translate DOWN/RIGHT = positive)
-  // When mouse is at 1 (bottom/right), show bottom/right of image (translate UP/LEFT = negative)
-  const translateX = (0.5 - mouseX) * maxTranslate * 2;
-  const translateY = (0.5 - mouseY) * maxTranslate * 2;
-  
-  // Apply transform with scale first, then translate in the scaled coordinate system
-  zoomedImage.style.transform = `scale(${zoomScale}) translate(${translateX}%, ${translateY}%)`;
+  const overflowX = Math.max(0, image.clientWidth * zoomScale - (container.clientWidth - 48));
+  const overflowY = Math.max(0, image.clientHeight * zoomScale - (container.clientHeight - 48));
+  const translateX = (0.5 - mouseX) * overflowX;
+  const translateY = (0.5 - mouseY) * overflowY;
+  image.style.transform = `translate(${translateX}px, ${translateY}px) scale(${zoomScale})`;
 }
 
 // Click on modal background to close
@@ -263,6 +269,7 @@ updateSlider();
 startSlider();
 
 window.addEventListener('resize', function() {
+  fitZoomImage();
   syncSliderControls();
   updateSlider();
 });

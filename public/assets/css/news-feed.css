@@ -9,7 +9,7 @@
   padding-bottom: 0;
   border-bottom: 0;
   color: #17212b;
-  font-family: "Manrope", "Inter", sans-serif;
+  font-family: "IBM Plex Sans", "IBM Plex Sans", sans-serif;
   font-size: var(--gaps-section-title-size, 2rem);
   line-height: 1.22;
   letter-spacing: 0;
@@ -41,7 +41,7 @@
 
 .news-feed__date {
   color: #0783c5;
-  font-family: "Inter", sans-serif;
+  font-family: "IBM Plex Sans", sans-serif;
   font-size: 0.78rem;
   font-weight: 700;
   line-height: 1.45;

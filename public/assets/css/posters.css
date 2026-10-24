@@ -1,0 +1,64 @@
+.poster-page, .poster-viewer { --poster-blue: #076b9d; --poster-ink: #17212b; --poster-muted: #586675; color: var(--poster-ink); }
+.poster-page-header { max-width: 750px; margin-bottom: 2rem; }
+.poster-eyebrow { margin: 0 0 .65rem; color: var(--poster-blue); font-size: .72rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; }
+.poster-page-header h1 { font-size: clamp(2.3rem, 5vw, 3.1rem); line-height: 1.08; margin: 0 0 1.2rem; }
+.poster-page-header h1::after { content: ''; display: block; width: 46px; height: 3px; margin-top: 1rem; background: #f28c28; }
+.poster-page-header > p:last-child { color: var(--poster-muted); line-height: 1.6; margin: 0; }
+.poster-gallery-heading { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .5rem; font-size: .72rem; color: var(--poster-muted); padding-bottom: .8rem; }
+.poster-gallery { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2rem 1.5rem; padding: 1.5rem; border: 0; background-color: #f6f9fb; background-image: linear-gradient(#dfe8ef70 1px, transparent 1px), linear-gradient(90deg, #dfe8ef70 1px, transparent 1px); background-size: 28px 28px; }
+.poster-card { min-width: 0; background: transparent; border: 0; }
+.poster-open { display: block; width: fit-content; max-width: 100%; color: inherit; text-decoration: none; cursor: zoom-in; transition: transform .2s; }
+.poster-open:hover { color: inherit; text-decoration: none; transform: scale(1.025); }
+.poster-mount { display: flex; align-items: center; justify-content: center; min-height: 255px; }
+.poster-mount img { display: block; width: auto; height: auto; max-width: 100%; max-height: 255px; filter: drop-shadow(0 3px 5px #142b3c30); }
+.poster-number { position: absolute; top: .55rem; left: .7rem; font-size: .6rem; font-weight: 600; color: #617487; }
+.poster-open-hint { position: absolute; bottom: .6rem; right: .6rem; background: #fff; border: 1px solid #dce5ec; border-radius: 3px; padding: .25rem .45rem; font-size: .65rem; color: var(--poster-blue); }
+.poster-card-body { padding: 1rem 1rem .4rem; }
+.poster-card-venue { margin: 0 0 .45rem; color: var(--poster-blue); font-size: .65rem; font-weight: 600; }
+.poster-card h2 { font-size: 1rem; line-height: 1.35; border: 0; margin: 0 0 .6rem; padding: 0; }
+.poster-card-authors { font-size: .72rem; color: var(--poster-muted); margin: 0; }
+.poster-paper-link { display: inline-block; margin: .5rem 1rem 1rem; font-size: .72rem; color: var(--poster-blue); }
+.poster-page a:focus-visible, .poster-viewer :focus-visible { outline: 2px solid #0783c5; outline-offset: 3px; }
+body:has(.poster-viewer[open]) { overflow: hidden; }
+.poster-viewer { position: fixed; inset: 0; width: min(1500px, 96vw); height: min(950px, 94dvh); max-width: 96vw; max-height: 94dvh; margin: auto; padding: 0; background: #fff; border: 1px solid #dce5ec; border-radius: 10px; box-shadow: 0 24px 100px #142a3e50; }
+.poster-viewer::backdrop { background: #122536aa; }
+.poster-viewer[open] { display: flex; flex-direction: column; }
+.poster-viewer button { display: inline-flex; align-items: center; justify-content: center; min-width: 36px; min-height: 36px; padding: .35rem .65rem; border: 1px solid #d8e1e8; border-radius: 4px; background: #fff; color: #233746; font: inherit; font-size: .75rem; cursor: pointer; }
+.poster-viewer button:hover { border-color: #0783c5; background: #edf7fc; }
+.poster-viewer button:disabled { opacity: .4; cursor: default; }
+.poster-viewer-toolbar { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: .65rem 1rem; border-bottom: 1px solid #e3eaf0; }
+.poster-pagination { display: flex; align-items: center; gap: .65rem; }
+#poster-position { min-width: 3rem; text-align: center; font-size: .75rem; color: var(--poster-muted); }
+.poster-close { gap: .75rem; }
+.poster-close span { font-size: 1.2rem; line-height: 1; }
+.poster-viewer-layout { display: grid; grid-template-columns: minmax(0, 1fr) 330px; flex: 1; min-height: 0; }
+.poster-inspection { min-width: 0; min-height: 0; display: flex; flex-direction: column; background: #edf2f5; }
+.poster-zoom-toolbar { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: .4rem; padding: .6rem; }
+#poster-zoom-label { min-width: 3rem; font-size: .72rem; text-align: center; }
+.poster-viewport { flex: 1; min-height: 0; overflow: auto; overscroll-behavior: contain; cursor: grab; }
+.poster-viewport.is-dragging { cursor: grabbing; user-select: none; }
+.poster-image-stage { display: flex; align-items: center; justify-content: center; min-width: 100%; min-height: 100%; padding: 16px; box-sizing: border-box; }
+#poster-full-image { display: block; flex-shrink: 0; max-width: none; box-shadow: 0 3px 16px #102b3a25; }
+#poster-full-image[hidden] { display: none; }
+.poster-viewer-hint { margin: .5rem; text-align: center; color: #536475; font-size: .65rem; }
+#poster-image-status { margin: 0; text-align: center; font-size: .72rem; }
+#poster-image-status:not(:empty) { padding: .5rem; }
+.poster-details { padding: 1.5rem; overflow-y: auto; border-left: 1px solid #dce5ec; }
+.poster-details h2 { font-size: 1.35rem; line-height: 1.3; padding: 0; border: 0; margin: 0 0 .8rem; }
+.poster-detail-authors { font-size: .8rem; color: var(--poster-muted); }
+.poster-description { margin-top: 1.2rem; font-size: .85rem; line-height: 1.6; }
+.poster-details h3 { border-top: 1px solid #e3eaf0; padding-top: 1.3rem; margin: 1.5rem 0 .7rem; font-size: .8rem; }
+.poster-citation { font-size: .75rem; line-height: 1.7; color: #4f5e6b; overflow-wrap: anywhere; }
+.poster-resource-links { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: 1.2rem; }
+.poster-resource-links a { display: inline-block; border: 1px solid #cbdde8; border-radius: 4px; padding: .4rem .6rem; font-size: .72rem; color: var(--poster-blue); text-decoration: none; }
+.poster-resource-links a:hover { background: #edf7fc; text-decoration: underline; }
+@media (max-width: 1000px) { .poster-gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 760px) {
+  .poster-gallery { padding: .8rem; gap: 1rem; }
+  .poster-viewer { width: 100vw; max-width: 100vw; height: 100dvh; max-height: 100dvh; border: 0; border-radius: 0; }
+  .poster-viewer-layout { display: flex; flex-direction: column; overflow-y: auto; }
+  .poster-inspection { flex: 0 0 62dvh; }
+  .poster-details { overflow: visible; border-left: 0; border-top: 1px solid #dce5ec; padding: 1.2rem; }
+}
+@media (max-width: 480px) { .poster-gallery { grid-template-columns: minmax(0, 1fr); } .poster-mount { min-height: 290px; } .poster-mount img { max-height: 290px; } }
+@media (prefers-reduced-motion: reduce) { .poster-open { transition: none; } }

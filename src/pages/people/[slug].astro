@@ -2,6 +2,8 @@
 import Base from '../../layouts/Base.astro';
 import { readCollection, readYaml } from '../../lib/content';
 import { marked } from 'marked';
+import { Image } from 'astro:assets';
+import { portraitSource } from '../../lib/portraits';
 
 const people = await readCollection('people');
 const projectData = await readYaml<any[]>('projects.yml');
@@ -12,6 +14,7 @@ export async function getStaticPaths() {
 }
 
 const person = people.find((item) => item.slug === Astro.params.slug)!;
+const photo = person.data.photo ? await portraitSource(person.data.photo) : null;
 const categoryTitles: Record<string, string> = {
   faculty: 'Faculty',
   non_faculty: 'Non-faculty',
@@ -76,8 +79,8 @@ function iconFor(label: string) {
     <article class="person-profile">
       <header class="person-profile__intro">
         <div class="person-profile__photo-wrap">
-          {person.data.photo
-            ? <img class="person-profile__photo" src={person.data.photo} alt={person.data.title} />
+          {photo
+            ? <Image class="person-profile__photo" src={photo} alt={person.data.title} width={440} widths={[220, 440]} sizes="220px" format="webp" quality={85} loading="eager" />
             : <div class="person-profile__photo person-profile__photo--placeholder" aria-hidden="true">{initials}</div>}
         </div>
 

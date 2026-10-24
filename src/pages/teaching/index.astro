@@ -1,7 +1,57 @@
 ---
 import Base from '../../layouts/Base.astro';
-import { readPage } from '../../lib/content';
-import { marked } from 'marked';
-const page = await readPage('teaching.md');
+import { readYaml, readCollection } from '../../lib/content';
+interface Course { code: string; name: string; url?: string; instructors: string[] }
+interface Programme { id: string; level: string; name: string; url: string; courses: Course[] }
+const programmes = await readYaml<Programme[]>('teaching.yml');
+const people = await readCollection('people');
+const faculty = new Map(people.map(person => [person.slug, person]));
+for (const programme of programmes) {
+  for (const course of programme.courses) {
+    for (const slug of course.instructors) {
+      if (!faculty.has(slug)) throw new Error(`Unknown teaching instructor: ${slug}`);
+    }
+  }
+}
 ---
-<Base title="Teaching"><article class="page-content" set:html={marked.parse(page.content)} /></Base>
+<Base title="Teaching" description="Courses taught by GAPS faculty across undergraduate and master's programmes at ETSIT, Universidad Politécnica de Madrid.">
+  <link slot="head" rel="stylesheet" href="/assets/css/teaching.css" />
+  <article class="teaching-page">
+    <header class="teaching-header">
+      <h1>Teaching</h1>
+      <p>Courses taught by GAPS faculty across undergraduate and master's programmes at ETSIT, Universidad Politécnica de Madrid.</p>
+      <ul class="teaching-summary" aria-label="Degree programmes">
+        <li><strong>2</strong> Bachelor’s degrees</li>
+        <li><strong>2</strong> Master’s degrees</li>
+      </ul>
+    </header>
+    <div class="teaching-grid">
+      {programmes.map(programme => (
+        <section class="teaching-programme" aria-labelledby={programme.id}>
+          <header class="teaching-programme-header">
+            <div class="teaching-programme-meta">
+              <span class="teaching-level">{programme.level}</span>
+              <span>{programme.courses.length} courses</span>
+            </div>
+            <h2 id={programme.id}>{programme.name}</h2>
+            <a class="teaching-programme-link" href={programme.url} aria-label={`View degree programme: ${programme.name}`}>View degree programme <span aria-hidden="true">↗</span></a>
+          </header>
+          <ul class="teaching-courses">
+            {programme.courses.map(course => (
+              <li>
+                <span class="teaching-code">{course.code}</span>
+                <div class="teaching-course-detail">
+                  {course.url ? <a class="teaching-course-name" href={course.url}>{course.name}</a> : <span class="teaching-course-name">{course.name}</span>}
+                  {course.instructors.length > 0 && <p class="teaching-instructors">
+                    <span>GAPS faculty: </span>
+                    {course.instructors.map((slug, index) => <>{index > 0 && ', '}<a href={`/people/${slug}/`}>{faculty.get(slug)!.data.title}</a></>)}
+                  </p>}
+                </div>
+              </li>
+            ))}
+          </ul>
+        </section>
+      ))}
+    </div>
+  </article>
+</Base>

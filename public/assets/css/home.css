@@ -66,7 +66,7 @@ body:has(.home-wave-backdrop) #main {
   max-width: none;
   margin: 0;
   color: var(--gaps-ink);
-  font-family: "Manrope", "Inter", sans-serif;
+  font-family: "IBM Plex Sans", "IBM Plex Sans", sans-serif;
   font-size: 3.1rem;
   font-weight: 800;
   line-height: 1.08;
@@ -129,7 +129,7 @@ body:has(.home-wave-backdrop) #main {
   padding-bottom: 0;
   border-bottom: 0;
   color: var(--gaps-ink);
-  font-family: "Manrope", "Inter", sans-serif;
+  font-family: "IBM Plex Sans", "IBM Plex Sans", sans-serif;
   font-size: var(--gaps-section-title-size);
   line-height: 1.22;
   letter-spacing: 0;

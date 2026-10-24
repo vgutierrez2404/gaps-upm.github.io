@@ -3,7 +3,7 @@ title: Alba Garrido López
 person_slug: alba-garrido-lopez
 group: phd_students
 email: alba.garrido.lopez@upm.es
-photo: "/images/people/new_images/AGL.png"
+photo: "/src/assets/people/new_images/AGL.png"
 ---
 Alba Garrido López is a teaching assistant and Ph.D. candidate in the Communications Technologies and Systems program at Universidad Politécnica de Madrid (UPM), supervised by Dr. Juan Parras Moral within the Signal Processing Applications Group (GAPS). She holds a B.Sc. in Biomedical Engineering and an M.Sc. in Signal Theory and Communications, with a specialization in Machine Learning for Big Data, both from UPM.
 

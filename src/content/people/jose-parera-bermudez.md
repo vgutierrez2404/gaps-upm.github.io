@@ -3,7 +3,7 @@ title: José Parera Bermúdez
 person_slug: jose-parera-bermudez
 group: faculty
 email: jose.parera@upm.es
-photo: "/images/people/parera.jpg"
+photo: "/src/assets/people/parera.jpg"
 links:
 - label: UPM
   url: https://portalcientifico.upm.es/es/ipublic/researcher/303926

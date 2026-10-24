@@ -1,18 +1,29 @@
 ---
 import Base from '../../layouts/Base.astro';
 import { readCollection, readYaml } from '../../lib/content';
+import { getImage } from 'astro:assets';
+import { portraitSource } from '../../lib/portraits';
 
 const people = await readCollection('people');
 const roster = await readYaml<Record<string, Array<string | {name: string; email?: string}>>>('people.yml');
-const records = Object.fromEntries(people.map(({slug, data}) => [slug, {
+const records = Object.fromEntries(await Promise.all(people.map(async ({slug, data}) => {
+  const source = data.photo ? await portraitSource(data.photo) : null;
+  const thumbnails = source ? await Promise.all([80, 160].map((width) =>
+    getImage({ src: source, width, format: 'webp', quality: 85 }),
+  )) : [];
+  return [slug, {
   name: data.title,
   slug,
   title: data.role || '',
   email: data.email || '',
-  photo: data.photo || '',
+  photo: thumbnails[0]?.src || '',
+  photoSrcset: thumbnails.map((image, index) => `${image.src} ${index === 0 ? 80 : 160}w`).join(', '),
+  photoWidth: thumbnails[0]?.attributes.width,
+  photoHeight: thumbnails[0]?.attributes.height,
   affiliation: data.affiliation || '',
   links: data.links || [],
-}]));
+}];
+})));
 ---
 <Base title="People">
   <link slot="head" rel="stylesheet" href="/assets/css/people.css" />

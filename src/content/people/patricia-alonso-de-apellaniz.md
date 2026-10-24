@@ -3,7 +3,7 @@ title: Patricia Alonso de Apellániz
 person_slug: patricia-alonso-de-apellaniz
 group: non_faculty
 email: patricia.alonsod@upm.es
-photo: "/images/people/new_images/PAA.png"
+photo: "/src/assets/people/new_images/PAA.png"
 links:
 - label: UPM
   url: https://portalcientifico.upm.es/es/ipublic/researcher/332427

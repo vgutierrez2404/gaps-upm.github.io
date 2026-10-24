@@ -3,7 +3,7 @@ title: Víctor Gutiérrez García
 person_slug: victor-gutierrez-garcia
 group: phd_students
 email: v.ggarcia@upm.es
-photo: "/images/people/new_images/VGG.png"
+photo: "/src/assets/people/new_images/VGG.png"
 links:
 - label: Web
   url: https://vgutierrez2404.github.io/

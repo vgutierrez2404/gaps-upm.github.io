@@ -1,0 +1,40 @@
+- title: DeCaFlow
+  subtitle: A Deconfounding Causal Generative Model
+  venue: NeurIPS 2025 Spotlight
+  authors: Almodóvar et al.
+  image: /images/posters/decaflow.png
+  publication_id: decaflow
+  id: decaflow
+  thumbnail: /images/posters/thumbnails/decaflow.webp
+- title: Biologically Informed Neural Speech Synthesis
+  subtitle: Neural articulatory synthesis and acoustic-to-articulatory inversion
+  venue: Speech and audio synthesis
+  authors: Cámara and Blanco-Murillo
+  image: /images/posters/mateo.png
+  publication_id: biological-informed
+  id: biological-informed
+  thumbnail: /images/posters/thumbnails/biological-informed.webp
+- title: Parameter Optimisation for a Physical Model of the Vocal System
+  subtitle: Optimising Pink Trombone for realistic human vocalisation
+  venue: EURASIP Journal 2025
+  authors: Cámara and Blanco-Murillo
+  image: /images/posters/poster_pink_trombone.png
+  publication_id: parameter-optimisation-physical-model-vocal-system
+  id: parameter-optimisation-physical-model-vocal-system
+  thumbnail: /images/posters/thumbnails/parameter-optimisation-physical-model-vocal-system.webp
+- title: Neural Audio Synthesis for Sound Effects
+  subtitle: A Scope Review
+  venue: IEEE/ACM TASLP 2025
+  authors: Cámara et al.
+  image: /images/posters/poster_sota.png
+  publication_id: neural-audio-synthesis-sound-effects-scope-review
+  id: neural-audio-synthesis-sound-effects-scope-review
+  thumbnail: /images/posters/thumbnails/neural-audio-synthesis-sound-effects-scope-review.webp
+- title: Advanced Beam Steering and Topological Optimization
+  subtitle: Large-scale antenna arrays through hexagonal subarrays
+  venue: RADARCONF 2025
+  authors: Loza-Morcillo and Blanco-Murillo
+  image: /images/posters/santi.jpg
+  publication_id: santi-RADARCONF25
+  id: santi-RADARCONF25
+  thumbnail: /images/posters/thumbnails/santi-RADARCONF25.webp

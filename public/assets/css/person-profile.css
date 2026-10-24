@@ -81,7 +81,7 @@
   margin: 0 0 0.75rem;
   font-size: clamp(1.7rem, 2.8vw, 2.65rem);
   color: var(--gaps-ink);
-  font-family: "Manrope", "Inter", sans-serif;
+  font-family: "IBM Plex Sans", "IBM Plex Sans", sans-serif;
   font-weight: 800;
   line-height: 1.1;
   letter-spacing: 0;
@@ -160,7 +160,7 @@
 .person-profile__keywords h2 {
   margin: 0 0 0.75rem;
   color: var(--gaps-ink);
-  font-family: "Manrope", "Inter", sans-serif;
+  font-family: "IBM Plex Sans", "IBM Plex Sans", sans-serif;
   font-size: 1.2rem;
   line-height: 1.25;
 }
@@ -191,7 +191,7 @@
 .person-profile__publications h2 {
   margin: 0 0 1rem;
   color: var(--gaps-ink);
-  font-family: "Manrope", "Inter", sans-serif;
+  font-family: "IBM Plex Sans", "IBM Plex Sans", sans-serif;
   font-size: 1.45rem;
   line-height: 1.2;
 }
@@ -278,7 +278,7 @@
 .person-profile__projects h2 {
   margin: 0 0 1rem;
   color: var(--gaps-ink);
-  font-family: "Manrope", "Inter", sans-serif;
+  font-family: "IBM Plex Sans", "IBM Plex Sans", sans-serif;
   font-size: 1.45rem;
   line-height: 1.2;
 }
