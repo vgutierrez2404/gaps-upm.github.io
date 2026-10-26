@@ -1,0 +1,38 @@
+# Initial topic suggestions use titles only. Set `topics: [topic-id, ...]` on a
+# publication to override them; the first topic controls its map cluster.
+- id: vision
+  label: Computer vision
+  color: '#5369b4'
+  patterns: ['segment', 'normalized cut', 'token graph', 'image', 'video', 'vision', 'visual', 'annotation', 'labeling', 'labelling', 'scene', 'object detect', 'imaging', 'retinal', 'compression', 'resolution', 'cinema']
+- id: audio
+  label: Speech & audio
+  color: '#0783c5'
+  patterns: ['speech', 'audio', 'acoustic', 'vocal', 'voice', 'sound', 'singing', 'articulat', 'trill', 'utterance', 'room equalization', 'speaker', 'lexicon', 'sonorizaci']
+- id: biomedical
+  label: Biomedical computing
+  color: '#bd657f'
+  patterns: ['medical', 'medicin', 'clinical', 'health', 'cancer', 'hematolog', 'haematolog', 'hemolytic', 'sickle', 'genom', 'omics', 'biomed', 'disease', 'mortality', 'spirometry', 'cell migration', 'survival', 'patient', 'therapy', 'warburg', 'respirat', 'blood', 'sleep apnea', 'apnea', 'coccidio', 'vaccin']
+- id: federated
+  label: Federated learning & privacy
+  color: '#9270b7'
+  patterns: ['federat', 'privacy', 'membership inference', 'distributed learning']
+- id: generative
+  label: Generative & causal ML
+  color: '#d18a26'
+  patterns: ['generativ', 'synthetic', 'causal', 'autoencoder', 'vae', 'treatment effect', 'treatment selection', 'jensen', 'divergence', 'flow matching', 'decaflow', 'causalkan', 'kolmogorov', 'kolgomorov']
+- id: communications
+  label: Sensing & communications
+  color: '#328a6c'
+  patterns: ['antenna', 'radar', 'beam', 'subarray', 'mimo', 'wireless', 'communication', 'sensor', 'sensing', 'underwater', 'uuv', 'vessel', 'sonar', 'nausim', 'localization', 'localisation', 'goldberg', 'radiofrequency', 'wireless network', 'acoustic network', 'heterogeneous network', 'antijamming', 'anti-jamming', 'csma', 'sprt', 'power allocation']
+- id: ml
+  label: Machine learning & data
+  color: '#bc7048'
+  patterns: ['learning', 'neural', 'prediction', 'classification', 'data', 'algorithm', 'optimization', 'optimisation', 'statistic', 'metric space', 'bayes', 'intelligence', 'svm', 'ddqn', 'gmm', 'classifiers', 'autocodificador']
+- id: systems
+  label: Signal processing & systems
+  color: '#677c45'
+  patterns: ['signal', 'filter', 'system', 'model', 'simulation', 'silicon', 'electronic', 'impedance', 'battery', 'batteries', 'spectra', 'conductiv', 'pecvd', 'hydrogen', 'semiconductor', 'rf power', 'dac', 'conductores ionicos', 'ionic conductor', 'fisicoquimica']
+- id: other
+  label: Other research
+  color: '#78818e'
+  patterns: []

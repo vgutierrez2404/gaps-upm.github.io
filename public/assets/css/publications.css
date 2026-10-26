@@ -129,3 +129,15 @@
     border-left-color: transparent;
   }
 }
+
+.publication-year-group + .publication-year-group { margin-top: .6rem; }
+.publication-year-group { border-bottom: 1px solid var(--gaps-border); }
+.publication-year-summary { display: flex; align-items: center; gap: .8rem; padding: 1rem 0; cursor: pointer; list-style: none; }
+.publication-year-summary::-webkit-details-marker { display: none; }
+.publication-year-summary::before { content: '›'; color: var(--gaps-blue); font-size: 1.4rem; line-height: 1; }
+.publication-year-group[open] > .publication-year-summary::before { transform: rotate(90deg); }
+.publication-year-summary .publication-year { margin: 0; }
+.publication-year-summary .publication-year::after { content: none; }
+.publication-year-count { margin-left: auto; font-size: .75rem; color: #596675; }
+.publication-year-group[open] > .publication-list { margin-top: .8rem; }
+.publication-year-summary:focus-visible { outline: 2px solid var(--gaps-blue); outline-offset: 4px; }

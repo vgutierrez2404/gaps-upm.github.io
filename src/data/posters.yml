@@ -1,7 +1,25 @@
+- title: Word Lengthening as a Function of Utterance Position
+  subtitle: A Multi-Corpus Study
+  venue: Interspeech 2026
+  authors:
+    - text: Cámara
+      key: camara
+    - text: ", "
+    - text: Blanco-Murillo
+      key: blanco
+    - text: " et al."
+  image: /images/posters/word-lengthening-interspeech-2026.webp
+  pdf: /files/posters/word-lengthening-interspeech-2026.pdf
+  publication_id: word-lengthening-as-function-utterance-position-multi-corpus
+  id: word-lengthening-interspeech-2026
+  thumbnail: /images/posters/thumbnails/word-lengthening-interspeech-2026.webp
 - title: DeCaFlow
   subtitle: A Deconfounding Causal Generative Model
   venue: NeurIPS 2025 Spotlight
-  authors: Almodóvar et al.
+  authors:
+    - text: Almodóvar
+      key: almodovar
+    - text: " et al."
   image: /images/posters/decaflow.png
   publication_id: decaflow
   id: decaflow
@@ -9,7 +27,12 @@
 - title: Biologically Informed Neural Speech Synthesis
   subtitle: Neural articulatory synthesis and acoustic-to-articulatory inversion
   venue: Speech and audio synthesis
-  authors: Cámara and Blanco-Murillo
+  authors:
+    - text: Cámara
+      key: camara
+    - text: " and "
+    - text: Blanco-Murillo
+      key: blanco
   image: /images/posters/mateo.png
   publication_id: biological-informed
   id: biological-informed
@@ -17,7 +40,12 @@
 - title: Parameter Optimisation for a Physical Model of the Vocal System
   subtitle: Optimising Pink Trombone for realistic human vocalisation
   venue: EURASIP Journal 2025
-  authors: Cámara and Blanco-Murillo
+  authors:
+    - text: Cámara
+      key: camara
+    - text: " and "
+    - text: Blanco-Murillo
+      key: blanco
   image: /images/posters/poster_pink_trombone.png
   publication_id: parameter-optimisation-physical-model-vocal-system
   id: parameter-optimisation-physical-model-vocal-system
@@ -25,7 +53,10 @@
 - title: Neural Audio Synthesis for Sound Effects
   subtitle: A Scope Review
   venue: IEEE/ACM TASLP 2025
-  authors: Cámara et al.
+  authors:
+    - text: Cámara
+      key: camara
+    - text: " et al."
   image: /images/posters/poster_sota.png
   publication_id: neural-audio-synthesis-sound-effects-scope-review
   id: neural-audio-synthesis-sound-effects-scope-review
@@ -33,7 +64,12 @@
 - title: Advanced Beam Steering and Topological Optimization
   subtitle: Large-scale antenna arrays through hexagonal subarrays
   venue: RADARCONF 2025
-  authors: Loza-Morcillo and Blanco-Murillo
+  authors:
+    - text: Loza-Morcillo
+      key: loza-morcillo
+    - text: " and "
+    - text: Blanco-Murillo
+      key: blanco
   image: /images/posters/santi.jpg
   publication_id: santi-RADARCONF25
   id: santi-RADARCONF25

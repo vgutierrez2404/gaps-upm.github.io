@@ -1,12 +1,18 @@
 ---
 import Base from '../../layouts/Base.astro';
-import { readYaml } from '../../lib/content';
+import { readCollection, readYaml } from '../../lib/content';
 import { marked } from 'marked';
-interface Poster { id: string; title: string; subtitle?: string; venue: string; authors: string; image: string; thumbnail: string; publication_id: string }
-interface Publication { id?: string; citation: string; links?: { label: string; url: string }[] }
+interface Poster { id: string; title: string; subtitle?: string; venue: string; authors: { text: string; key?: string }[]; image: string; pdf?: string; thumbnail: string; publication_id: string }
+interface Publication { id?: string; citation: string; authors_tags?: string[]; links?: { label: string; url: string }[] }
 const posters = await readYaml<Poster[]>('posters.yml');
 const groups = await readYaml<{year: number; items: Publication[]}[]>('publications.yml');
 const publications = new Map(groups.flatMap(group => group.items.filter(item => item.id).map(item => [item.id, {...item, year: group.year}] as const)));
+const authorProfiles = await readYaml<{key: string; profile_slug?: string}[]>('publication_authors.yml');
+const people = await readCollection('people');
+const researchers = new Map(authorProfiles.flatMap(author => {
+  const person = people.find(person => person.slug === author.profile_slug);
+  return person ? [[author.key, { name: String(person.data.title), url: `/people/${person.slug}/` }] as const] : [];
+}));
 for (const poster of posters) {
   if (!publications.has(poster.publication_id)) throw new Error(`Missing publication for poster ${poster.id}`);
 }
@@ -17,23 +23,27 @@ for (const poster of posters) {
     <header class="poster-page-header">
       <p>Research posters from GAPS. Select a poster to explore it in detail.</p>
     </header>
-    <div class="poster-gallery">
+    <div class="poster-gallery" id="poster-gallery" aria-label="Poster exhibition">
       {posters.map((poster) => <article class="poster-card" id={poster.id}>
         <div class="poster-mount">
           <a class="poster-open" href={poster.image} data-poster={poster.id} aria-label={`Explore poster: ${poster.title}`}>
-            <img src={poster.thumbnail} alt={`${poster.title} — research poster`} loading="lazy" />
+            <img src={poster.thumbnail} alt={`${poster.title} — research poster`} loading="lazy" draggable="false" />
           </a>
         </div>
         <template data-poster-details={poster.id}>
           <p class="poster-eyebrow">{poster.venue}</p>
           <h2 id="poster-viewer-title">{poster.title}</h2>
-          <p class="poster-detail-authors">{poster.authors}</p>
+          <p class="poster-detail-authors">{poster.authors.map(author => {
+            const person = author.key ? researchers.get(author.key) : undefined;
+            return person ? <a href={person.url} title={person.name}>{author.text}</a> : author.text;
+          })}</p>
           {poster.subtitle && <p class="poster-description">{poster.subtitle}</p>}
           <h3>Associated publication</h3>
           <div class="poster-citation" set:html={marked.parseInline(publications.get(poster.publication_id)!.citation)} />
           <div class="poster-resource-links">
             <a href={`/publications/#${poster.publication_id}`}>Publication record <span aria-hidden="true">→</span></a>
             {publications.get(poster.publication_id)!.links?.map(link => <a href={link.url} target="_blank" rel="noopener noreferrer">{link.label} <span aria-hidden="true">↗</span></a>)}
+            {poster.pdf && <a href={poster.pdf} target="_blank" rel="noopener noreferrer">Poster PDF <span aria-hidden="true">↗</span></a>}
             <a href={poster.image} target="_blank" rel="noopener noreferrer">Original poster <span aria-hidden="true">↗</span></a>
           </div>
         </template>

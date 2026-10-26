@@ -1,18 +1,20 @@
 #!/usr/bin/env python3
-"""Import missing publications from Google Scholar profiles.
+"""Collect 2026 Scholar candidates for manual review, then import only approvals.
 
-This script reads Scholar profile links from the Astro people content, compares
-the fetched works with src/data/publications.yml by normalized title, and appends
-new entries grouped by year.
+Collect: python3 scripts/update_publications_from_scholar.py --year 2026
+Review: edit status (pending/approved/rejected) in the JSON.
+Approved entries use candidate_author_tags; confirmed_author_tags optionally overrides them.
+Import: python3 scripts/update_publications_from_scholar.py --year 2026 --apply
 
-Examples:
-  python3 scripts/update_publications_from_scholar.py --dry-run --max-per-author 20
-  python3 scripts/update_publications_from_scholar.py --apply --max-per-author 50
+Requires Node.js and the site's installed yaml dependency to read YAML reliably.
 """
 
 from __future__ import annotations
 
 import argparse
+import hashlib
+import json
+import subprocess
 import html
 import re
 import shutil
@@ -143,160 +145,13 @@ def yaml_double_quote(value: str) -> str:
     return '"' + value.replace("\\", "\\\\").replace('"', '\\"') + '"'
 
 
-def extract_people_profiles(path: Path, author_tags: dict[str, str], known_tags: set[str]) -> list[ScholarProfile]:
-    collection_profiles = extract_people_profiles_from_collection(ROOT / "src" / "content" / "people", author_tags, known_tags)
-    if collection_profiles:
-        return collection_profiles
-
-    profiles: list[ScholarProfile] = []
-    current_name: str | None = None
-
-    for raw_line in path.read_text(encoding="utf-8").splitlines():
-        name_match = re.match(r"\s*-\s+name:\s+[\"']?(.+?)[\"']?\s*$", raw_line)
-        if name_match:
-            current_name = name_match.group(1)
-            continue
-
-        url_match = re.match(r"\s*url:\s+[\"']?(https?://scholar\.google\.[^\"']+)[\"']?\s*$", raw_line)
-        if current_name and url_match:
-            scholar_url = url_match.group(1)
-            parsed = urllib.parse.urlparse(scholar_url)
-            user_id = urllib.parse.parse_qs(parsed.query).get("user", [""])[0]
-            if user_id:
-                profiles.append(
-                    ScholarProfile(
-                        name=current_name,
-                        user_id=user_id,
-                        scholar_url=scholar_url,
-                        tag=match_person_to_tag(current_name, author_tags, known_tags),
-                    )
-                )
-
-    return profiles
-
-
-def extract_people_profiles_from_collection(
-    people_dir: Path,
-    author_tags: dict[str, str],
-    known_tags: set[str],
-) -> list[ScholarProfile]:
-    if not people_dir.is_dir():
-        return []
-
-    profiles: list[ScholarProfile] = []
-    for person_file in sorted(people_dir.glob("*.md")):
-        text = person_file.read_text(encoding="utf-8")
-        front_matter_match = re.match(r"\A---\s*\n(.*?)\n---\s*", text, flags=re.S)
-        if not front_matter_match:
-            continue
-
-        front_matter = front_matter_match.group(1)
-        title_match = re.search(r"^title:\s+[\"']?(.+?)[\"']?\s*$", front_matter, flags=re.M)
-        if not title_match:
-            continue
-
-        name = title_match.group(1)
-        for url_match in re.finditer(
-            r"^\s*url:\s+[\"']?(https?://scholar\.google\.[^\"']+)[\"']?\s*$",
-            front_matter,
-            flags=re.M,
-        ):
-            scholar_url = url_match.group(1)
-            parsed = urllib.parse.urlparse(scholar_url)
-            user_id = urllib.parse.parse_qs(parsed.query).get("user", [""])[0]
-            if user_id:
-                profiles.append(
-                    ScholarProfile(
-                        name=name,
-                        user_id=user_id,
-                        scholar_url=scholar_url,
-                        tag=match_person_to_tag(name, author_tags, known_tags),
-                    )
-                )
-
-    return profiles
-
-
-def extract_author_tags(path: Path) -> dict[str, str]:
-    tags: dict[str, str] = {}
-    current_key: str | None = None
-    for raw_line in path.read_text(encoding="utf-8").splitlines():
-        key_match = re.match(r"\s*-\s+key:\s+(.+?)\s*$", raw_line)
-        if key_match:
-            current_key = key_match.group(1).strip()
-            continue
-
-        label_match = re.match(r"\s*label:\s+[\"']?(.+?)[\"']?\s*$", raw_line)
-        if current_key and label_match:
-            tags[current_key] = label_match.group(1).strip()
-            current_key = None
-    return tags
-
-
-def surname_tokens(name: str) -> set[str]:
-    particles = {"de", "del", "la", "las", "los", "y"}
-    words = [w for w in re.findall(r"[A-Za-zÀ-ÿ]+", strip_accents(name).casefold()) if w not in particles]
-    return {w for w in words if len(w) > 2}
-
-
-def person_generated_tags(person_name: str) -> list[str]:
-    words = [w for w in re.findall(r"[A-Za-zÀ-ÿ]+", strip_accents(person_name).casefold())]
-    particles = {"de", "del", "la", "las", "los", "y"}
-    useful = [w for w in words if w not in particles]
-    candidates: list[str] = []
-    if len(useful) >= 2:
-        candidates.append(f"{useful[0]}-{useful[-1]}")
-        candidates.append(f"{useful[0]}-{useful[1]}")
-        candidates.append(useful[-1])
-    return candidates
-
-
-def match_person_to_tag(person_name: str, author_tags: dict[str, str], known_tags: set[str]) -> str | None:
-    for candidate in person_generated_tags(person_name):
-        if candidate in known_tags:
-            return candidate
-
-    person_tokens = surname_tokens(person_name)
-    best_key: str | None = None
-    best_score = 0
-    for key, label in author_tags.items():
-        label_tokens = surname_tokens(label)
-        score = len(person_tokens & label_tokens)
-        if score > best_score:
-            best_score = score
-            best_key = key
-    return best_key if best_score else None
-
-
-def existing_author_tags(publications_text: str) -> set[str]:
-    tags: set[str] = set()
-    for match in re.findall(r"authors_tags:\s*\[([^\]]+)\]", publications_text):
-        tags.update(tag.strip() for tag in match.split(",") if tag.strip())
-    return tags
-
-
-def existing_titles(publications_text: str) -> list[str]:
-    titles = []
-    for title in re.findall(r"\*\*(.+?)\*\*", publications_text, flags=re.DOTALL):
-        titles.append(normalize_title(title))
-    for citation in re.findall(r"citation:\s+[\"'](.+?)[\"']\s*$", publications_text, flags=re.MULTILINE):
-        titles.append(normalize_title(citation))
-    return titles
-
-
-def title_exists(title: str, existing: list[str], similarity_threshold: float) -> bool:
-    normalized = normalize_title(title)
-    if normalized in existing:
-        return True
-    return any(SequenceMatcher(None, normalized, known).ratio() >= similarity_threshold for known in existing)
-
-
-def fetch_scholar_works(profile: ScholarProfile, max_per_author: int, timeout: int) -> list[ScholarWork]:
+def fetch_scholar_page(profile: ScholarProfile, max_per_author: int, timeout: int, start: int = 0) -> list[ScholarWork]:
     query = urllib.parse.urlencode(
         {
             "user": profile.user_id,
             "hl": "en",
             "pagesize": min(max_per_author, 100),
+            "cstart": start,
             "sortby": "pubdate",
         }
     )
@@ -319,6 +174,8 @@ def fetch_scholar_works(profile: ScholarProfile, max_per_author: int, timeout: i
 
     parser = ScholarProfileParser()
     parser.feed(body)
+    if not parser.rows:
+        raise RuntimeError("No publication rows returned; profile may be empty, blocked, or markup changed")
 
     works: list[ScholarWork] = []
     for row in parser.rows[:max_per_author]:
@@ -408,7 +265,7 @@ def insert_items(publications_text: str, works: list[ScholarWork]) -> str:
         items = "".join(build_yaml_item(work, used_ids) + "\n" for work in by_year[year])
         year_pattern = re.compile(rf"(^- year:\s+{year}\s*\n\s+items:\s*\n)", re.MULTILINE)
         if year_pattern.search(text):
-            text = year_pattern.sub(r"\1" + items, text, count=1)
+            text = year_pattern.sub(lambda match: match.group(1) + items, text, count=1)
         else:
             block = f"- year: {year}\n  items:\n{items}\n"
             if text.startswith("#"):
@@ -419,77 +276,205 @@ def insert_items(publications_text: str, works: list[ScholarWork]) -> str:
     return text
 
 
+def load_yaml(path: Path):
+    result = subprocess.run(
+        ["node", "--input-type=module", "-e",
+         "import fs from 'node:fs'; import {parse} from 'yaml'; console.log(JSON.stringify(parse(fs.readFileSync(process.argv[1], 'utf8'))));",
+         str(path.resolve())], cwd=ROOT, text=True, capture_output=True, check=True,
+    )
+    return json.loads(result.stdout)
+
+
+def confirmed_profiles(author_file: Path) -> tuple[list[ScholarProfile], set[str]]:
+    authors = load_yaml(author_file)
+    by_slug = {a["profile_slug"]: a["key"] for a in authors if a.get("profile_slug")}
+    profiles = []
+    for path in sorted((ROOT / "src/content/people").glob("*.md")):
+        match = re.match(r"\A---\s*\n(.*?)\n---", path.read_text(encoding="utf-8"), re.S)
+        if not match:
+            continue
+        # Parse front matter as YAML instead of inferring identities from surnames.
+        result = subprocess.run(
+            ["node", "--input-type=module", "-e",
+             "import {parse} from 'yaml'; let text=''; for await (const c of process.stdin) text+=c; console.log(JSON.stringify(parse(text)));"],
+            input=match.group(1), cwd=ROOT, text=True, capture_output=True, check=True,
+        )
+        person = json.loads(result.stdout)
+        for link in person.get("links", []):
+            url = link.get("url", "")
+            parsed = urllib.parse.urlparse(url)
+            if not re.fullmatch(r"scholar\.google\.[a-z.]+", parsed.hostname or ""):
+                continue
+            user_id = urllib.parse.parse_qs(parsed.query).get("user", [""])[0]
+            if user_id:
+                profiles.append(ScholarProfile(person["title"], user_id, url, by_slug.get(person.get("person_slug", path.stem))))
+    return profiles, {a["key"] for a in authors}
+
+
+def fetch_scholar_works(profile: ScholarProfile, max_per_author: int, timeout: int, year: int = 2026, delay: float = 3) -> list[ScholarWork]:
+    works = []
+    for start in range(0, max_per_author, 100):
+        page = fetch_scholar_page(profile, min(max_per_author - start, 100), timeout, start)
+        works.extend(page)
+        # Profiles are requested in publication-date order. Stop after crossing the year boundary.
+        if len(page) < min(max_per_author - start, 100) or any(w.year and w.year < year for w in page):
+            break
+        if start + 100 < max_per_author:
+            time.sleep(delay)
+    return works
+
+
+def reviewed_titles(groups) -> set[str]:
+    return {normalize_title(title) for group in groups for item in group.get("items", [])
+            for title in re.findall(r"\*\*(.+?)\*\*", item.get("citation", ""))}
+
+
+def candidate_id(work: ScholarWork) -> str:
+    return hashlib.sha256(f"{work.year}:{normalize_title(work.title)}".encode()).hexdigest()[:16]
+
+
+def atomic_json(path: Path, data) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    temp = path.with_suffix(path.suffix + ".tmp")
+    temp.write_text(json.dumps(data, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    temp.replace(path)
+
+
+def write_report(path: Path, review) -> None:
+    lines = [f"# Publications to review — {review['year']}", "",
+             "Existing website publications are unchanged. Scholar candidates may belong to namesakes.",
+             "Edit the JSON: set `status` to `approved` or `rejected`. Approved entries use `candidate_author_tags` unless a nonempty `confirmed_author_tags` override is provided.",
+             "Approving a paper accepts its candidate tags too. To correct or complete them, use `confirmed_author_tags`. Leave uncertain papers pending.", ""]
+    for profile in review.get("profiles", []):
+        lines += [f"## {profile['name']}", "", f"Profile: {profile['url']}", "", f"Collection: {profile['status']}", ""]
+        if profile.get("limit_reached"):
+            lines += ["Collection limit reached: increase --max-per-author; this profile may have more candidates.", ""]
+        if profile.get("error"):
+            lines += [f"Collection error: {profile['error']}", ""]
+        entries = [c for c in review["candidates"] if profile["name"] in c["source_profiles"]]
+        if not entries:
+            lines += ["No new candidates collected for this profile. This does not prove that no new publications exist.", ""]
+        for c in entries:
+            lines += [f"### [{c['status']}] {c['title']}", "", f"Review ID: `{c['id']}` · Year: {c['year']}",
+                      f"Authors reported by Scholar: {c['authors']}", f"Venue: {c['venue']}",
+                      f"Source: {c['url']}", f"Candidate tags: {', '.join(c['candidate_author_tags']) or 'No explicit mapping'}"]
+            if c.get("similar_existing_titles"):
+                lines += ["Check possible duplicates: " + "; ".join(c["similar_existing_titles"])]
+            lines += [""]
+    path.write_text("\n".join(lines) + "\n", encoding="utf-8")
+
+
+def apply_approved(review, path: Path, year: int, known_tags: set[str], dry_run: bool = False) -> int:
+    if review.get("year") != year:
+        raise ValueError("Review file year does not match --year")
+    text = path.read_text(encoding="utf-8")
+    existing = reviewed_titles(load_yaml(path))
+    additions = []
+    imported = []
+    for c in review["candidates"]:
+        if c["status"] not in {"pending", "approved", "rejected", "imported"}:
+            raise ValueError(f"Unknown review status for {c['id']}")
+        if c["status"] != "approved":
+            continue
+        if c["year"] != year:
+            raise ValueError(f"Refusing publication outside {year}: {c['id']}")
+        tags = c.get("confirmed_author_tags") or c.get("candidate_author_tags", [])
+        if not isinstance(tags, list) or not tags or any(not isinstance(tag, str) or tag not in known_tags for tag in tags):
+            raise ValueError(f"No valid author tags for {c['id']}: provide candidate_author_tags or confirmed_author_tags")
+        work = ScholarWork(c["title"], c["authors"], c["venue"], c["year"], c["url"], set(c["source_profiles"]), set(tags))
+        key = normalize_title(work.title)
+        if key not in existing:
+            additions.append(work)
+            existing.add(key)
+        imported.append(c)
+    if additions and not dry_run:
+        updated = insert_items(text, additions)
+        # Validate the complete YAML before touching the reviewed catalogue.
+        temp = path.with_suffix(path.suffix + ".tmp")
+        try:
+            temp.write_text(updated, encoding="utf-8")
+            load_yaml(temp)
+            shutil.copy2(path, path.with_suffix(path.suffix + ".bak"))
+            temp.replace(path)
+        finally:
+            temp.unlink(missing_ok=True)
+    if not dry_run:
+        for c in imported:
+            c["status"] = "imported"
+    print(f"{'Would import' if dry_run else 'Imported'} {len(additions)} approved publication(s) from {year}.")
+    return len(additions)
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--people", type=Path, default=DEFAULT_PEOPLE)
     parser.add_argument("--publications", type=Path, default=DEFAULT_PUBLICATIONS)
     parser.add_argument("--publication-authors", type=Path, default=DEFAULT_PUBLICATION_AUTHORS)
-    parser.add_argument("--max-per-author", type=int, default=30)
-    parser.add_argument("--author", help="Only fetch people whose name contains this text.")
-    parser.add_argument("--since-year", type=int, default=None)
-    parser.add_argument(
-        "--similarity-threshold",
-        type=float,
-        default=0.68,
-        help="Normalized-title similarity above this value is treated as already present.",
-    )
-    parser.add_argument("--delay", type=float, default=3.0, help="Seconds between Scholar profile requests.")
+    parser.add_argument("--year", type=int, default=2026, help="Exact publication year, not a minimum year.")
+    parser.add_argument("--review-file", type=Path, default=ROOT / "reviews/scholar-2026.json")
+    parser.add_argument("--max-per-author", type=int, default=1000)
+    parser.add_argument("--author", help="Only collect people whose name contains this text.")
+    parser.add_argument("--delay", type=float, default=3)
     parser.add_argument("--timeout", type=int, default=20)
-    parser.add_argument("--apply", action="store_true", help="Write changes to publications.yml.")
-    parser.add_argument("--dry-run", action="store_true", help="Print proposed additions without writing.")
+    parser.add_argument("--apply", action="store_true", help="Import only approved entries from the review JSON; never fetch.")
+    parser.add_argument("--dry-run", action="store_true", help="Show results without writing any file.")
     args = parser.parse_args()
-
-    if args.max_per_author < 1:
-        parser.error("--max-per-author must be greater than zero")
-
-    publications_text = args.publications.read_text(encoding="utf-8")
-    author_tags = extract_author_tags(args.publication_authors)
-    known_tags = set(author_tags) | existing_author_tags(publications_text)
-    profiles = extract_people_profiles(args.people, author_tags, known_tags)
+    if args.max_per_author < 1 or args.delay < 0 or args.timeout <= 0:
+        parser.error("Use positive --max-per-author and --timeout, and nonnegative --delay")
+    profiles, known_tags = confirmed_profiles(args.publication_authors)
+    review = json.loads(args.review_file.read_text(encoding="utf-8")) if args.review_file.exists() else {"version": 1, "year": args.year, "profiles": [], "candidates": []}
+    if review["year"] != args.year:
+        parser.error("Use a separate --review-file for each year")
+    report = args.review_file.with_suffix(".md")
+    if args.apply:
+        apply_approved(review, args.publications, args.year, known_tags, args.dry_run)
+        if not args.dry_run:
+            atomic_json(args.review_file, review)
+            write_report(report, review)
+        return 0
     if args.author:
-        needle = strip_accents(args.author).casefold()
-        profiles = [p for p in profiles if needle in strip_accents(p.name).casefold()]
+        profiles = [p for p in profiles if strip_accents(args.author).casefold() in strip_accents(p.name).casefold()]
     if not profiles:
-        print("No Google Scholar profiles found in people.yml.", file=sys.stderr)
-        return 1
-
-    all_works: list[ScholarWork] = []
-    for index, profile in enumerate(profiles, start=1):
-        tag_note = f", tag={profile.tag}" if profile.tag else ""
-        print(f"[{index}/{len(profiles)}] Fetching {profile.name} ({profile.user_id}{tag_note})")
+        parser.error("No matching Scholar profiles found")
+    groups = load_yaml(args.publications)
+    existing = reviewed_titles(groups)
+    titles = [title for group in groups for item in group.get("items", []) for title in re.findall(r"\*\*(.+?)\*\*", item.get("citation", ""))]
+    old = {c["id"]: c for c in review["candidates"]}
+    all_works = []
+    results = {p["user_id"]: p for p in review.get("profiles", [])}
+    for i, profile in enumerate(profiles):
+        print(f"[{i+1}/{len(profiles)}] {profile.name}", flush=True)
+        result = {"name": profile.name, "user_id": profile.user_id, "url": profile.scholar_url}
         try:
-            all_works.extend(fetch_scholar_works(profile, args.max_per_author, args.timeout))
-        except Exception as exc:  # noqa: BLE001 - keep import running for the other profiles.
-            print(f"  warning: skipped {profile.name}: {exc}", file=sys.stderr)
-        if index < len(profiles):
+            works = fetch_scholar_works(profile, args.max_per_author, args.timeout, args.year, args.delay)
+            all_works.extend(works)
+            result.update(status="collected", fetched=len(works), limit_reached=len(works) >= args.max_per_author)
+            print(f"  {len(works)} entries fetched", flush=True)
+        except Exception as exc:
+            result.update(status="failed", error=str(exc))
+            print(f"  Failed: {exc}", flush=True)
+        results[profile.user_id] = result
+        if i < len(profiles)-1:
             time.sleep(args.delay)
-
-    seen_titles = existing_titles(publications_text)
-    missing = [
-        work
-        for work in merge_works(all_works)
-        if not title_exists(work.title, seen_titles, args.similarity_threshold)
-        and work.year
-        and (args.since_year is None or work.year >= args.since_year)
-    ]
-
-    print(f"\nFound {len(missing)} missing publication(s).")
-    for work in missing:
-        tags = ", ".join(sorted(work.author_tags)) or "no matched website tag"
-        print(f"- {work.year}: {work.title} [{tags}]")
-
-    if not missing:
-        return 0
-
-    if not args.apply or args.dry_run:
-        print("\nDry run only. Re-run with --apply to update src/data/publications.yml.")
-        return 0
-
-    backup = args.publications.with_suffix(args.publications.suffix + ".bak")
-    shutil.copy2(args.publications, backup)
-    args.publications.write_text(insert_items(publications_text, missing), encoding="utf-8")
-    print(f"\nUpdated {args.publications}")
-    print(f"Backup written to {backup}")
+    for work in merge_works(all_works):
+        if work.year != args.year or normalize_title(work.title) in existing:
+            continue
+        key = candidate_id(work)
+        if key in old:
+            old[key]["source_profiles"] = sorted(set(old[key]["source_profiles"]) | work.source_profiles)
+            old[key]["candidate_author_tags"] = sorted(set(old[key]["candidate_author_tags"]) | work.author_tags)
+            continue
+        old[key] = {"id": key, "status": "pending", "year": work.year, "title": work.title,
+                    "authors": work.authors, "venue": work.venue, "url": work.url,
+                    "source_profiles": sorted(work.source_profiles), "candidate_author_tags": sorted(work.author_tags),
+                    "confirmed_author_tags": [], "notes": "",
+                    "similar_existing_titles": [t for t in titles if SequenceMatcher(None, normalize_title(t), normalize_title(work.title)).ratio() >= .8]}
+    review["profiles"] = list(results.values())
+    review["candidates"] = sorted(old.values(), key=lambda c: (c["title"].casefold(), c["id"]))
+    print(f"Review contains {len(review['candidates'])} candidate(s) for {args.year}; website unchanged.")
+    if not args.dry_run:
+        atomic_json(args.review_file, review)
+        write_report(report, review)
+        print(f"Review: {args.review_file}\nReadable report: {report}")
     return 0
 
 

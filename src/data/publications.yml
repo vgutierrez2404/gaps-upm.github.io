@@ -1,6 +1,229 @@
 - year: 2026
   items:
+    - id: ddsp-framework-adaptive-room-equalization
+      topics:
+        - audio
+        - systems
+      research:
+        area: audio
+        tasks:
+          - Room equalization
+        methods:
+          - Differentiable DSP
+          - Adaptive filtering
+        basis: abstract
+        source: https://arxiv.org/abs/2606.22563
+        note: Adaptive audio equalization; automatic differentiation does not by itself
+          imply a generative model.
+      authors_tags: [camara, marcos]
+      citation: "F Marcos-Macías, MP Daza-Llin, M Cámara, JL Blanco (2026). **A DDSP Framework for Adaptive Room Equalization.** *arXiv preprint arXiv:2606.22563, 2026.*"
+      links:
+        - label: Scholar
+          url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=QM-zcTYAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=QM-zcTYAAAAJ:2osOgNQ5qMEC
+
+    - id: acoustic-landmark-detector-based-conformer-hubert
+      topics:
+        - audio
+        - ml
+      research:
+        area: audio
+        tasks:
+          - Acoustic landmark detection
+        methods:
+          - Conformer
+          - HuBERT
+        basis: abstract
+        source: https://arxiv.org/abs/2606.23228
+        note: Speech event detection with learned representations.
+      authors_tags: [blanco, camara]
+      citation: "M Cámara, JL Blanco, JI Godino-Llorente, JY Choi, S Shattuck-Hufnagel (2026). **Acoustic Landmark Detector based on Conformer and HuBERT.** *arXiv preprint arXiv:2606.23228, 2026.*"
+      links:
+        - label: Scholar
+          url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=J-zt09cAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=J-zt09cAAAAJ:silx2ntsSuwC
+
+    - id: acoustic-landmark-database-english-lexicon-via-articulatory-synthesis
+      topics:
+        - audio
+        - systems
+      research:
+        area: audio
+        tasks:
+          - Speech dataset generation
+          - Acoustic landmark analysis
+        methods:
+          - Articulatory synthesis
+          - Physical modelling
+        basis: abstract
+        source: https://arxiv.org/abs/2606.23220
+        note: A physically synthesized speech corpus, not a learned generative model.
+      authors_tags: [blanco, camara]
+      citation: "M Cámara, JL Blanco, JI Godino-Llorente, JY Choi, S Shattuck-Hufnagel (2026). **An Acoustic Landmark Database of the English Lexicon via Articulatory Synthesis.** *arXiv preprint arXiv:2606.23220, 2026.*"
+      links:
+        - label: Scholar
+          url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=J-zt09cAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=J-zt09cAAAAJ:sA9dB-pw3HoC
+
+    - id: counting-closures-spanish-trills-multi-corpus-acoustic-study
+      topics:
+        - audio
+        - systems
+      research:
+        area: audio
+        tasks:
+          - Phonetic analysis
+        methods:
+          - Corpus analysis
+          - Autocorrelation
+        basis: abstract
+        source: https://arxiv.org/abs/2609.17424
+        note: Acoustic measurement of trill closures; no neural method is claimed.
+      authors_tags: [camara]
+      citation: "M Cámara, MF Alcala-Durand (2026). **Counting Closures in Spanish Trills: A Multi-Corpus Acoustic Study.** *arXiv preprint arXiv:2609.17424, 2026.*"
+      links:
+        - label: Scholar
+          url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=muINbiEAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=muINbiEAAAAJ:Wp0gIr-vW9MC
+
+    - id: differentiable-articulatory-copy-synthesis-biphonic-singing
+      topics:
+        - audio
+        - systems
+      research:
+        area: audio
+        tasks:
+          - Articulatory copy-synthesis
+        methods:
+          - Differentiable DSP
+          - Physical modelling
+        basis: abstract
+        source: https://arxiv.org/abs/2606.04943
+        note: Differentiable physical vocal-tract modelling rather than generic
+          generative ML.
+      authors_tags: [camara, marcos]
+      citation: "M Cámara, MP Daza-Llin, F Marcos-Macías, JL Blanco (2026). **Differentiable Articulatory Copy-Synthesis of Biphonic Singing.** *arXiv preprint arXiv:2606.04943, 2026.*"
+      links:
+        - label: Scholar
+          url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=QM-zcTYAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=QM-zcTYAAAAJ:9yKSN-GCB0IC
+
+    - id: no-free-lunch-synthetic-images-under-data-scarcity
+      topics:
+        - vision
+        - generative
+        - federated
+        - biomedical
+      research:
+        area: vision
+        tasks:
+          - Synthetic image evaluation
+        methods:
+          - Variational autoencoders
+          - GANs
+          - Diffusion models
+          - Differential privacy
+        basis: abstract
+        source: https://arxiv.org/abs/2606.07640
+        note: Image fidelity, utility and privacy evaluation, including medical image
+          datasets. The federated topic also covers privacy; federated training itself
+          is not asserted.
+      authors_tags: [almodovar, apellaniz, parras, zazo]
+      citation: "BA Galende, A Almodóvar, PA Apellániz, J Parras, S Uribe, S Zazo (2026). **No Free Lunch for Synthetic Images under Data Scarcity Conditions.** *arXiv preprint arXiv:2606.07640, 2026.*"
+      links:
+        - label: Scholar
+          url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=3rVo9hUAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=3rVo9hUAAAAJ:Zph67rFs4hoC
+
+    - id: not-all-jensen-shannon-divergence-estimators-are-equal
+      topics:
+        - ml
+        - generative
+      research:
+        area: ml
+        tasks:
+          - Synthetic tabular data evaluation
+          - Distribution comparison
+        methods:
+          - Divergence estimation
+          - Classifier-based estimation
+        basis: abstract
+        source: https://arxiv.org/abs/2606.16411
+        note: An estimator/evaluation contribution, with synthetic tabular data as
+          application; not a new generator.
+      authors_tags: [almodovar, apellaniz, parras, zazo]
+      citation: "A Garrido, A Almodóvar, M Elizo, PA Apellániz, S Zazo, J Parras (2026). **Not all Jensen-Shannon Divergence Estimators are Equal.** *arXiv preprint arXiv:2606.16411, 2026.*"
+      links:
+        - label: Scholar
+          url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=3rVo9hUAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=3rVo9hUAAAAJ:ULOm3_A8WrAC
+
+    - id: novel-oxygenscan-parameters-differentiate-unique-hemolytic-inflammatory-profiles
+      topics:
+        - biomedical
+      research:
+        area: biomedical
+        tasks:
+          - Sickle cell disease characterization
+        methods: []
+        basis: title
+        note: Clinical topic is supported by the title. No ML or federated method is
+          assigned without a confirmed abstract.
+      authors_tags: [apellaniz, parras, zazo]
+      citation: "A Idrizovic, MJM Traets, AC Gimbert, S Reidel, S van der Veen,  (2026). **Novel oxygenscan parameters differentiate unique hemolytic and inflammatory profiles associated with sickle cell disease genotypes.** *Scientific Reports, 2026.*"
+      links:
+        - label: Scholar
+          url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=AQcxu7MAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=AQcxu7MAAAAJ:35N4QoGY0k4C
+
+    - id: real-time-sonar-simulation-uuvs-rasterization-omnidirectional-screen
+      topics:
+        - communications
+        - systems
+      research:
+        area: communications
+        tasks:
+          - Sonar simulation
+        methods:
+          - GPU rasterization
+          - Screen-space reflections
+        basis: abstract
+        source: https://www.sciencedirect.com/science/article/pii/S0141118726003585
+        note: Underwater sensing simulation; neither speech processing nor a learned
+          generative model.
+      authors_tags: [parras]
+      citation: "CA Ortiz-Toro, R Saldaña-Esteban, J Parras, Á Gutiérrez (2026). **Real-time sonar simulation for UUVs using rasterization and omnidirectional screen space reflections.** *Applied Ocean Research 176, 105276, 2026.*"
+      links:
+        - label: Scholar
+          url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=AQcxu7MAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=AQcxu7MAAAAJ:70eg2SAEIzsC
+
+    - id: word-lengthening-as-function-utterance-position-multi-corpus
+      topics:
+        - audio
+      research:
+        area: audio
+        tasks:
+          - Speech timing analysis
+        methods:
+          - Corpus analysis
+        basis: title
+        source: https://arxiv.org/abs/2606.23232
+        note: Title supports the acoustic corpus study. More specific statistical
+          methods await an abstract review.
+      authors_tags: [blanco, camara]
+      citation: "M Cámara, JL Blanco, JI Godino-Llorente, JY Choi, S Shattuck-Hufnagel (2026). **Word Lengthening as a Function of Utterance Position: A Multi-Corpus Study.** *arXiv preprint arXiv:2606.23232, 2026.*"
+      links:
+        - label: Scholar
+          url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=J-zt09cAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=J-zt09cAAAAJ:aIdbFUkbNIkC
+
     - id: geometry-privacy-two-stage-analysis-generative-membership-inference
+      topics:
+        - federated
+        - generative
+        - ml
+      research:
+        area: ml
+        tasks:
+          - Privacy risk assessment
+        methods:
+          - Federated learning
+          - Membership inference
+          - Generative modelling
+        basis: abstract
+        source: https://www.mdpi.com/2504-2289/10/5/163
+        note: Privacy and membership inference in federated generative learning.
       authors_tags: [almodovar, apellaniz, parras]
       citation: "B Arroyo Galende, PA Apellániz, A Almodóvar, S Uribe, F Álvarez,  (2026). **The Geometry of Privacy: A Two-Stage Analysis of Generative Membership Inference in Federated Learning.** *Big Data and Cognitive Computing 10 (5), 163, 2026.*"
       links:
@@ -8,6 +231,18 @@
           url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=3rVo9hUAAAAJ&pagesize=30&sortby=pubdate&citation_for_view=3rVo9hUAAAAJ:kNdYIx-mwKoC
 
     - id: real-time-interpretable-diagnostics-solid-state-batteries-via
+      topics:
+        - systems
+        - ml
+      research:
+        area: systems
+        tasks:
+          - Battery diagnostics
+        methods:
+          - Interpretable machine learning
+        basis: title
+        note: Electrochemical diagnostics is the application area; specific
+          architectures are not inferred.
       authors_tags: [almodovar, apellaniz, parras]
       citation: "Z Warren, F Cuasquer, R Sanchez, PA Apellániz, A Almodóvar, J Parras,  (2026). **Real‐Time, Interpretable Diagnostics for Solid‐State Batteries via Machine Learning on In Situ Impedance Spectra.** *Battery Energy 5 (3), e70122, 2026.*"
       links:
@@ -15,6 +250,21 @@
           url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=3rVo9hUAAAAJ&pagesize=30&sortby=pubdate&citation_for_view=3rVo9hUAAAAJ:MXK_kJrjxJIC
 
     - id: random-effects-algorithm-random-objects-metric-spaces
+      topics:
+        - ml
+        - biomedical
+      research:
+        area: ml
+        tasks:
+          - Random-effects modelling
+          - Personalized prediction
+        methods:
+          - Frechet regression
+          - Metric-space statistics
+        basis: abstract
+        source: https://arxiv.org/abs/2605.02693
+        note: Statistical learning contribution with digital-health evaluation; not
+          generative or causal modelling.
       authors_tags: [camara]
       citation: "M Matabuena, M Cámara (2026). **Random-Effects Algorithm for Random Objects in Metric Spaces.** *arXiv preprint arXiv:2605.02693, 2026.*"
       links:
@@ -22,6 +272,16 @@
           url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=muINbiEAAAAJ&pagesize=30&sortby=pubdate&citation_for_view=muINbiEAAAAJ:YOwf2qJgpHMC
 
     - id: peer-reviewed-technical-communication
+      topics:
+        - other
+      research:
+        area: other
+        tasks: []
+        methods: []
+        basis: needs-source
+        note: This wording may be a publication-type heading rather than a paper title.
+          Keep the reviewed bibliographic record, but leave its topic unresolved until
+          the source is confirmed.
       authors_tags: [fernandez, parras, zazo]
       citation: "FF Salvador, J Parras, S Zazo (2026). **Peer-Reviewed Technical Communication.** *Google Scholar.*"
       links:
@@ -29,6 +289,23 @@
           url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=kNhqGMwAAAAJ&pagesize=30&sortby=pubdate&citation_for_view=kNhqGMwAAAAJ:wMgC3FpKEyYC
 
     - id: optimizing-ai-models-haematological-malignancies-federated-learning-simulations
+      topics:
+        - biomedical
+        - federated
+        - ml
+      research:
+        area: biomedical
+        tasks:
+          - Survival prediction
+          - Clinical risk prediction
+        methods:
+          - Federated learning
+          - DeepSurv
+          - Logistic regression
+        basis: abstract
+        source: https://patricia-a-apellaniz.github.io/publications/
+        note: Author-provided abstract describes federated DeepSurv and logistic
+          regression in hematology.
       authors_tags: [apellaniz, parras, zazo]
       citation: "L Carota, F Casadei, G Asti, D Piscia, S D'Amico, R Biondi, C Sala, C Rollo, T Sanavia, P Fariselli, S Zazo, P A Apellániz, J Parras, C Merleau Nono, F Alvarez García, M Della Porta, E Giampieri, G Castellani (2026). **Optimizing AI models for haematological malignancies with federated learning: simulations and experiments.** *Physica Medica: European Journal of Medical Physics 142, 2026.*"
       links:
@@ -36,6 +313,20 @@
           url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=AQcxu7MAAAAJ&pagesize=30&sortby=pubdate&citation_for_view=AQcxu7MAAAAJ:hMod-77fHWUC
 
     - id: kolmogorov-arnold-causal-generative-models
+      topics:
+        - generative
+        - ml
+      research:
+        area: ml
+        tasks:
+          - Causal inference
+          - Synthetic tabular data generation
+        methods:
+          - Kolmogorov-Arnold networks
+          - Structural causal models
+        basis: abstract
+        source: https://arxiv.org/abs/2603.20184
+        note: Interpretable causal mechanisms for tabular generation and causal queries.
       authors_tags: [almodovar, elizo, apellaniz, parras, zazo]
       citation: "A Almodóvar, M Elizo, PA Apellániz, S Zazo, J Parras (2026). **Kolmogorov-Arnold causal generative models.** *arXiv preprint arXiv:2603.20184, 2026.*"
       links:
@@ -43,6 +334,17 @@
           url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=3rVo9hUAAAAJ&pagesize=30&sortby=pubdate&citation_for_view=3rVo9hUAAAAJ:8k81kl-MbHgC
 
     - id: from-physical-activity-spirometry-as-curve-combined-model
+      topics:
+        - biomedical
+        - ml
+      research:
+        area: biomedical
+        tasks:
+          - Mortality prediction
+        methods: []
+        basis: title
+        note: Predictive biomedical task is clear; the specific model is left
+          unspecified pending source confirmation.
       authors_tags: [camara]
       citation: "DD Ghosal, C Correa, M Cámara (2026). **From Physical Activity to Spirometry (as a Curve): A Combined Model for Mortality Prediction.** *Google Scholar.*"
       links:
@@ -50,6 +352,20 @@
           url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=muINbiEAAAAJ&pagesize=30&sortby=pubdate&citation_for_view=muINbiEAAAAJ:_kc_bZDykSQC
 
     - id: experimenting-federated-ai-models-hematological-diseases
+      topics:
+        - biomedical
+        - federated
+        - ml
+      research:
+        area: biomedical
+        tasks:
+          - Hematological disease modelling
+        methods:
+          - Federated learning
+        basis: title
+        source: https://iptc.upm.es/publications/experimenting-federated-ai-models-for-hematological-diseases/
+        note: Institutional record confirms the field and publication; specific model
+          families are not assumed.
       authors_tags: [ apellaniz]
       citation: "D Piscia, PA Apellániz, S D'Amico, R Biondi, C Sala¹, NSC Merleau,  (2026). **Experimenting Federated AI Models for Hematological Diseases.** *Artificial Intelligence for Biomedical Data: First International Workshop …, 2026.*"
       links:
@@ -57,6 +373,22 @@
           url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=3rVo9hUAAAAJ&pagesize=30&sortby=pubdate&citation_for_view=3rVo9hUAAAAJ:0EnyYjriUFMC
 
     - id: enhancing-survival-analysis-through-federated-learning-non-iid
+      topics:
+        - biomedical
+        - federated
+        - generative
+      research:
+        area: biomedical
+        tasks:
+          - Survival prediction
+          - Synthetic tabular data generation
+        methods:
+          - Federated learning
+          - Variational autoencoders
+        basis: abstract
+        source: https://www.sciencedirect.com/science/article/pii/S0010482526001204
+        note: Federated synthetic-data sharing for survival analysis, supported by SAVAE
+          and VAE-BGM.
       authors_tags: [apellaniz, parras, zazo]
       citation: "PA Apellániz, J Parras, S Zazo (2026). **Enhancing survival analysis through federated learning in non-IID and scarce data scenarios.** *Computers in Biology and Medicine 204, 111558, 2026.*"
       links:
@@ -64,6 +396,21 @@
           url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=AQcxu7MAAAAJ&pagesize=30&sortby=pubdate&citation_for_view=AQcxu7MAAAAJ:BqipwSGYUEgC
 
     - id: decision-aware-proximal-bridge-learning-optimal-treatment-selection
+      topics:
+        - generative
+        - ml
+      research:
+        area: ml
+        tasks:
+          - Optimal treatment selection
+          - Causal inference
+        methods:
+          - Proximal causal inference
+          - Decision-aware learning
+        basis: abstract
+        source: https://arxiv.org/abs/2605.16989
+        note: Causal decision methodology; treatment selection alone does not establish
+          a clinical experiment.
       authors_tags: [almodovar, parras]
       citation: "T Garriga, A Almodóvar, A Brando, G Sanz, ES de Cambra, J Parras (2026). **Decision-Aware Proximal Bridge Learning for Optimal Treatment Selection.** *arXiv preprint arXiv:2605.16989, 2026.*"
       links:
@@ -71,6 +418,18 @@
           url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=3rVo9hUAAAAJ&pagesize=30&sortby=pubdate&citation_for_view=3rVo9hUAAAAJ:3fE2CSJIrl8C
 
     - id: attentive-neural-processes-fast-trajectory-prediction-underwater-acoustic
+      topics:
+        - communications
+        - ml
+      research:
+        area: communications
+        tasks:
+          - Trajectory prediction
+        methods:
+          - Attentive neural processes
+        basis: title
+        note: Underwater acoustic networks are a sensing/communications application, not
+          speech or audio synthesis.
       authors_tags: [fernandez, parras, zazo]
       citation: "FF Salvador, J Parras, S Zazo (2026). **Attentive Neural Processes for Fast Trajectory Prediction in Underwater Acoustic Networks.** *IEEE Journal of Oceanic Engineering, 2026.*"
       links:
@@ -78,6 +437,21 @@
           url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=AQcxu7MAAAAJ&pagesize=30&sortby=pubdate&citation_for_view=AQcxu7MAAAAJ:GnPB-g6toBAC
 
     - id: evaluation-hybrid-annotation-workflows-high-ambiguity-spatiotemporal-video
+      topics:
+        - vision
+        - ml
+      research:
+        area: vision
+        tasks:
+          - Video annotation
+          - Annotation workflow evaluation
+        methods:
+          - Human-in-the-loop
+          - Vision-language models
+        basis: abstract
+        source: https://arxiv.org/abs/2510.21798
+        note: Human verification and AI pre-annotations for temporal video labels; no
+          image segmentation task is asserted.
       authors_tags: [gutierrez-navarro]
       citation: "J Gutiérrez, V Gutiérrez-García, Á Mora-Sánchez, S Rodríguez-Jiménez,  (2026). **An Evaluation of Hybrid Annotation Workflows on High-Ambiguity Spatiotemporal Video Footage.** *arXiv preprint arXiv:2510.21798, 2026.*"
       links:
@@ -85,6 +459,19 @@
           url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=wT7WzX8AAAAJ&pagesize=30&sortby=pubdate&citation_for_view=wT7WzX8AAAAJ:UeHWp8X0CEIC
 
     - id: panc
+      topics:
+        - vision
+      research:
+        area: vision
+        tasks:
+          - Image segmentation
+        methods:
+          - Normalized cut
+          - Spectral graph partitioning
+        basis: abstract
+        source: https://arxiv.org/abs/2602.06912
+        note: A training-free spectral segmentation method with anchor priors, not a
+          generic neural classifier.
       authors_tags: [gutierrez-navarro, gutierrez-garcia, blanco]
       citation: "Gutiérrez, J., Gutiérrez-García, V., & Blanco-Murillo, J. L. (2026). **PANC: Prior-Aware Normalized Cut via Anchor-Augmented Token Graphs.** *arXiv preprint arXiv:2602.06912.*"
       links:
@@ -98,6 +485,20 @@
           url: https://github.com/jgnav/PANC
 
     - id: hitlm
+      topics:
+        - vision
+        - ml
+      research:
+        area: vision
+        tasks:
+          - Video annotation
+          - Annotation disagreement analysis
+        methods:
+          - AI-assisted annotation
+        basis: title
+        source: https://jgnav.github.io/data/ICML26_workshop.pdf
+        note: The linked PDF was unavailable during review. Only the task and assistance
+          setting stated in the title are assigned.
       authors_tags: [gutierrez-navarro, gutierrez-garcia, blanco]
       citation: "Gutiérrez, J., Gutiérrez-García, V., & Blanco-Murillo, J. L. (2026). **Does AI Assistance Preserve or Collapse Disagreement?   A Study of Pre-Annotations in Ambiguous Video Labeling** *ICML 2026 Workshop.*"
       links:
@@ -107,7 +508,7 @@
 - year: 2025
   items:
     - id: neural-audio-synthesis-sound-effects-scope-review
-      authors_tags: [camara, marcos]
+      authors_tags: [camara, marcos, blanco]
       citation: "M Cámara, F Marcos, AR Bargum, C Erkut, J Reiss, JL Blanco (2025). **Neural Audio Synthesis for Sound Effects: A Scope Review.** *IEEE Transactions on Audio, Speech and Language Processing, 2025.*"
       links:
         - label: Scholar

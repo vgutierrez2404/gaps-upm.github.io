@@ -1,27 +1,22 @@
 ---
 import Base from '../../layouts/Base.astro';
+import PublicationMap from '../../components/PublicationMap.astro';
+import { publicationTopics, publicationResearch, publicationTitle, publicationAnchor, type ResearchTopic } from '../../lib/publication-topics';
 import { readCollection, readYaml } from '../../lib/content';
 import { marked } from 'marked';
 const groups = await readYaml<any[]>('publications.yml');
+const topics = await readYaml<ResearchTopic[]>('research_topics.yml');
+for (const group of groups) for (const publication of group.items) {
+  publication.id ||= publicationAnchor(publication.citation);
+  publication.topics = publicationTopics(publication, topics);
+  publication.research = publicationResearch(publication, topics);
+}
+const papers = groups.flatMap(group => group.items.map((publication: any) => ({id: publication.id, title: publicationTitle(publication.citation), year: Number(group.year), topics: publication.topics, research: publication.research ? {area: publication.research.area, tasks: publication.research.tasks, methods: publication.research.methods} : null})));
+const currentYear = Number(new Intl.DateTimeFormat('en', { year: 'numeric', timeZone: 'Europe/Madrid' }).format(new Date()));
 const authors = await readYaml<any[]>('publication_authors.yml');
 const authorLabels = Object.fromEntries(authors.map((author) => [author.key, author.label]));
 const people = await readCollection('people');
-const authorSlugByKey: Record<string, string> = {
-  almodovar: 'alejandro-almodovar-espeso',
-  apellaniz: 'patricia-alonso-de-apellaniz',
-  blanco: 'jose-luis-blanco-murillo',
-  camara: 'mateo-jose-camara-largo',
-  daza: 'maria-pilar-daza-llin',
-  fernandez: 'luis-fernando-fernandez-salvador',
-  'gutierrez-navarro': 'juan-gutierrez-navarro',
-  'gutierrez-garcia': 'victor-gutierrez-garcia',
-  hernandez: 'luis-alfonso-hernandez-gomez',
-  'loza-morcillo': 'santiago-loza-morcillo',
-  marcos: 'fernando-marcos-macias',
-  parras: 'juan-parras-moral',
-  zazo: 'santiago-zazo-bello',
-  elizo: 'mar-elizo-alonso',
-};
+const authorSlugByKey = Object.fromEntries(authors.filter(author => author.profile_slug).map(author => [author.key, author.profile_slug]));
 const peopleNamesBySlug = Object.fromEntries(people.map(({slug, data}) => [slug, data.title]));
 const authorSearchNames = Object.fromEntries(authors.map((author) => [
   author.key,
@@ -41,18 +36,36 @@ function iconForLink(label: string) {
 <Base title="Publications">
   <link slot="head" rel="stylesheet" href="/assets/css/publications.css" />
   <link slot="head" rel="stylesheet" href="/assets/css/text-search.css" />
-  <section class="filter-section text-search" aria-label="Search publications">
+  <link slot="head" rel="stylesheet" href="/assets/css/publication-map.css" />
+  <div class="publication-view-switch" aria-label="Publication view" hidden>
+    <button type="button" data-publication-view="map" aria-pressed="false" aria-controls="publication-map-view">Research map</button>
+    <button type="button" data-publication-view="list" aria-pressed="true" aria-controls="publication-list-view">List by year</button>
+  </div>
+  <section class="filter-section text-search publication-search" aria-label="Search publications">
+    <div class="publication-search-toolbar">
+    <div class="publication-search-field">
     <label for="publication-search">Search publications</label>
     <div class="text-search__control">
       <i class="fas fa-search" aria-hidden="true"></i>
       <input id="publication-search" type="search" autocomplete="off" placeholder="Author, title, journal, or year" aria-describedby="publication-search-status" />
     </div>
+    </div>
+    <div class="publication-topic-filters">
+      <label>Research topic<select id="publication-topic"><option value="">All topics</option>{topics.map(topic => <option value={topic.id}>{topic.label}</option>)}</select></label>
+      <label>Year<select id="publication-map-year"><option value="">All years</option>{groups.map(group => <option value={group.year}>{group.year}</option>)}</select></label>
+      <button type="button" id="publication-reset-filters">Clear filters</button>
+    </div>
+    </div>
     <p id="publication-search-status" class="text-search__status" aria-live="polite"></p>
   </section>
-  {groups.map((group) => <section class="publication-year-group"><h2 class="publication-year">{group.year}</h2><ul class="publication-list">{group.items.map((publication: any) => {
+  <PublicationMap papers={papers} topics={topics} />
+  <div id="publication-list-view">
+  {groups.map((group) => <details class="publication-year-group" open={Number(group.year) === currentYear}><summary class="publication-year-summary"><h2 class="publication-year">{group.year}</h2><span class="publication-year-count">{group.items.length} publications</span></summary><ul class="publication-list">{group.items.map((publication: any) => {
     const publicationAuthors = (publication.authors_tags || []).map((key: string) => authorSearchNames[key] || authorLabels[key] || key).join(' ');
     const linkLabels = (publication.links || []).map((link: any) => link.label).join(' ');
-    return <li class="publication-item" id={publication.id} data-authors={publication.authors_tags?.join(',')} data-search={`${publication.citation} ${publicationAuthors} ${group.year} ${linkLabels}`}><div class="publication-citation" set:html={marked.parseInline(publication.citation)} />{publication.links && <div class="publication-links">{publication.links.map((link: any) => <a href={link.url} target="_blank" rel="noreferrer noopener"><i class={iconForLink(link.label)} aria-hidden="true"></i>{link.label}</a>)}</div>}</li>;
-  })}</ul></section>)}
+    return <li class="publication-item" id={publication.id} data-topics={publication.topics.join(',')} data-year={group.year} data-authors={publication.authors_tags?.join(',')} data-search={`${publication.citation} ${publicationAuthors} ${group.year} ${linkLabels} ${publication.topics.map((id: string) => topics.find(topic => topic.id === id)?.label).join(' ')} ${publication.research ? [...publication.research.tasks, ...publication.research.methods].join(' ') : ''}`}><div class="publication-citation" set:html={marked.parseInline(publication.citation)} />{publication.links && <div class="publication-links">{publication.links.map((link: any) => <a href={link.url} target="_blank" rel="noreferrer noopener"><i class={iconForLink(link.label)} aria-hidden="true"></i>{link.label}</a>)}</div>}</li>;
+  })}</ul></details>)}
+  </div>
   <script src="/assets/js/publications-filter.js" defer></script>
+  <script is:inline src="/assets/js/publication-map.js" defer></script>
 </Base>

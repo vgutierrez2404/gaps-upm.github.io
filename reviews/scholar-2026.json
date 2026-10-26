@@ -1,0 +1,358 @@
+{
+  "version": 1,
+  "year": 2026,
+  "profiles": [
+    {
+      "name": "Alejandro Almodóvar Espeso",
+      "user_id": "3rVo9hUAAAAJ",
+      "url": "https://scholar.google.com/citations?user=3rVo9hUAAAAJ&hl=en",
+      "status": "collected",
+      "fetched": 19,
+      "limit_reached": false
+    },
+    {
+      "name": "Fernando Marcos Macías",
+      "user_id": "QM-zcTYAAAAJ",
+      "url": "https://scholar.google.com/citations?user=QM-zcTYAAAAJ&hl=es",
+      "status": "collected",
+      "fetched": 5,
+      "limit_reached": false
+    },
+    {
+      "name": "José Luis Blanco Murillo",
+      "user_id": "J-zt09cAAAAJ",
+      "url": "https://scholar.google.es/citations?user=J-zt09cAAAAJ&hl=es&oi=ao",
+      "status": "collected",
+      "fetched": 55,
+      "limit_reached": false
+    },
+    {
+      "name": "José Parera Bermúdez",
+      "user_id": "3MXue_oAAAAJ",
+      "url": "https://scholar.google.es/citations?user=3MXue_oAAAAJ&hl=es&oi=ao",
+      "status": "collected",
+      "fetched": 6,
+      "limit_reached": false
+    },
+    {
+      "name": "Juan Gutiérrez Navarro",
+      "user_id": "wT7WzX8AAAAJ",
+      "url": "https://scholar.google.es/citations?user=wT7WzX8AAAAJ&hl=es&authuser=1",
+      "status": "collected",
+      "fetched": 10,
+      "limit_reached": false
+    },
+    {
+      "name": "Juan Parras Moral",
+      "user_id": "AQcxu7MAAAAJ",
+      "url": "https://scholar.google.es/citations?user=AQcxu7MAAAAJ&hl=es",
+      "status": "collected",
+      "fetched": 66,
+      "limit_reached": false
+    },
+    {
+      "name": "Luis Alfonso Hernández Gómez",
+      "user_id": "EilwjX0AAAAJ",
+      "url": "https://scholar.google.es/citations?user=EilwjX0AAAAJ&hl=es&oi=ao",
+      "status": "collected",
+      "fetched": 100,
+      "limit_reached": false
+    },
+    {
+      "name": "Mateo José Cámara Largo",
+      "user_id": "muINbiEAAAAJ",
+      "url": "https://scholar.google.es/citations?hl=en&user=muINbiEAAAAJ&view_op=list_works&sortby=pubdate",
+      "status": "collected",
+      "fetched": 24,
+      "limit_reached": false
+    },
+    {
+      "name": "Patricia Alonso de Apellániz",
+      "user_id": "HgKLtFEAAAAJ",
+      "url": "https://scholar.google.com/citations?user=HgKLtFEAAAAJ&hl=en",
+      "status": "collected",
+      "fetched": 35,
+      "limit_reached": false
+    },
+    {
+      "name": "Santiago Zazo Bello",
+      "user_id": "kNhqGMwAAAAJ",
+      "url": "https://scholar.google.es/citations?user=kNhqGMwAAAAJ&hl=es&oi=ao",
+      "status": "collected",
+      "fetched": 100,
+      "limit_reached": false
+    },
+    {
+      "name": "Víctor Gutiérrez García",
+      "user_id": "c_Y49J8AAAAJ",
+      "url": "https://scholar.google.com/citations?user=c_Y49J8AAAAJ&hl=es",
+      "status": "collected",
+      "fetched": 3,
+      "limit_reached": false
+    }
+  ],
+  "candidates": [
+    {
+      "id": "30fad18154026711",
+      "status": "app",
+      "year": 2026,
+      "title": "A DDSP Framework for Adaptive Room Equalization",
+      "authors": "F Marcos-Macías, MP Daza-Llin, M Cámara, JL Blanco",
+      "venue": "arXiv preprint arXiv:2606.22563, 2026",
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=QM-zcTYAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=QM-zcTYAAAAJ:2osOgNQ5qMEC",
+      "source_profiles": [
+        "Fernando Marcos Macías",
+        "Mateo José Cámara Largo"
+      ],
+      "candidate_author_tags": [
+        "camara",
+        "marcos"
+      ],
+      "confirmed_author_tags": [],
+      "notes": "",
+      "similar_existing_titles": []
+    },
+    {
+      "id": "969c6a4d75f7abaf",
+      "status": "imported",
+      "year": 2026,
+      "title": "Acoustic Landmark Detector based on Conformer and HuBERT",
+      "authors": "M Cámara, JL Blanco, JI Godino-Llorente, JY Choi, S Shattuck-Hufnagel",
+      "venue": "arXiv preprint arXiv:2606.23228, 2026",
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=J-zt09cAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=J-zt09cAAAAJ:silx2ntsSuwC",
+      "source_profiles": [
+        "José Luis Blanco Murillo",
+        "Mateo José Cámara Largo"
+      ],
+      "candidate_author_tags": [
+        "blanco",
+        "camara"
+      ],
+      "confirmed_author_tags": [],
+      "notes": "",
+      "similar_existing_titles": []
+    },
+    {
+      "id": "b3586292e5801c3b",
+      "status": "imported",
+      "year": 2026,
+      "title": "An Acoustic Landmark Database of the English Lexicon via Articulatory Synthesis",
+      "authors": "M Cámara, JL Blanco, JI Godino-Llorente, JY Choi, S Shattuck-Hufnagel",
+      "venue": "arXiv preprint arXiv:2606.23220, 2026",
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=J-zt09cAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=J-zt09cAAAAJ:sA9dB-pw3HoC",
+      "source_profiles": [
+        "José Luis Blanco Murillo",
+        "Mateo José Cámara Largo"
+      ],
+      "candidate_author_tags": [
+        "blanco",
+        "camara"
+      ],
+      "confirmed_author_tags": [],
+      "notes": "",
+      "similar_existing_titles": []
+    },
+    {
+      "id": "c1f484351a8d9657",
+      "status": "rejected",
+      "year": 2026,
+      "title": "Assessing the Spatial Transferability of Annual Soil Erosion Models Across Mediterranean Catchments Using Hierarchical and Ensemble Approaches",
+      "authors": "C Patino-Alonso, F Espejo, JL Molina, S Zazo, MC Molina",
+      "venue": "Water 18 (18), 2255, 2026",
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=kNhqGMwAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=kNhqGMwAAAAJ:43bX7VzcjpAC",
+      "source_profiles": [
+        "Santiago Zazo Bello"
+      ],
+      "candidate_author_tags": [
+        "zazo"
+      ],
+      "confirmed_author_tags": [],
+      "notes": "",
+      "similar_existing_titles": []
+    },
+    {
+      "id": "ef9e7a44b1293668",
+      "status": "imported",
+      "year": 2026,
+      "title": "Counting Closures in Spanish Trills: A Multi-Corpus Acoustic Study",
+      "authors": "M Cámara, MF Alcala-Durand",
+      "venue": "arXiv preprint arXiv:2609.17424, 2026",
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=muINbiEAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=muINbiEAAAAJ:Wp0gIr-vW9MC",
+      "source_profiles": [
+        "Mateo José Cámara Largo"
+      ],
+      "candidate_author_tags": [
+        "camara"
+      ],
+      "confirmed_author_tags": [],
+      "notes": "",
+      "similar_existing_titles": []
+    },
+    {
+      "id": "e51a2c9b28dfa8a1",
+      "status": "imported",
+      "year": 2026,
+      "title": "Differentiable Articulatory Copy-Synthesis of Biphonic Singing",
+      "authors": "M Cámara, MP Daza-Llin, F Marcos-Macías, JL Blanco",
+      "venue": "arXiv preprint arXiv:2606.04943, 2026",
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=QM-zcTYAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=QM-zcTYAAAAJ:9yKSN-GCB0IC",
+      "source_profiles": [
+        "Fernando Marcos Macías",
+        "Mateo José Cámara Largo"
+      ],
+      "candidate_author_tags": [
+        "camara",
+        "marcos"
+      ],
+      "confirmed_author_tags": [],
+      "notes": "",
+      "similar_existing_titles": []
+    },
+    {
+      "id": "2edec9cf44d45d06",
+      "status": "imported",
+      "year": 2026,
+      "title": "No Free Lunch for Synthetic Images under Data Scarcity Conditions",
+      "authors": "BA Galende, A Almodóvar, PA Apellániz, J Parras, S Uribe, S Zazo",
+      "venue": "arXiv preprint arXiv:2606.07640, 2026",
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=3rVo9hUAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=3rVo9hUAAAAJ:Zph67rFs4hoC",
+      "source_profiles": [
+        "Alejandro Almodóvar Espeso",
+        "Juan Parras Moral",
+        "Patricia Alonso de Apellániz",
+        "Santiago Zazo Bello"
+      ],
+      "candidate_author_tags": [
+        "almodovar",
+        "apellaniz",
+        "parras",
+        "zazo"
+      ],
+      "confirmed_author_tags": [],
+      "notes": "",
+      "similar_existing_titles": []
+    },
+    {
+      "id": "cbcbad077d833977",
+      "status": "imported",
+      "year": 2026,
+      "title": "Not all Jensen-Shannon Divergence Estimators are Equal",
+      "authors": "A Garrido, A Almodóvar, M Elizo, PA Apellániz, S Zazo, J Parras",
+      "venue": "arXiv preprint arXiv:2606.16411, 2026",
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=3rVo9hUAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=3rVo9hUAAAAJ:ULOm3_A8WrAC",
+      "source_profiles": [
+        "Alejandro Almodóvar Espeso",
+        "Juan Parras Moral",
+        "Patricia Alonso de Apellániz",
+        "Santiago Zazo Bello"
+      ],
+      "candidate_author_tags": [
+        "almodovar",
+        "apellaniz",
+        "parras",
+        "zazo"
+      ],
+      "confirmed_author_tags": [],
+      "notes": "",
+      "similar_existing_titles": []
+    },
+    {
+      "id": "d2b8ef7735bd46ab",
+      "status": "imported",
+      "year": 2026,
+      "title": "Novel oxygenscan parameters differentiate unique hemolytic and inflammatory profiles associated with sickle cell disease genotypes",
+      "authors": "A Idrizovic, MJM Traets, AC Gimbert, S Reidel, S van der Veen, ...",
+      "venue": "Scientific Reports, 2026",
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=AQcxu7MAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=AQcxu7MAAAAJ:35N4QoGY0k4C",
+      "source_profiles": [
+        "Juan Parras Moral",
+        "Patricia Alonso de Apellániz",
+        "Santiago Zazo Bello"
+      ],
+      "candidate_author_tags": [
+        "apellaniz",
+        "parras",
+        "zazo"
+      ],
+      "confirmed_author_tags": [],
+      "notes": "",
+      "similar_existing_titles": []
+    },
+    {
+      "id": "39e2cf755f23d62f",
+      "status": "rejected",
+      "year": 2026,
+      "title": "PANC: Prior-Aware Normalized Cut for Object Segmentation",
+      "authors": "J Gutiérrez, V Gutiérrez-Garcia, JL Blanco-Murillo",
+      "venue": "arXiv e-prints, arXiv: 2602.06912, 2026",
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=J-zt09cAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=J-zt09cAAAAJ:rbm3iO8VlycC",
+      "source_profiles": [
+        "José Luis Blanco Murillo",
+        "Juan Gutiérrez Navarro"
+      ],
+      "candidate_author_tags": [
+        "blanco",
+        "gutierrez-navarro"
+      ],
+      "confirmed_author_tags": [],
+      "notes": "Duplicate of existing publication panc (arXiv:2602.06912); retain the reviewed Anchor-Augmented Token Graphs record.",
+      "similar_existing_titles": []
+    },
+    {
+      "id": "c5c0f99031500b29",
+      "status": "imported",
+      "year": 2026,
+      "title": "Real-time sonar simulation for UUVs using rasterization and omnidirectional screen space reflections",
+      "authors": "CA Ortiz-Toro, R Saldaña-Esteban, J Parras, Á Gutiérrez",
+      "venue": "Applied Ocean Research 176, 105276, 2026",
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=AQcxu7MAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=AQcxu7MAAAAJ:70eg2SAEIzsC",
+      "source_profiles": [
+        "Juan Parras Moral"
+      ],
+      "candidate_author_tags": [
+        "parras"
+      ],
+      "confirmed_author_tags": [],
+      "notes": "",
+      "similar_existing_titles": []
+    },
+    {
+      "id": "57eeea72873251ea",
+      "status": "rejected",
+      "year": 2026,
+      "title": "Streamflow Simulation Based on a Hybrid Morphometric–Satellite Methodological Framework",
+      "authors": "DA Pérez-Campo, F Espejo, S Zazo",
+      "venue": "Water 18 (7), 786, 2026",
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=kNhqGMwAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=kNhqGMwAAAAJ:jL-93Qbq4QoC",
+      "source_profiles": [
+        "Santiago Zazo Bello"
+      ],
+      "candidate_author_tags": [
+        "zazo"
+      ],
+      "confirmed_author_tags": [],
+      "notes": "",
+      "similar_existing_titles": []
+    },
+    {
+      "id": "cf90a54516318c9d",
+      "status": "imported",
+      "year": 2026,
+      "title": "Word Lengthening as a Function of Utterance Position: A Multi-Corpus Study",
+      "authors": "M Cámara, JL Blanco, JI Godino-Llorente, JY Choi, S Shattuck-Hufnagel",
+      "venue": "arXiv preprint arXiv:2606.23232, 2026",
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=J-zt09cAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=J-zt09cAAAAJ:aIdbFUkbNIkC",
+      "source_profiles": [
+        "José Luis Blanco Murillo",
+        "Mateo José Cámara Largo"
+      ],
+      "candidate_author_tags": [
+        "blanco",
+        "camara"
+      ],
+      "confirmed_author_tags": [],
+      "notes": "",
+      "similar_existing_titles": []
+    }
+  ]
+}

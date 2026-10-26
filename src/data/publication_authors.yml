@@ -1,31 +1,45 @@
 # Publication filter labels
 - key: almodovar
+  profile_slug: alejandro-almodovar-espeso
   label: "Almodóvar Espeso, A."
 - key: apellaniz
+  profile_slug: patricia-alonso-de-apellaniz
   label: "Alonso Apellániz, P."
 - key: blanco
+  profile_slug: jose-luis-blanco-murillo
   label: "Blanco Murillo, J. L."
 - key: camara
+  profile_slug: mateo-jose-camara-largo
   label: "Cámara Largo, M."
 - key: daza
+  profile_slug: maria-pilar-daza-llin
   label: "Daza Llín, M. P."
 - key: fernandez
+  profile_slug: luis-fernando-fernandez-salvador
   label: "Fernández Salvador, L. F."
 - key: gutierrez-navarro
+  profile_slug: juan-gutierrez-navarro
   label: "Gutiérrez Navarro, J."
 - key: gutierrez-garcia
+  profile_slug: victor-gutierrez-garcia
   label: "Gutiérrez García, V."
 - key: hernandez
+  profile_slug: luis-alfonso-hernandez-gomez
   label: "Hernández Gómez, L. A."
 - key: loza-morcillo
+  profile_slug: santiago-loza-morcillo
   label: "Loza Morcillo, S."
 - key: marcos
+  profile_slug: fernando-marcos-macias
   label: "Marcos Macías, F."
 - key: parras
+  profile_slug: juan-parras-moral
   label: "Parras Moral, J."
 - key: yague
   label: "Yagüe Jiménez, V."
 - key: zazo
+  profile_slug: santiago-zazo-bello
   label: "Zazo Bello, S."
 - key: elizo
+  profile_slug: mar-elizo-alonso
   label: "Elizo, M."

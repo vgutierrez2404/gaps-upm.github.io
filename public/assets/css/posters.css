@@ -5,7 +5,7 @@
 .poster-page-header h1::after { content: ''; display: block; width: 46px; height: 3px; margin-top: 1rem; background: #f28c28; }
 .poster-page-header > p:last-child { color: var(--poster-muted); line-height: 1.6; margin: 0; }
 .poster-gallery-heading { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .5rem; font-size: .72rem; color: var(--poster-muted); padding-bottom: .8rem; }
-.poster-gallery { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2rem 1.5rem; padding: 1.5rem; border: 0; background-color: #f6f9fb; background-image: linear-gradient(#dfe8ef70 1px, transparent 1px), linear-gradient(90deg, #dfe8ef70 1px, transparent 1px); background-size: 28px 28px; }
+.poster-gallery { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2rem 1.5rem; padding: 1.5rem; border: 0; background: transparent; }
 .poster-card { min-width: 0; background: transparent; border: 0; }
 .poster-open { display: block; width: fit-content; max-width: 100%; color: inherit; text-decoration: none; cursor: zoom-in; transition: transform .2s; }
 .poster-open:hover { color: inherit; text-decoration: none; transform: scale(1.025); }
@@ -62,3 +62,6 @@ body:has(.poster-viewer[open]) { overflow: hidden; }
 }
 @media (max-width: 480px) { .poster-gallery { grid-template-columns: minmax(0, 1fr); } .poster-mount { min-height: 290px; } .poster-mount img { max-height: 290px; } }
 @media (prefers-reduced-motion: reduce) { .poster-open { transition: none; } }
+
+.poster-detail-authors a { color: var(--poster-blue); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+.poster-detail-authors a:hover { color: #05547c; }

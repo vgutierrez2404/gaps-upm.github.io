@@ -1,0 +1,787 @@
+- year: 2026
+  items:
+    - id: geometry-privacy-two-stage-analysis-generative-membership-inference
+      authors_tags: [almodovar, apellaniz, parras]
+      citation: "B Arroyo Galende, PA Apellániz, A Almodóvar, S Uribe, F Álvarez,  (2026). **The Geometry of Privacy: A Two-Stage Analysis of Generative Membership Inference in Federated Learning.** *Big Data and Cognitive Computing 10 (5), 163, 2026.*"
+      links:
+        - label: Scholar
+          url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=3rVo9hUAAAAJ&pagesize=30&sortby=pubdate&citation_for_view=3rVo9hUAAAAJ:kNdYIx-mwKoC
+
+    - id: real-time-interpretable-diagnostics-solid-state-batteries-via
+      authors_tags: [almodovar, apellaniz, parras]
+      citation: "Z Warren, F Cuasquer, R Sanchez, PA Apellániz, A Almodóvar, J Parras,  (2026). **Real‐Time, Interpretable Diagnostics for Solid‐State Batteries via Machine Learning on In Situ Impedance Spectra.** *Battery Energy 5 (3), e70122, 2026.*"
+      links:
+        - label: Scholar
+          url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=3rVo9hUAAAAJ&pagesize=30&sortby=pubdate&citation_for_view=3rVo9hUAAAAJ:MXK_kJrjxJIC
+
+    - id: random-effects-algorithm-random-objects-metric-spaces
+      authors_tags: [camara]
+      citation: "M Matabuena, M Cámara (2026). **Random-Effects Algorithm for Random Objects in Metric Spaces.** *arXiv preprint arXiv:2605.02693, 2026.*"
+      links:
+        - label: Scholar
+          url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=muINbiEAAAAJ&pagesize=30&sortby=pubdate&citation_for_view=muINbiEAAAAJ:YOwf2qJgpHMC
+
+    - id: peer-reviewed-technical-communication
+      authors_tags: [fernandez, parras, zazo]
+      citation: "FF Salvador, J Parras, S Zazo (2026). **Peer-Reviewed Technical Communication.** *Google Scholar.*"
+      links:
+        - label: Scholar
+          url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=kNhqGMwAAAAJ&pagesize=30&sortby=pubdate&citation_for_view=kNhqGMwAAAAJ:wMgC3FpKEyYC
+
+    - id: optimizing-ai-models-haematological-malignancies-federated-learning-simulations
+      authors_tags: [apellaniz, parras, zazo]
+      citation: "L Carota, F Casadei, G Asti, D Piscia, S D'Amico, R Biondi, C Sala, C Rollo, T Sanavia, P Fariselli, S Zazo, P A Apellániz, J Parras, C Merleau Nono, F Alvarez García, M Della Porta, E Giampieri, G Castellani (2026). **Optimizing AI models for haematological malignancies with federated learning: simulations and experiments.** *Physica Medica: European Journal of Medical Physics 142, 2026.*"
+      links:
+        - label: Scholar
+          url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=AQcxu7MAAAAJ&pagesize=30&sortby=pubdate&citation_for_view=AQcxu7MAAAAJ:hMod-77fHWUC
+
+    - id: kolmogorov-arnold-causal-generative-models
+      authors_tags: [almodovar, elizo, apellaniz, parras, zazo]
+      citation: "A Almodóvar, M Elizo, PA Apellániz, S Zazo, J Parras (2026). **Kolmogorov-Arnold causal generative models.** *arXiv preprint arXiv:2603.20184, 2026.*"
+      links:
+        - label: Scholar
+          url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=3rVo9hUAAAAJ&pagesize=30&sortby=pubdate&citation_for_view=3rVo9hUAAAAJ:8k81kl-MbHgC
+
+    - id: from-physical-activity-spirometry-as-curve-combined-model
+      authors_tags: [camara]
+      citation: "DD Ghosal, C Correa, M Cámara (2026). **From Physical Activity to Spirometry (as a Curve): A Combined Model for Mortality Prediction.** *Google Scholar.*"
+      links:
+        - label: Scholar
+          url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=muINbiEAAAAJ&pagesize=30&sortby=pubdate&citation_for_view=muINbiEAAAAJ:_kc_bZDykSQC
+
+    - id: experimenting-federated-ai-models-hematological-diseases
+      authors_tags: [ apellaniz]
+      citation: "D Piscia, PA Apellániz, S D'Amico, R Biondi, C Sala¹, NSC Merleau,  (2026). **Experimenting Federated AI Models for Hematological Diseases.** *Artificial Intelligence for Biomedical Data: First International Workshop …, 2026.*"
+      links:
+        - label: Scholar
+          url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=3rVo9hUAAAAJ&pagesize=30&sortby=pubdate&citation_for_view=3rVo9hUAAAAJ:0EnyYjriUFMC
+
+    - id: enhancing-survival-analysis-through-federated-learning-non-iid
+      authors_tags: [apellaniz, parras, zazo]
+      citation: "PA Apellániz, J Parras, S Zazo (2026). **Enhancing survival analysis through federated learning in non-IID and scarce data scenarios.** *Computers in Biology and Medicine 204, 111558, 2026.*"
+      links:
+        - label: Scholar
+          url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=AQcxu7MAAAAJ&pagesize=30&sortby=pubdate&citation_for_view=AQcxu7MAAAAJ:BqipwSGYUEgC
+
+    - id: decision-aware-proximal-bridge-learning-optimal-treatment-selection
+      authors_tags: [almodovar, parras]
+      citation: "T Garriga, A Almodóvar, A Brando, G Sanz, ES de Cambra, J Parras (2026). **Decision-Aware Proximal Bridge Learning for Optimal Treatment Selection.** *arXiv preprint arXiv:2605.16989, 2026.*"
+      links:
+        - label: Scholar
+          url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=3rVo9hUAAAAJ&pagesize=30&sortby=pubdate&citation_for_view=3rVo9hUAAAAJ:3fE2CSJIrl8C
+
+    - id: attentive-neural-processes-fast-trajectory-prediction-underwater-acoustic
+      authors_tags: [fernandez, parras, zazo]
+      citation: "FF Salvador, J Parras, S Zazo (2026). **Attentive Neural Processes for Fast Trajectory Prediction in Underwater Acoustic Networks.** *IEEE Journal of Oceanic Engineering, 2026.*"
+      links:
+        - label: Scholar
+          url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=AQcxu7MAAAAJ&pagesize=30&sortby=pubdate&citation_for_view=AQcxu7MAAAAJ:GnPB-g6toBAC
+
+    - id: evaluation-hybrid-annotation-workflows-high-ambiguity-spatiotemporal-video
+      authors_tags: [gutierrez-navarro]
+      citation: "J Gutiérrez, V Gutiérrez-García, Á Mora-Sánchez, S Rodríguez-Jiménez,  (2026). **An Evaluation of Hybrid Annotation Workflows on High-Ambiguity Spatiotemporal Video Footage.** *arXiv preprint arXiv:2510.21798, 2026.*"
+      links:
+        - label: Scholar
+          url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=wT7WzX8AAAAJ&pagesize=30&sortby=pubdate&citation_for_view=wT7WzX8AAAAJ:UeHWp8X0CEIC
+
+    - id: panc
+      authors_tags: [gutierrez-navarro, gutierrez-garcia, blanco]
+      citation: "Gutiérrez, J., Gutiérrez-García, V., & Blanco-Murillo, J. L. (2026). **PANC: Prior-Aware Normalized Cut via Anchor-Augmented Token Graphs.** *arXiv preprint arXiv:2602.06912.*"
+      links:
+        - label: PDF
+          url: https://arxiv.org/pdf/2602.06912
+        - label: DOI
+          url: https://doi.org/10.48550/arXiv.2602.06912
+        - label: Scholar
+          url: https://scholar.google.com/scholar_lookup?arxiv_id=2602.06912
+        - label: Code
+          url: https://github.com/jgnav/PANC
+
+    - id: hitlm
+      authors_tags: [gutierrez-navarro, gutierrez-garcia, blanco]
+      citation: "Gutiérrez, J., Gutiérrez-García, V., & Blanco-Murillo, J. L. (2026). **Does AI Assistance Preserve or Collapse Disagreement?   A Study of Pre-Annotations in Ambiguous Video Labeling** *ICML 2026 Workshop.*"
+      links:
+        - label: PDF
+          url: https://jgnav.github.io/data/ICML26_workshop.pdf
+
+- year: 2025
+  items:
+    - id: neural-audio-synthesis-sound-effects-scope-review
+      authors_tags: [camara, marcos, blanco]
+      citation: "M Cámara, F Marcos, AR Bargum, C Erkut, J Reiss, JL Blanco (2025). **Neural Audio Synthesis for Sound Effects: A Scope Review.** *IEEE Transactions on Audio, Speech and Language Processing, 2025.*"
+      links:
+        - label: Scholar
+          url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=muINbiEAAAAJ&pagesize=30&sortby=pubdate&citation_for_view=muINbiEAAAAJ:ULOm3_A8WrAC
+
+    - id: interpretable-clinical-classification-kolgomorov-arnold-networks
+      authors_tags: [almodovar, apellaniz, parras, zazo]
+      citation: "A Almodóvar, PA Apellániz, A Garrido, F Fernández-Salvador, S Zazo,  (2025). **Interpretable clinical classification with kolgomorov-arnold networks.** *arXiv preprint arXiv:2509.16750, 2025.*"
+      links:
+        - label: Scholar
+          url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=3rVo9hUAAAAJ&pagesize=30&sortby=pubdate&citation_for_view=3rVo9hUAAAAJ:ufrVoPGSRksC
+
+    - id: development-implementation-validation-open-source-federated-learning-platform
+      authors_tags: [almodovar, apellaniz, parras, zazo]
+      citation: "G Asti, PA Apellaniz, L Carota, F Casadei, D Piscia, M Delleani, I Isasa,  (2025). **Development, implementation, and validation of an open-source Federated Learning platform to accelerate innovation and boost personalized medicine in rare and ultra-rare ….** *medRxiv, 2025.08. 07.25333044, 2025.*"
+      links:
+        - label: Scholar
+          url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=3rVo9hUAAAAJ&pagesize=30&sortby=pubdate&citation_for_view=3rVo9hUAAAAJ:eQOLeE2rZwMC
+
+    - id: development-validation-synthetic-data-generation-over-federated-learning
+      authors_tags: [almodovar, apellaniz, parras, zazo]
+      citation: "G Asti, M Delleani, P Apellaniz, I Isasa, D Martinez Duarte,  (2025). **Development and validation of synthetic data generation over a federated learning computing framework to accelerate innovation and boost personalized medicine in hematological ….** *Blood 146 (Supplement 1), 4350-4350, 2025.*"
+      links:
+        - label: Scholar
+          url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=3rVo9hUAAAAJ&pagesize=30&sortby=pubdate&citation_for_view=3rVo9hUAAAAJ:Se3iqnhoufwC
+
+    - id: deep-survival-analysis-multimodal-medical-data-parametric-probabilistic
+      authors_tags: [almodovar, apellaniz, parras, zazo]
+      citation: "A Garrido, A Almodóvar, PA Apellániz, J Parras, S Zazo (2025). **Deep Survival Analysis in Multimodal Medical Data: A Parametric and Probabilistic Approach with Competing Risks.** *arXiv preprint arXiv:2507.07804, 2025.*"
+      links:
+        - label: Scholar
+          url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=3rVo9hUAAAAJ&pagesize=30&sortby=pubdate&citation_for_view=3rVo9hUAAAAJ:YsMSGLbcyi4C
+
+    - id: deep-generative-models-meet-federated-learning-healthcare-centered
+      authors_tags: [apellaniz]
+      citation: "A Ceresi, BA Galende, J Guinea-Pérez, PA Apellániz,  (2025). **Deep Generative Models Meet Federated Learning: A Healthcare-Centered Review.** *Authorea Preprints, 2025.*"
+      links:
+        - label: Scholar
+          url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=HgKLtFEAAAAJ&pagesize=30&sortby=pubdate&citation_for_view=HgKLtFEAAAAJ:8k81kl-MbHgC
+
+    - id: data-correlation-analytics-cone-crusher-responses
+      authors_tags: [gutierrez-navarro]
+      citation: "G Asbjörnsson, M Evertsson, J Corton-Gonzalez, J Gutierrez-Navarro,  (2025). **Data correlation and analytics of cone crusher responses.** *The 14th International Comminution Symposium (Comminution'25), Cape Town, 2025.*"
+      links:
+        - label: Scholar
+          url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=wT7WzX8AAAAJ&pagesize=30&sortby=pubdate&citation_for_view=wT7WzX8AAAAJ:IjCSPb-OGe4C
+
+    - id: causalkans-interpretable-treatment-effect-estimation-kolmogorov-arnold-networks
+      authors_tags: [almodovar, apellaniz, parras, zazo]
+      citation: "A Almodóvar, PA Apellániz, S Zazo, J Parras (2025). **CausalKANs: interpretable treatment effect estimation with Kolmogorov-Arnold networks.** *arXiv preprint arXiv:2509.22467, 2025.*"
+      links:
+        - label: Scholar
+          url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=3rVo9hUAAAAJ&pagesize=30&sortby=pubdate&citation_for_view=3rVo9hUAAAAJ:_FxGoFyzp5QC
+
+    - id: santi-RADARCONF25
+      authors_tags: [blanco, loza-morcillo]
+      citation: "Loza-Morcillo, S., & Blanco-Murillo, J. L. (2025). **Advanced beam steering and topological optimization in large-scale antenna arrays through hexagonal subarray implementation over Goldberg polyhedral configurations.** *Accepted at RADARCONF25.*"
+    
+    - authors_tags: [blanco, loza-morcillo]
+      citation: "Loza-Morcillo, S., & Blanco-Murillo, J. L. (2025). **Enabling scale economies for large-scale antenna arrays with physically manufacturable hexagonal subarrays in Goldberg Polyhedra configurations.** *Accepted at RADARCONF25.*"
+    
+    - id: decaflow
+      authors_tags: [almodovar, parras, zazo]
+      citation: "Almodóvar, A., Javaloy, A., Parras, J., Zazo, S., & Valera, I. (2025). **DeCaFlow: A Deconfounding Causal Generative Model.** *Advances in Neural Information Processing Systems, 38, SPOTLIGHT.*"
+      links:
+        - label: PDF
+          url: https://arxiv.org/pdf/2503.15114
+        - label: Scholar
+          url: https://scholar.google.es/citations?view_op=view_citation&hl=es&user=3rVo9hUAAAAJ&sortby=pubdate&citation_for_view=3rVo9hUAAAAJ:zYLM7Y9cAGgC
+        - label: Code
+          url: https://github.com/aalmodovares/DeCaFlow
+    - authors_tags: [fernandez, almodovar, parras, zazo]
+      citation: "Fernández Salvador, L. F., Vilallonga Tejela, B., Almodóvar, A., Parras, J. & Zazo, S. (2025). **Attentive Neural Processes for Few-Shot Learning Anomaly-Based Vessel Localization Using Magnetic Sensor Data.** *Journal of Marine Science and Engineering.*"
+      links:
+        - label: DOI
+          url: https://www.mdpi.com/2077-1312/13/9/1627
+        - label: Scholar
+          url: https://scholar.google.com/citations?view_op=view_citation&hl=es&user=AQcxu7MAAAAJ&sortby=pubdate&citation_for_view=AQcxu7MAAAAJ:k_IJM867U9cC
+        - label: Code
+          url: https://github.com/FernandoFS96/tesis/tree/c42b6b10f03a7c8f9f352fe8f8c7cae55069ab5a/magnetic-localization
+    - authors_tags: [apellaniz, parras, zazo]
+      citation: "Apellániz, P. A., Arroyo Galende, B., Jiménez, A., Parras, J. & Zazo, S. (2025). **Advancing Cancer Research with Synthetic Data Generation in Low-Data Scenarios.** *IEEE Journal of Biomedical and Health Informatics.*"
+      links:
+        - label: DOI
+          url: https://ieeexplore.ieee.org/document/11112545
+        - label: Scholar
+          url: https://scholar.google.es/citations?view_op=view_citation&hl=es&user=AQcxu7MAAAAJ&sortby=pubdate&citation_for_view=AQcxu7MAAAAJ:TFP_iSt0sucC
+        - label: Code
+          url: https://github.com/Patricia-A-Apellaniz/low_sample_data_generator
+    - authors_tags: [apellaniz, parras, zazo]
+      citation: "Apellániz, P. A., Jiménez, A., Arroyo Galende, B., Parras, J. & Zazo, S. (2025). **Artificial inductive bias for synthetic tabular data generation in data-scarce scenarios.** *Neurocomputing.*"
+      links:
+        - label: DOI
+          url: https://www.sciencedirect.com/science/article/pii/S0925231225017941?via%3Dihub
+        - label: Scholar
+          url: https://scholar.google.es/citations?view_op=view_citation&hl=es&user=AQcxu7MAAAAJ&sortby=pubdate&citation_for_view=AQcxu7MAAAAJ:ZeXyd9-uunAC
+        - label: Code
+          url: https://github.com/Patricia-A-Apellaniz/low_sample_data_generator
+    - authors_tags: [apellaniz, parras, zazo]
+      citation: "Arroyo Galende, B., Apellániz, P. A., Parras, J., Zazo, S. & Uribe, S. (2025). **Membership Inference Attacks and Differential Privacy: A Study within the context of Generative Models.** *IEEE Open Journal of the Computer Society.*"
+      links:
+        - label: DOI
+          url: https://ieeexplore.ieee.org/document/11008817
+        - label: Scholar
+          url: https://scholar.google.es/citations?view_op=view_citation&hl=es&user=AQcxu7MAAAAJ&sortby=pubdate&citation_for_view=AQcxu7MAAAAJ:j3f4tGmQtD8C
+        - label: Code
+          url: https://github.com/BorjaArroyo/mia-theoretical-foundations
+    - authors_tags: [apellaniz, parras, zazo]
+      citation: "Apellániz, P. A., Parras, J., & Zazo, S. (2025). **Improving Synthetic Data Generation Through Federated Learning in Scarce and Heterogeneous Data Scenarios.** *Big Data and Cognitive Computing.*"
+      links:
+        - label: DOI
+          url: https://www.mdpi.com/2504-2289/9/2/18
+        - label: Scholar
+          url: https://scholar.google.es/citations?view_op=view_citation&hl=es&user=AQcxu7MAAAAJ&sortby=pubdate&citation_for_view=AQcxu7MAAAAJ:e5wmG9Sq2KIC
+        - label: Code
+          url: https://github.com/Patricia-A-Apellaniz/fed_vae
+    - authors_tags: [blanco, loza-morcillo]
+      citation: "Loza-Morcillo, S., & Blanco-Murillo, J. L. (2025). **Side Effects of Triangular-Grid Geometry and Orientation in Hierarchical Regular Subarray-Based Large-Scale Digital Antenna Arrays.** *Electronics, 14(17), 3505.*"
+      links:
+        - label: DOI
+          url: https://www.mdpi.com/2079-9292/14/17/3505
+        - label: Scholar
+          url: https://scholar.google.es/citations?view_op=view_citation&hl=es&user=J-zt09cAAAAJ&sortby=pubdate&citation_for_view=J-zt09cAAAAJ:HJSXoJQnj-YC
+    - authors_tags: [camara, blanco, daza, gutierrez-navarro]
+      citation: "Cámara, M., Gutiérrez, J., Daza, M. P., & Blanco, J. L. (2025). **Open-Source System for Multilingual Translation and Cloned Speech Synthesis.** *EuroNoise Málaga 2025.*"
+      links:
+        - label: PDF
+          url: https://arxiv.org/pdf/2507.02530
+        - label: Scholar
+          url: https://scholar.google.es/citations?view_op=view_citation&hl=es&user=muINbiEAAAAJ&sortby=pubdate&citation_for_view=muINbiEAAAAJ:KlAtU1dfN6UC
+    - id: parameter-optimisation-physical-model-vocal-system
+      authors_tags: [camara, blanco]
+      citation: "Cámara, M., Blanco, J. L., & Reiss, J. D. (2025). **Parameter optimisation for a physical model of the vocal system.** *EURASIP Journal on Audio, Speech, and Music Processing, 2025(1), 27.*"
+      links:
+        - label: DOI
+          url: https://asmp-eurasipjournals.springeropen.com/articles/10.1186/s13636-025-00414-5
+        - label: Scholar
+          url: https://scholar.google.es/citations?view_op=view_citation&hl=es&user=muINbiEAAAAJ&sortby=pubdate&citation_for_view=muINbiEAAAAJ:Zph67rFs4hoC
+- year: 2024
+  items:
+    - id: synthetic-tabular-data-validation-divergence-based-approach
+      authors_tags: [apellaniz, parras, zazo]
+      citation: "PA Apellániz, A Jiménez, BA Galende, J Parras, S Zazo (2024). **Synthetic tabular data validation: A divergence-based approach.** *Ieee Access 12, 103895-103907, 2024.*"
+      links:
+        - label: Scholar
+          url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=HgKLtFEAAAAJ&pagesize=30&sortby=pubdate&citation_for_view=HgKLtFEAAAAJ:zYLM7Y9cAGgC
+
+    - id: survival-model-optimization-via-federated-learning-study-combining
+      authors_tags: [apellaniz, parras, zazo]
+      citation: "F Casadei, L Carota, G Asti, S D’Amico, D Piscia, S Zazo, PA Apellániz,  (2024). **Survival Model Optimization via Federated Learning: A Study Combining Simulations and Experiments.** *2024 IEEE International Conference on Big Data (BigData), 7658-7667, 2024.*"
+      links:
+        - label: Scholar
+          url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=AQcxu7MAAAAJ&pagesize=30&sortby=pubdate&citation_for_view=AQcxu7MAAAAJ:R3hNpaxXUhUC
+
+    - id: propensity-weighted-federated-learning-treatment-effect-estimation-distributed
+      authors_tags: [almodovar, parras, zazo]
+      citation: "A Almodóvar, J Parras, S Zazo (2024). **Propensity Weighted federated learning for treatment effect estimation in distributed imbalanced environments.** *Computers in Biology and Medicine 178, 108779, 2024.*"
+      links:
+        - label: Scholar
+          url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=3rVo9hUAAAAJ&pagesize=30&sortby=pubdate&citation_for_view=3rVo9hUAAAAJ:LkGwnXOMwfcC
+
+    - id: mosaic-artificial-intelligence-based-framework-multimodal-analysis-classification
+      authors_tags: [apellaniz]
+      citation: "S D'Amico, L Dall’Olio, C Rollo, P Alonso, I Prada-Luengo, D Dall’Olio,  (2024). **MOSAIC: an artificial intelligence–based framework for multimodal analysis, classification, and personalized prognostic assessment in rare cancers.** *JCO Clinical Cancer Informatics 8, e2400008, 2024.*"
+      links:
+        - label: Scholar
+          url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=HgKLtFEAAAAJ&pagesize=30&sortby=pubdate&citation_for_view=HgKLtFEAAAAJ:eQOLeE2rZwMC
+
+    - id: leveraging-variational-bayes-autoencoder-survival-analysis
+      authors_tags: [apellaniz, parras, zazo]
+      citation: "PA Apellániz, J Parras, S Zazo (2024). **Leveraging the variational Bayes autoencoder for survival analysis.** *Scientific Reports 14 (1), 24567, 2024.*"
+      links:
+        - label: Scholar
+          url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=AQcxu7MAAAAJ&pagesize=30&sortby=pubdate&citation_for_view=AQcxu7MAAAAJ:9ZlFYXVOiuMC
+
+    - id: genomed4all-federated-learning-platform-clinical-omics-data
+      authors_tags: [apellaniz, parras]
+      citation: "D Piscia, PA Apellaniz, B Arroyo, S Barrio, F Moreno, J Parras, S Uribe,  (2024). **GenoMed4All, a federated learning platform for clinical and omics data.** *EUROPEAN JOURNAL OF HUMAN GENETICS 32, 1640-1640, 2024.*"
+      links:
+        - label: Scholar
+          url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=AQcxu7MAAAAJ&pagesize=30&sortby=pubdate&citation_for_view=AQcxu7MAAAAJ:4JMBOYKVnBMC
+
+    - id: exploring-uuv-development-nausim-open-source-simulation-platform
+      authors_tags: [parras]
+      citation: "CA Ortiz-Toro, C Cerrada-Collado, D Moreno-Salinas, D Chaos-García,  (2024). **Exploring UUV Development with NauSim: An Open-Source Simulation Platform.** *2024 Global Conference on Wireless and Optical Technologies (GCWOT), 1-7, 2024.*"
+      links:
+        - label: Scholar
+          url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=AQcxu7MAAAAJ&pagesize=30&sortby=pubdate&citation_for_view=AQcxu7MAAAAJ:RHpTSmoSYBkC
+
+    - id: deep-learning-as-new-framework-passive-vehicle-safety
+      authors_tags: [apellaniz, parras, zazo]
+      citation: "M Lahoz Navarro, JS Jehle, PA Apellániz, J Parras, S Zazo, M Gerdts (2024). **Deep Learning as a New Framework for Passive Vehicle Safety Design Using Finite Elements Models Data.** *Applied Sciences 14 (20), 9296, 2024.*"
+      links:
+        - label: Scholar
+          url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=AQcxu7MAAAAJ&pagesize=30&sortby=pubdate&citation_for_view=AQcxu7MAAAAJ:hC7cP41nSMkC
+
+    - id: data-driven-research-through-european-radeep-registry-use
+      authors_tags: [apellaniz, parras, zazo]
+      citation: "AC Gimbert, S Reidel, PA de Apellániz, F Alvarez, BA Galende,  (2024). **Data Driven Research through the European RADeep Registry and the Use of Artificial Intelligence Towards Personalized Medicine in Sickle Cell Disease.** *Blood 144, 1138, 2024.*"
+      links:
+        - label: Scholar
+          url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=AQcxu7MAAAAJ&pagesize=30&sortby=pubdate&citation_for_view=AQcxu7MAAAAJ:TQgYirikUcIC
+
+    - id: cr-savae-parametric-method-survival-analysis-competing-risks
+      authors_tags: [apellaniz, parras,zazo]
+      citation: "PA Apellániz, J Parras, S Zazo (2024). **CR-SAVAE: A Parametric Method for Survival Analysis with Competing Risks.** *2024 32nd European Signal Processing Conference (EUSIPCO), 1526-1530, 2024.*"
+      links:
+        - label: Scholar
+          url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=AQcxu7MAAAAJ&pagesize=30&sortby=pubdate&citation_for_view=AQcxu7MAAAAJ:IWHjjKOFINEC
+
+    - id: improved-tabular-data-generator-vae-gmm-integration
+      authors_tags: [apellaniz, parras,zazo]
+      citation: "PA Apellaniz, J Parras, S Zazo (2024). **An Improved Tabular Data Generator with VAE-GMM Integration.** *2024 32nd European Signal Processing Conference (EUSIPCO), 2024.*"
+      links:
+        - label: Scholar
+          url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=AQcxu7MAAAAJ&pagesize=30&sortby=pubdate&citation_for_view=AQcxu7MAAAAJ:hFOr9nPyWt4C
+
+    - id: artificial-intelligence-based-federated-learning-platform-boost-precision
+      authors_tags: [apellaniz, parras, zazo]
+      citation: "G Asti, S D'Amico, L Carota, D Piscia, F Casadei, NSC Merleau,  (2024). **An Artificial Intelligence-Based Federated Learning Platform to Boost Precision Medicine in Rare Hematological Diseases: An Initiative By GenoMed4all and Synthema Consortia.** *Blood 144, 4989, 2024.*"
+      links:
+        - label: Scholar
+          url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=AQcxu7MAAAAJ&pagesize=30&sortby=pubdate&citation_for_view=AQcxu7MAAAAJ:HDshCWvjkbEC
+
+    - id: adversarial-learning-remove-sources-variability-speech-applications
+      authors_tags: [hernandez]
+      citation: "JM Perero-Codosero, FM Espinoza-Cuadros, LA Hernández-Gómez (2024). **Adversarial Learning to Remove Sources of Variability in Speech Applications.** *Proc. IberSPEECH 2024, 270-274, 2024.*"
+      links:
+        - label: Scholar
+          url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=EilwjX0AAAAJ&pagesize=30&sortby=pubdate&citation_for_view=EilwjX0AAAAJ:9u2w3wkYHSMC
+
+    - authors_tags: [hernandez]
+      citation: "Fernández-Castañón, R., Espinoza-Cuadros, F. M., Perero-Codosero, J. M., Sancho-Lozano, E., & Hernández-Gómez, L. A. (2024, June). **Can Large Sound Event Detection Models Be Accurately Adapted to Specific Acoustic Scenarios?.** *In International Symposium on Distributed Computing and Artificial Intelligence (pp. 36-45). Cham: Springer Nature Switzerland.*"
+    - authors_tags: [blanco, gutierrez-navarro]
+      citation: "Gutiérrez-Navarro, J., Mora-Sánchez, Á., Rodríguez-Jiménez, S., & Blanco-Murillo, J. L. (2024, June). **AI-Boosted Video Annotation: Exploring Pre-Labeling with Cross-Modalities.** *In International Symposium on Distributed Computing and Artificial Intelligence (pp. 5-15). Cham: Springer Nature Switzerland.*"
+    - authors_tags: [camara, blanco, marcos]
+      citation: "Cámara, M., Marcos, F., & Blanco, J. L. (2024). **Decoding vocal articulations from acoustic latent representations.** *AES Europe Madrid.*"
+    - authors_tags: [camara, hernandez]
+      citation: "Sánchez, M., Fernández, L., Arias, J., Cámara, M., Comini, G., Gabrys, A., ... & Hernández, L. A. (2024). **Del Visual al Auditivo: Sonorización de Escenas Guiada por Imagen.** *arXiv preprint arXiv:2402.01385.*"
+    - id: biological-informed
+      authors_tags: [camara, blanco]
+      citation: "Cámara, M., & Blanco, J. L. (2024). **Biologically Informed Neural Speech Synthesis.** *In Proc. IberSPEECH 2024 (pp. 261-265).*"
+- year: 2023
+  items:
+    - id: study-development-video-annotation-support-system-agnostic-image
+      authors_tags: [gutierrez-navarro]
+      citation: "J Gutiérrez Navarro (2023). **Study for the development of a video annotation support system using an agnostic image model.** *Telecomunicacion, 2023.*"
+      links:
+        - label: Scholar
+          url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=wT7WzX8AAAAJ&pagesize=30&sortby=pubdate&citation_for_view=wT7WzX8AAAAJ:d1gkVwhDpl0C
+
+    - id: optimization-electrical-conductivity-thermal-coefficient-temperature-tcr-hydrogenated
+      authors_tags: [hernandez]
+      citation: "O Velandia, M Moreno, R Zavala, A Morales, A Torres, L Hernández (2023). **Optimization of the electrical conductivity and thermal coefficient of temperature (TCR) on hydrogenated amorphous silicon-germanium films doped with nitrogen (a-SiGe: H, N ….** *2023 IEEE Latin American Electron Devices Conference (LAEDC), 1-5, 2023.*"
+      links:
+        - label: Scholar
+          url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=EilwjX0AAAAJ&pagesize=30&sortby=pubdate&citation_for_view=EilwjX0AAAAJ:RXC-vbXDMdwC
+
+    - id: low-intensity-continuous-ultrasound-inhibit-cancer-cell-migration
+      authors_tags: [hernandez]
+      citation: "I González, J Luzuriaga, A Valdivieso, M Candil, J Frutos, J López,  (2023). **Low-intensity continuous ultrasound to inhibit cancer cell migration.** *Frontiers in Cell and Developmental Biology 10, 842965, 2023.*"
+      links:
+        - label: Scholar
+          url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=EilwjX0AAAAJ&pagesize=30&sortby=pubdate&citation_for_view=EilwjX0AAAAJ:_9EdYq_GCQ0C
+
+    - id: effect-rf-power-pecvd-crystalline-fractions-microcrystalline-silicon
+      authors_tags: [hernandez]
+      citation: "M Moreno, A Torres-Sánchez, P Rosales, A Morales, A Torres, J Flores,  (2023). **Effect of the RF power of PECVD on the crystalline fractions of microcrystalline silicon (μc-Si: H) films and their structural, optical, and electronic properties.** *Electronic Materials 4 (3), 110-123, 2023.*"
+      links:
+        - label: Scholar
+          url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=EilwjX0AAAAJ&pagesize=30&sortby=pubdate&citation_for_view=EilwjX0AAAAJ:i_QFVEgXGzMC
+
+    - authors_tags: [blanco, yague]
+      citation: "Coronel-Gaviro, J., Yagüe-Jiménez, V., & Blanco-Murillo, J. L. (2023). **Radiofrequency Absorbance as a Novel Concentration Indicator in Sucrose Aqueous Solutions.** *Ingeniería e Investigación, 43(1), 1.*"
+    - authors_tags: [camara, blanco]
+      citation: "Cámara, M., & Blanco, J. L. (2023). **FOLEY-VAE: Generación de efectos de audio para cine con inteligencia artificial.** *Congreso Español de Acústica (TECNIACÚSTICA).*"
+      links:
+        - label: Scholar
+          url: https://scholar.google.es/citations?view_op=view_citation&hl=en&user=muINbiEAAAAJ&sortby=pubdate&citation_for_view=muINbiEAAAAJ:5nxA0vEk-isC
+    - authors_tags: [camara, blanco, marcos, yague]
+      citation: "Marcos, F., Tamaki, R., Cámara, M., Yagüe, V., & Blanco, J. L. (2023). **IA Para el Mantenimiento Predictivo en Canteras: Modelado.** *Congreso Español de Acústica (TECNIACÚSTICA).*"
+      links:
+        - label: Scholar
+          url: https://scholar.google.es/citations?view_op=view_citation&hl=en&user=muINbiEAAAAJ&sortby=pubdate&citation_for_view=muINbiEAAAAJ:8k81kl-MbHgC
+    - authors_tags: [almodovar, parras, zazo]
+      citation: "Almodóvar, A., Parras, J., & Zazo, S. (2023, October). **Federated learning for causal inference using deep generative disentangled models.** *In 1st Workshop on Deep Generative Models for Health, NeurIPS 2023.*"
+      links:
+        - label: Scholar
+          url: https://scholar.google.es/citations?view_op=view_citation&hl=es&user=AQcxu7MAAAAJ&sortby=pubdate&citation_for_view=AQcxu7MAAAAJ:Wp0gIr-vW9MC
+        - label: Code
+          url: https://github.com/aalmodovares/federated_tedvae
+    - authors_tags: [camara, blanco]
+      citation: "Cámara, M., Xu, Z., Zong, Y., Blanco, J. L., & Reiss, J. D. (2023). **Optimization Techniques for a Physical Model of Human Vocalisation.** *Digital Audio Effects Conference (DAFx).*"
+      links:
+        - label: Scholar
+          url: https://scholar.google.es/citations?view_op=view_citation&hl=en&user=muINbiEAAAAJ&sortby=pubdate&citation_for_view=muINbiEAAAAJ:0EnyYjriUFMC
+    - authors_tags: [camara]
+      citation: "Südholt, D., Cámara, M., Xu, Z., & Reiss, J. D. (2023). **Vocal Tract Area Estimation by Gradient Descent.** *Digital Audio Effects Conference (DAFx).*"
+      links:
+        - label: Scholar
+          url: https://scholar.google.es/citations?view_op=view_citation&hl=en&user=muINbiEAAAAJ&sortby=pubdate&citation_for_view=muINbiEAAAAJ:hqOjcs7Dif8C
+    - citation: "Velasco, Pablo, et al (2023). **The Relapsed Acute Lymphoblastic Leukemia Network (ReALLNet): A multidisciplinary project from the Spanish Society of Pediatric Hematology and Oncology (SEHOP).** *Frontiers in Pediatrics.*"
+      links:
+        - label: DOI
+          url: https://doi.org/10.3389/fped.2023.1269560
+        - label: Scholar
+          url: https://scholar.google.es/citations?view_op=view_citation&hl=es&user=AQcxu7MAAAAJ&sortby=pubdate&citation_for_view=AQcxu7MAAAAJ:aqlVkmm33-oC
+    - authors_tags: [parras, zazo]
+      citation: "Parras, J., & Zazo, S. (2023, September). **Negotiation strategies to improve distributed power allocation for self-organizing heterogeneous networks.** *In 2023 31st European Signal Processing Conference (EUSIPCO) (pp. 1743-1747). IEEE.*"
+      links:
+        - label: DOI
+          url: https://doi.org/10.23919/EUSIPCO58844.2023.10290042
+        - label: Scholar
+          url: https://scholar.google.es/citations?view_op=view_citation&hl=es&user=AQcxu7MAAAAJ&sortby=pubdate&citation_for_view=AQcxu7MAAAAJ:4DMP91E08xMC
+        - label: Code
+          url: https://github.com/jparras/ca_eusipco
+    - authors_tags: [parras, zazo]
+      citation: "Sanz-Nogales, J.M, Parras, J., & Zazo, S. (2023). **DDQN-based optimal targeted therapy with reversible inhibitors to combat the Warburg effect.** *Mathematical Biosciences, 363, 109044.*"
+      links:
+        - label: DOI
+          url: https://doi.org/10.1016/j.mbs.2023.109044
+        - label: Scholar
+          url: https://scholar.google.es/citations?view_op=view_citation&hl=es&user=AQcxu7MAAAAJ&sortby=pubdate&citation_for_view=AQcxu7MAAAAJ:qxL8FJ1GzNcC
+        - label: Code
+          url: https://github.com/jsanno/ddqn
+    - authors_tags: [parras, zazo]
+      citation: "Barreno, P., Parras, J., & Zazo, S. (2023). **An efficient underwater navigation method using MPC with unknown kinematics and non-linear disturbances.** *Journal of Marine Science and Engineering. 2023, 11, 710.*"
+      links:
+        - label: DOI
+          url: https://doi.org/10.3390/jmse11040710
+        - label: Scholar
+          url: https://scholar.google.es/citations?view_op=view_citation&hl=es&user=AQcxu7MAAAAJ&pagesize=80&sortby=pubdate&citation_for_view=AQcxu7MAAAAJ:M3ejUd6NZC8C
+        - label: Code
+          url: https://github.com/jparras/mpc_linear
+- year: 2022
+  items:
+    - id: multi-modal-analysis-federated-learning-approach-classification-personalized
+      authors_tags: [apellaniz]
+      citation: "S D'Amico, L Dall'Olio, C Rollo, P Alonso, I Prada-Luengo, D Dall'Olio,  (2022). **Multi-modal analysis and federated learning approach for classification and personalized prognostic assessment in myeloid neoplasms.** *Blood, The Journal of the American Society of Hematology 140 (Supplement 1 …, 2022.*"
+      links:
+        - label: Scholar
+          url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=HgKLtFEAAAAJ&pagesize=30&sortby=pubdate&citation_for_view=HgKLtFEAAAAJ:UeHWp8X0CEIC
+    - authors_tags: [hernandez]
+      citation: "Perero-Codosero, J. M., Espinoza-Cuadros, F. M., & Hernández-Gómez, L. A. (2022). **X-vector anonymization using autoencoders and adversarial training for preserving speech privacy.** *Computer Speech & Language, 74, 101351.*"
+    - authors_tags: [hernandez]
+      citation: "Perero-Codosero, J. M., Espinoza-Cuadros, F. M., & Hernández-Gómez, L. A. (2022). **A comparison of hybrid and end-to-end ASR systems for the IberSpeech-RTVE 2020 speech-to-text transcription challenge.** *Applied Sciences, 12(2), 903.*"
+    - authors_tags: [blanco, yague]
+      citation: "Blanco-Murillo, J. L., Yagüe-Jiménez, V., Coronel-Gaviro, J., & Quirós, F. C. (2022). **A model-informed, single-input method for amplifiers assessment from pruned Volterra kernels collapsed projection.** *Measurement, 193, 110856.*"
+    - authors_tags: [parras, almodovar, apellaniz, zazo]
+      citation: "Parras, J., Almodóvar, A., Apellániz, P.A., & Zazo, S. (2022). **Inverse Reinforcement Learning: a New Framework to Mitigate an Intelligent Backoff Attack.** *IEEE Internet of Things Journal, 9(24), 24790-24799.*"
+      links:
+        - label: DOI
+          url: https://doi.org/10.1109/JIOT.2022.3194694
+        - label: Scholar
+          url: https://scholar.google.es/citations?view_op=view_citation&hl=es&user=AQcxu7MAAAAJ&pagesize=80&sortby=pubdate&citation_for_view=AQcxu7MAAAAJ:4TOpqqG69KYC
+        - label: Code
+          url: https://github.com/jparras/irl_attack
+    - authors_tags: [camara, blanco]
+      citation: "Cámara M., & Blanco, J. L. (2022). **Acercando los autocodificadores variacionales al gran público.** *Revista de acústica, 53, 3-11.*"
+      links:
+        - label: Scholar
+          url: https://scholar.google.es/citations?view_op=view_citation&hl=en&user=muINbiEAAAAJ&sortby=pubdate&citation_for_view=muINbiEAAAAJ:roLk4NBRz8UC
+    - authors_tags: [parras, zazo]
+      citation: "Pérez, M., Parras, J., Zazo, S., Álvarez, I. A. P., & Lluch, M. d. M. S. (2022). **Using a Deep Learning Algorithm to Improve the Results Obtained in the Recognition of Vessels Size and Trajectory Patterns in Shallow Areas Based on Magnetic Field Measurements Using Fluxgate Sensors.** *IEEE Transactions on Intelligent Transportation Systems, 23(4), 3472-3481.*"
+      links:
+        - label: DOI
+          url: https://doi.org/10.1109/TITS.2020.3036906
+        - label: Scholar
+          url: https://scholar.google.es/citations?view_op=view_citation&hl=es&user=AQcxu7MAAAAJ&pagesize=80&sortby=pubdate&citation_for_view=AQcxu7MAAAAJ:3fE2CSJIrl8C
+    - authors_tags: [camara, blanco]
+      citation: "Cámara, M., & Blanco, J. L. (2022). **Expanding the Frontiers of Web Audio With Autoencoders and JavaScript.** *Journal of the Audio Engineering Society, 70(11), 979-989.*"
+      links:
+        - label: Scholar
+          url: https://scholar.google.es/citations?view_op=view_citation&hl=en&user=muINbiEAAAAJ&sortby=pubdate&citation_for_view=muINbiEAAAAJ:_FxGoFyzp5QC
+    - authors_tags: [camara, blanco]
+      citation: "Cámara, M., & Blanco, J. L. (2022). **Phase-Aware Transformations in Variational Autoencoders for Audio Effects.** *Journal of the Audio Engineering Society, 70(9), 731-741.*"
+      links:
+        - label: Scholar
+          url: https://scholar.google.es/citations?view_op=view_citation&hl=en&user=muINbiEAAAAJ&sortby=pubdate&citation_for_view=muINbiEAAAAJ:ufrVoPGSRksC
+    - authors_tags: [parras, apellaniz, zazo]
+      citation: "Parras, J., Apellániz, P.A., & Zazo, S. (2022). **An online learning algorithm to play discounted repeated games in wireless networks.** *Engineering Applications of Artificial Intelligence, 107, 104520.*"
+      links:
+        - label: DOI
+          url: https://doi.org/10.1016/j.engappai.2021.104520
+        - label: Scholar
+          url: https://scholar.google.es/citations?view_op=view_citation&hl=es&user=AQcxu7MAAAAJ&pagesize=80&sortby=pubdate&citation_for_view=AQcxu7MAAAAJ:YOwf2qJgpHMC
+        - label: Code
+          url: https://github.com/jparras/lewis
+- year: 2021
+  items:
+    - authors_tags: [hernandez]
+      citation: "González, I., Luzuriaga, J., Valdivieso, A., Frutos, J., López, J., Hernández, L., ... & Earl, J. (2021). **Low-intensity ultrasound inhibits the long-term migration of cancer cells.**"
+    - authors_tags: [apellaniz, hernandez]
+      citation: "Cardoso, L., Gómez, L., Alonso, P., Pena, S., Herrera, M., Valencia, P., ... & Diezhandino, P. (2021). **PO-1285 Postoperative high dose rate brachytherapy in endometrial cancer: three versus six fractions.** *Radiotherapy and Oncology, 161, S1059.*"
+    - authors_tags: [hernandez]
+      citation: "Bafundo, K. W., Gomez, L., Lumpkins, B., Mathis, G. F., McNaughton, J. L., & Duerr, I. (2021). **Concurrent use of saponins and live coccidiosis vaccines: the influence of a quillaja and yucca combination on anticoccidial effects and performance results of coccidia-vaccinated broilers.** *Poultry Science, 100(3), 100905.*"
+    - authors_tags: [hernandez]
+      citation: "Perero-Codosero, J. M., Espinoza-Cuadros, F. M., & Gómez, L. A. H. (2021, March). **Sigma-UPM ASR Systems for the IberSpeech-RTVE 2020 Speech-to-Text Transcription Challenge.** *In IberSPEECH.*"
+    - authors_tags: [hernandez]
+      citation: "Perry, C. A., Yates, C. J., Flury, M., & Hernandez, L. (2021). **Effects of short duration active and passive recovery on blood lactate accumulation during high intensity wind sprints in college aged students.** *Sport & Health-International Journal of Sport & Health, 8.*"
+    - authors_tags: [blanco, yague]
+      citation: "Coronel-Gaviro, J., Yagüe-Jiménez, V., & Blanco-Murillo, J. L. (2021). **Nonintrusive honey fraud detection and quantification based on differential radiofrequency absorbance analysis.** *Journal of Food Engineering, 295, 110448.*"
+    - authors_tags: [parras, apellaniz, zazo]
+      citation: "Parras, J., Apellániz, P.A., & Zazo, S. (2021). **Deep Learning for Efficient and Optimal Motion Planning for AUVs with Disturbances.** *Sensors, 21(15), 5011.*"
+      links:
+        - label: DOI
+          url: https://doi.org/10.3390/s21155011
+        - label: Scholar
+          url: https://scholar.google.es/citations?view_op=view_citation&hl=es&user=AQcxu7MAAAAJ&pagesize=80&sortby=pubdate&citation_for_view=AQcxu7MAAAAJ:Zph67rFs4hoC
+        - label: Code
+          url: https://github.com/jparras/dla_navigation
+    - authors_tags: [parras, zazo]
+      citation: "Parras, J., Hüttenrauch, M., Zazo, S., & Neumann, G. (2021). **Deep Reinforcement Learning for Attacking Wireless Sensor Networks.** *Sensors, 21(12), 4060.*"
+      links:
+        - label: DOI
+          url: https://doi.org/10.3390/s21124060
+        - label: Scholar
+          url: https://scholar.google.es/citations?view_op=view_citation&hl=es&user=AQcxu7MAAAAJ&pagesize=80&sortby=pubdate&citation_for_view=AQcxu7MAAAAJ:KlAtU1dfN6UC
+        - label: Code
+          url: https://github.com/jparras/dla/tree/master
+    - authors_tags: [parras, zazo]
+      citation: "Parras, J., & Zazo, S. (2021, June). **Robust Deep Reinforcement Learning for underwater navigation with unknown disturbances.** *In 2021 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP) (pp. 3440-3444). IEEE.*"
+      links:
+        - label: DOI
+          url: https://doi.org/10.1109/ICASSP39728.2021.9414937
+        - label: Scholar
+          url: https://scholar.google.es/citations?view_op=view_citation&hl=es&user=AQcxu7MAAAAJ&pagesize=80&sortby=pubdate&citation_for_view=AQcxu7MAAAAJ:kNdYIx-mwKoC
+        - label: Code
+          url: https://github.com/jparras/robust_drl_navigation
+- year: 2020
+  items:
+    - id: retinal-noise-emulation-novel-artistic-tool-cinema-that
+      authors_tags: [camara]
+      citation: "I Zabaleta, M Cámara, C Díaz, T Canham, N García, M Bertalmío (2020). **Retinal noise emulation: a novel artistic tool for cinema that also improves compression efficiency.** *IEEE Access 8, 67263-67276, 2020.*"
+      links:
+        - label: Scholar
+          url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=muINbiEAAAAJ&pagesize=30&sortby=pubdate&citation_for_view=muINbiEAAAAJ:d1gkVwhDpl0C
+
+    - id: epidemic-model-economical-impact-predicting-spatiotemporal-spreading-covid
+      authors_tags: [camara]
+      citation: "M Cámara, M Miravete, E Navarro (2020). **An epidemic model for economical impact predicting and spatiotemporal spreading of COVID-19.** *medRxiv, 2020.09. 02.20186551, 2020.*"
+      links:
+        - label: Scholar
+          url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=muINbiEAAAAJ&pagesize=30&sortby=pubdate&citation_for_view=muINbiEAAAAJ:u5HHmVD_uO8C
+
+    - authors_tags: [hernandez]
+      citation: "Espinoza-Cuadros, F. M., Perero-Codosero, J. M., Antón-Martín, J., & Hernández-Gómez, L. A. (2020). **Speaker de-identification system using autoencoders and adversarial training.** *arXiv preprint arXiv:2011.04696.*"
+    - citation: "Deep, S. T. S. U. **Audio-Visual Emotion Recognition System for Variable Length Spatio-Temporal Samples Using Deep Transfer-Learning.** *In Business Information Systems (p. 434).*"
+    - authors_tags: [parras, zazo]
+      citation: "Parras, J., & Zazo, S. (2020). **The Threat of Intelligent Attackers Using Deep Learning: The Backoff Attack Case.** *In Deep Learning Strategies for Security Enhancement in Wireless Sensor Networks (pp. 110-133). IGI Global.*"
+      links:
+        - label: DOI
+          url: https://doi.org/10.4018/978-1-7998-5068-7.ch006
+        - label: Scholar
+          url: https://scholar.google.es/citations?view_op=view_citation&hl=es&user=AQcxu7MAAAAJ&pagesize=80&sortby=pubdate&citation_for_view=AQcxu7MAAAAJ:MXK_kJrjxJIC
+    - authors_tags: [parras, zazo]
+      citation: "Parras, J., & Zazo, S. (2020, May). **A Graph Network Model for Distributed Learning with Limited Bandwidth Links and Privacy Constraints.** *In 2020 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP) (pp. 3907-3911). IEEE.*"
+      links:
+        - label: DOI
+          url: https://doi.org/10.1109/ICASSP40776.2020.9053067
+        - label: Scholar
+          url: https://scholar.google.es/citations?view_op=view_citation&hl=es&user=AQcxu7MAAAAJ&pagesize=80&sortby=pubdate&citation_for_view=AQcxu7MAAAAJ:8k81kl-MbHgC
+        - label: Code
+          url: https://github.com/jparras/gnn_limited_bandwidth
+    - authors_tags: [parras, zazo]
+      citation: "Parras, J., & Zazo, S. (2020). **A distributed algorithm to obtain repeated games equilibria with discounting.** *Applied Mathematics and Computation, 367, 124785.*"
+      links:
+        - label: DOI
+          url: https://doi.org/10.1016/j.amc.2019.124785
+        - label: Scholar
+          url: https://scholar.google.es/citations?view_op=view_citation&hl=es&user=AQcxu7MAAAAJ&pagesize=80&sortby=pubdate&citation_for_view=AQcxu7MAAAAJ:UebtZRa9Y70C
+        - label: Code
+          url: https://github.com/jparras/ca_algorithm
+- year: 2019
+  items:
+    - id: perceptually-equivalent-resolution-handheld-devices-streaming-bandwidth-saving
+      authors_tags: [camara]
+      citation: "M Cámara, C Díaz, J Casal, J Ruano, N García (2019). **Perceptually equivalent resolution in handheld devices for streaming bandwidth saving.** *IEEE Signal Processing Letters 26 (6), 878-882, 2019.*"
+      links:
+        - label: Scholar
+          url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=muINbiEAAAAJ&pagesize=30&sortby=pubdate&citation_for_view=muINbiEAAAAJ:u-x6o8ySG0sC
+
+    - authors_tags: [hernandez]
+      citation: "Perero-Codosero, J. M., Espinoza-Cuadros, F., Antón-Martín, J., Barbero-Alvarez, M. A., & Hernández-Gómez, L. A. (2019). **Modeling obstructive sleep apnea voices using deep neural network embeddings and domain-adversarial training.** *IEEE Journal of Selected Topics in Signal Processing, 14(2), 240-250.*"
+    - authors_tags: [hernandez]
+      citation: "Gómez, L., & Gonzáles, L. (2019). **Blanqueo de capitales: técnicas de investigación en la contabilidad financiera panameña.** *Centros: Revista Científica Universitaria, 8(2), 65-73.*"
+    - authors_tags: [hernandez]
+      citation: "Hernández Sánchez, S., Fernández Pozo, R., & Hernández Gómez, L. A. (2019, May). **Deep neural networks for driver identification using accelerometer signals from smartphones.** *In International Conference on Business Information Systems (pp. 206-220). Cham: Springer International Publishing.*"
+    - authors_tags: [hernandez]
+      citation: "Hernandez, L., Manning, J., & Zhang, S. (2019). **Voluntary control of breathing affects center of pressure complexity during static standing in healthy older adults.** *Gait & Posture, 68, 488-493.*"
+    - authors_tags: [parras, zazo]
+      citation: "Parras, J., & Zazo, S. (2019). **Repeated game analysis of a CSMA/CA network under a backoff attack.** *Sensors, 19(24), 5393.*"
+      links:
+        - label: DOI
+          url: https://doi.org/10.3390/s19245393
+        - label: Scholar
+          url: https://scholar.google.es/citations?view_op=view_citation&hl=es&user=AQcxu7MAAAAJ&pagesize=80&sortby=pubdate&citation_for_view=AQcxu7MAAAAJ:5nxA0vEk-isC
+        - label: Code
+          url: https://github.com/jparras/rga_csma
+    - authors_tags: [parras, zazo]
+      citation: "Parras, J., & Zazo, S. (2019). **Using one class SVM to counter intelligent attacks against an SPRT defense mechanism.** *Ad-Hoc Networks, 94, 101946.*"
+      links:
+        - label: DOI
+          url: https://doi.org/10.1016/j.adhoc.2019.101946
+        - label: Scholar
+          url: https://scholar.google.es/citations?view_op=view_citation&hl=es&user=AQcxu7MAAAAJ&pagesize=80&sortby=pubdate&citation_for_view=AQcxu7MAAAAJ:eQOLeE2rZwMC
+        - label: Code
+          url: https://github.com/jparras/svm_sprt
+    - authors_tags: [parras, zazo]
+      citation: "Tapia, D., Parras, J., & Zazo, S. (2019, September). **Deep Reinforcement Learning for autonomous model-free navigation with partial observability.** *In 2019 27th European Signal Processing Conference (EUSIPCO) (pp. 1-5). IEEE.*"
+      links:
+        - label: DOI
+          url: https://doi.org/10.23919/EUSIPCO.2019.8902933
+        - label: Scholar
+          url: https://scholar.google.es/citations?view_op=view_citation&hl=es&user=AQcxu7MAAAAJ&pagesize=80&sortby=pubdate&citation_for_view=AQcxu7MAAAAJ:0EnyYjriUFMC
+        - label: Code
+          url: https://github.com/itsTAMART/UAV-RL-environment
+    - authors_tags: [parras, zazo]
+      citation: "Baldazo, D., Parras, J., & Zazo, S. (2019, September). **Decentralized multi-agent deep reinforcement learning in swarms of drones for flood monitoring.** *In 2019 27th European Signal Processing Conference (EUSIPCO) (pp. 1-5). IEEE.*"
+      links:
+        - label: DOI
+          url: https://doi.org/10.1109/SPAWC.2019.8815408
+        - label: Scholar
+          url: https://scholar.google.es/citations?view_op=view_citation&hl=es&user=AQcxu7MAAAAJ&pagesize=80&sortby=pubdate&citation_for_view=AQcxu7MAAAAJ:hqOjcs7Dif8C
+        - label: Code
+          url: https://github.com/dabalda/drl_for_natural_disaster_monitoring
+    - authors_tags: [parras, zazo]
+      citation: "Parras, J., Zazo, S., Pérez-Álvarez, I. A., & Sanz González, J. L. (2019). **Model free localization with Deep Neural Architectures by means of an underwater WSN.** *Sensors, 19(16), 3530.*"
+      links:
+        - label: DOI
+          url: https://doi.org/10.3390/s19163530
+        - label: Scholar
+          url: https://scholar.google.es/citations?view_op=view_citation&hl=es&user=AQcxu7MAAAAJ&pagesize=80&sortby=pubdate&citation_for_view=AQcxu7MAAAAJ:WF5omc3nYNoC
+        - label: Code
+          url: https://github.com/jparras/model_free_localization_wsn
+    - authors_tags: [parras, zazo]
+      citation: "Parras, J., & Zazo, S. (2019, July). **Sequential Bayes factor testing: a new framework for decision fusion.** *In 20th International Workshop on Signal Processing Advances in Wireless Communications (SPAWC) (pp. 1-5). IEEE.*"
+      links:
+        - label: DOI
+          url: https://doi.org/10.1109/SPAWC.2019.8815408
+        - label: Scholar
+          url: https://scholar.google.es/citations?view_op=view_citation&hl=es&user=AQcxu7MAAAAJ&pagesize=80&sortby=pubdate&citation_for_view=AQcxu7MAAAAJ:Se3iqnhoufwC
+        - label: Code
+          url: https://github.com/jparras/sequential_bayes_factor
+    - authors_tags: [parras, zazo]
+      citation: "Parras, J., & Zazo, S. (2019). **Learning attack mechanisms in Wireless Sensor Networks using Markov Decision Processes.** *Expert Systems with Applications, 122, 376-387.*"
+      links:
+        - label: DOI
+          url: https://doi.org/10.1016/j.eswa.2019.01.023
+        - label: Scholar
+          url: https://scholar.google.es/citations?view_op=view_citation&hl=es&user=AQcxu7MAAAAJ&pagesize=80&sortby=pubdate&citation_for_view=AQcxu7MAAAAJ:YsMSGLbcyi4C
+        - label: Code
+          url: https://github.com/jparras/wsn_attack_mdp
+- year: 2018
+  items:
+    - authors_tags: [hernandez]
+      citation: "Perero-Codosero, J. M., Antón-Martín, J., Merino, D. T., Gonzalo, E. L., & Gómez, L. A. H. (2018, November). **Exploring Open-Source Deep Learning ASR for Speech-to-Text TV program transcription.** *In IberSPEECH (pp. 262-266).*"
+    - authors_tags: [hernandez]
+      citation: "Hernandez Sanchez, S., Fernandez Pozo, R., & Hernandez Gomez, L. A. (2018). **Estimating vehicle movement direction from smartphone accelerometers using deep neural networks.** *Sensors, 18(8), 2624.*"
+    - citation: "Montero, E. D. F., Pozo, R. F., Gomez, L. A. H., Jimenez, R. P., & Munoz, V. M. G. (2018). **U.S. Patent Application No. 15/622,439.**"
+    - authors_tags: [hernandez]
+      citation: "Hernández, L., López, A. B., & Morales, F. (2018). **Los significados materiales del territorio: Una propuesta de análisis socioterritorial.** *Problemas urbanos y del territorio, 9.*"
+    - authors_tags: [hernandez]
+      citation: "Manning, J. P., Hernandez, L., Zhang, S., Wright, P., Benner, D., & Li, L. (2018). **Difference in Attentional Involvement and Respiratory Complexity During Static Balance Between Older and Young Adults.**"
+    - authors_tags: [blanco, yague]
+      citation: "Blanco-Murillo, J. L., & Yagüe-Jiménez, V. (2018). **A method for informed selection of memory-length and nonlinearity-order parameters in Volterra–Wiener systems from exponential sweep excitations.** *Multidimensional Systems and Signal Processing, 29(4), 1861-1893.*"
+    - authors_tags: [parras, zazo]
+      citation: "Parras, J., & Zazo, S. (2018). **Wireless Networks under a Backoff Attack: A Game Theoretical Perspective.** *Sensors, 18(2), 404.*"
+      links:
+        - label: DOI
+          url: https://doi.org/10.3390/s18020404
+        - label: Scholar
+          url: https://scholar.google.es/citations?view_op=view_citation&hl=es&user=AQcxu7MAAAAJ&pagesize=80&sortby=pubdate&citation_for_view=AQcxu7MAAAAJ:_FxGoFyzp5QC
+        - label: Code
+          url: https://github.com/jparras/backoff_attack_csma
+- year: 2017
+  items:
+    - citation: "Bibert, S., Bratschi, M. W., Aboagye, S. Y., Collinet, E., Scherr, N., Yeboah-Manu, D., ... & Bochud, P. Y. (2017). **Susceptibility to *Mycobacterium ulcerans* disease (Buruli ulcer) is associated with IFNG and iNOS gene polymorphisms.** *Frontiers in Microbiology, 8, 1903.*"
+    - authors_tags: [hernandez]
+      citation: "Cardillo, E., di Prátula, P., Terny, S., Hernandez, L., Sola, M., & Frechero, M. A. (2017, September). **Fisicoquímica de conductores iónicos: síntesis y caracterización de nuevos materiales amigables con el medio ambiente para la generación de energía limpia.** *IV Congreso Internacional Científico y Tecnológico - CONCYT 2017.*"
+    - authors_tags: [blanco, yague]
+      citation: "Blanco-Murillo, J. L., Lluveras, D., Yagüe-Jiménez, V., Anaya, J. J., Casajús-Quirós, F. J., Izquierdo, M. A. G., ... & Herrera, A. (2017). **Combined US and UWB-RF imaging of concrete structures for identification and location of embedded materials.** *Construction and Building Materials, 152, 693-701.*"
+    - authors_tags: [blanco, yague]
+      citation: "Blanco-Murillo, J. L., Yagüe-Jiménez, V., & Casajús-Quirós, F. J. (2017). **Assessment of nonlinearities for precision DACs.** *IEEE Transactions on Instrumentation and Measurement, 66(11), 2852-2857.*"
+    - authors_tags: [parras, zazo]
+      citation: "Parras, J., Zazo, S., Del Val, J., Zazo, J., & Macua, S. V. (2017). **Pursuit-evasion games: a tractable framework for antijamming games in aerial attacks.** *EURASIP Journal on Wireless Communications and Networking, 2017(1), 69.*"
+      links:
+        - label: DOI
+          url: https://doi.org/10.1186/s13638-017-0857-8
+        - label: Scholar
+          url: https://scholar.google.es/citations?view_op=view_citation&hl=es&user=AQcxu7MAAAAJ&pagesize=80&sortby=pubdate&citation_for_view=AQcxu7MAAAAJ:LkGwnXOMwfcC
+        - label: Code
+          url: https://github.com/jparras/pursuit_evasion
+- year: 2016
+  items:
+    - authors_tags: [hernandez]
+      citation: "Espinoza-Cuadros, F., Fernández-Pozo, R., Toledano, D. T., Alcázar-Ramírez, J. D., López-Gonzalo, E., & Hernández-Gómez, L. A. (2016). **Reviewing the connection between speech and obstructive sleep apnea.** *Biomedical Engineering Online, 15(1), 20.*"
+    - authors_tags: [hernandez]
+      citation: "Pozo, R. F., Gomez, L. A. H., Meco, D. L., Vercher, J. B., & Muñoz, V. M. G. (2016). **U.S. Patent Application No. 14/802,471.**"
+    - authors_tags: [blanco, hernandez]
+      citation: "Benavides, A. M., Murillo, J. L. B., Pozo, R. F., Cuadros, F. E., Toledano, D. T., Alcázar-Ramírez, J. D., & Gómez, L. A. H. (2016). **Formant frequencies and bandwidths in relation to clinical variables in an obstructive sleep apnea population.** *Journal of Voice, 30(1), 21-29.*"
+    - authors_tags: [parras, zazo]
+      citation: "Del Val, J., Zazo, S., Macua, S. V., Zazo, J., & Parras, J. (2016, August). **Optimal attack and defence of large scale networks using mean field theory.** *24th European Signal Processing Conference (EUSIPCO) (pp. 973-977). IEEE.*"
+      links:
+        - label: DOI
+          url: https://doi.org/10.1109/EUSIPCO.2016.7760393
+        - label: Scholar
+          url: https://scholar.google.es/citations?view_op=view_citation&hl=es&user=AQcxu7MAAAAJ&pagesize=80&sortby=pubdate&citation_for_view=AQcxu7MAAAAJ:W7OEmFMy1HYC
+    - authors_tags: [parras, zazo]
+      citation: "Parras, J., Del Val, J., Zazo, S., Zazo, J., & Macua, S. V. (2016, June). **A new approach for solving anti-jamming games in stochastic scenarios as pursuit-evasion games.** *IEEE Statistical Signal Processing Workshop (SSP) (pp. 1-5).*"
+      links:
+        - label: DOI
+          url: https://doi.org/10.1109/SSP.2016.7551804
+        - label: Scholar
+          url: https://scholar.google.es/citations?view_op=view_citation&hl=es&user=AQcxu7MAAAAJ&pagesize=80&sortby=pubdate&citation_for_view=AQcxu7MAAAAJ:ufrVoPGSRksC
+- year: 2015
+  items:
+    - id: compensation-biased-excitation-effects-mls-based-nonlinear-systems
+      authors_tags: [blanco]
+      citation: "V Yagüe-Jiménez, JL Blanco-Murillo, FJ Casajús-Quirós (2015). **Compensation of biased excitation effects for MLS-based nonlinear systems׳ identification.** *Signal Processing 115, 176-194, 2015.*"
+      links:
+        - label: Scholar
+          url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=J-zt09cAAAAJ&pagesize=30&sortby=pubdate&citation_for_view=J-zt09cAAAAJ:U_HPUtbDl20C
+- year: 2014
+  items:
+    - id: analysis-voice-features-related-obstructive-sleep-apnoea-their
+      authors_tags: [blanco]
+      citation: "AM Benavides, RF Pozo, DT Toledano, JLB Murillo, EL Gonzalo,  (2014). **Analysis of voice features related to obstructive sleep apnoea and their application in diagnosis support.** *Computer Speech & Language 28 (2), 434-452, 2014.*"
+      links:
+        - label: Scholar
+          url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=J-zt09cAAAAJ&pagesize=30&sortby=pubdate&citation_for_view=J-zt09cAAAAJ:QyXJ3EUuO1IC
+
+- year: 2013
+  items:
+    - id: vocal-tract-settings-speakers-obstructive-sleep-apnea-syndrome
+      authors_tags: [blanco]
+      citation: "JL Blanco, J Schoentgen, C Manfredi (2013). **Vocal tract settings in speakers with obstructive sleep apnea syndrome.** *Proc. 8th International Workshop Models and Analysis of Vocal Emissions for …, 2013.*"
+      links:
+        - label: Scholar
+          url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=J-zt09cAAAAJ&pagesize=30&sortby=pubdate&citation_for_view=J-zt09cAAAAJ:-95Q15plzcUC
+
+    - id: improving-automatic-detection-obstructive-sleep-apnea-through-nonlinear
+      authors_tags: [blanco, hernandez]
+      citation: "JL Blanco, LA Hernández, R Fernández, D Ramos (2013). **Improving automatic detection of obstructive sleep apnea through nonlinear analysis of sustained speech.** *Cognitive Computation 5 (4), 458-472, 2013.*"
+      links:
+        - label: Scholar
+          url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=J-zt09cAAAAJ&pagesize=30&sortby=pubdate&citation_for_view=J-zt09cAAAAJ:OBSaB-F7qqsC
+
+    - id: hf-spectrum-activity-prediction-model-based-hmm-cognitive
+      authors_tags: [zazo, blanco]
+      citation: "L Melián-Gutiérrez, S Zazo, JL Blanco-Murillo, I Pérez-Álvarez,  (2013). **HF spectrum activity prediction model based on HMM for cognitive radio applications.** *Physical Communication 9, 199-211, 2013.*"
+      links:
+        - label: Scholar
+          url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=J-zt09cAAAAJ&pagesize=30&sortby=pubdate&citation_for_view=J-zt09cAAAAJ:RoXSNcbkSzsC
+
+    - id: gmm-based-classifiers-automatic-detection-obstructive-sleep-apnea
+      authors_tags: [blanco]
+      citation: "JA Gómez García, JL Blanco Murillo, JI Godino Llorente,  (2013). **GMM-based classifiers for the automatic detection of obstructive sleep apnea.** *Telecomunicacion, 2013.*"
+      links:
+        - label: Scholar
+          url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=J-zt09cAAAAJ&pagesize=30&sortby=pubdate&citation_for_view=J-zt09cAAAAJ:pS0ncopqnHgC
+
+    - id: evaluacion-de-la-contribucion-y-el-impacto-de
+      authors_tags: [blanco]
+      citation: "JLB Murillo (2013). **Evaluación de la contribución y el impacto de las tecnologías del habla en la detección automática del Síndrome de la Apnea Obstructiva del Sueño= Contributions and impact ….** *Universidad Politécnica de Madrid, 2013.*"
+      links:
+        - label: Scholar
+          url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=J-zt09cAAAAJ&pagesize=30&sortby=pubdate&citation_for_view=J-zt09cAAAAJ:2l5NCbZemmgC
+
+- year: 2012
+  items:
+    - id: hmm-detect-speakers-severe-obstructive-sleep-apnoea-syndrome
+      authors_tags: [blanco]
+      citation: "AM Benavides, JL Blanco, A Fernández, RF Pozo, DT Toledano,  (2012). **Using HMM to detect speakers with severe obstructive sleep apnoea syndrome.** *Advances in Speech and Language Technologies for Iberian Languages …, 2012.*"
+      links:
+        - label: Scholar
+          url: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=J-zt09cAAAAJ&pagesize=30&sortby=pubdate&citation_for_view=J-zt09cAAAAJ:-jrNzM816MMC

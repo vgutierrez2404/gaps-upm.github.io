@@ -1,0 +1,29 @@
+---
+interface Props { papers: { id: string; title: string; year: number; topics: string[]; research?: {area: string; tasks: string[]; methods: string[]} | null }[]; topics: {id: string; label: string; color: string}[] }
+const {papers, topics} = Astro.props;
+const data = JSON.stringify({papers, topics}).replace(/</g, '\\u003c');
+---
+<section class="research-map" id="publication-map-view" aria-label="Research topic map" hidden>
+  <div class="research-map-layout">
+    <div class="research-map-stage">
+      <div class="research-map-tools" aria-label="Map controls">
+        <button type="button" data-map-action="in" aria-label="Zoom in">+</button>
+        <button type="button" data-map-action="out" aria-label="Zoom out">−</button>
+        <button type="button" data-map-action="reset">Fit map</button>
+        <button type="button" data-map-action="fullscreen">Full screen</button>
+        <span id="research-map-count" aria-live="polite"></span>
+      </div>
+      <svg id="research-map-svg" viewBox="0 0 1440 1080" tabindex="0" role="group" aria-label="Interactive publication map. Select a topic or paper. Drag to pan; use zoom controls to explore.">
+        <title>GAPS research map</title>
+        <desc>Papers are grouped by suggested research topics. Larger labelled nodes represent topics; their size reflects the number of matching papers. Links connect papers to topics, not citations. The list view provides an alternative way to browse all papers.</desc>
+      </svg>
+      <div id="research-map-tooltip" class="research-map-tooltip" hidden></div>
+      <p class="research-map-empty" hidden>No papers match these filters. Try another topic or search.</p>
+      <p class="research-map-hint">Drag to explore · + / − to zoom · Select a dot to read</p>
+    </div>
+    <aside class="research-map-detail" aria-label="Selected publication" aria-live="polite">
+      <div id="research-map-detail-content"><p class="research-map-eyebrow">A map of ideas</p><h2>Where will you start?</h2><p>Choose a coloured topic to explore its papers, or select any small dot to discover a publication.</p><p class="research-map-detail-note">Topic size reflects the number of matching papers. A paper can belong to several topics; its colour shows its main group.</p></div>
+    </aside>
+  </div>
+  <script type="application/json" id="research-map-data" set:html={data} />
+</section>
