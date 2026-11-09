@@ -9,5 +9,6 @@ __pycache__/
 *.py[cod]
 /src/data/publications.yml.bak
 .DS_Store
-
+.vscode/
+.idea/
 */node_modules/
