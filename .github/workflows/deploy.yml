@@ -25,6 +25,8 @@ jobs:
 
   deploy:
     needs: build
+    # Deploy only from the group's canonical repository; forks are for development.
+    if: github.repository == 'gaps-upm/gaps-upm.github.io'
     runs-on: ubuntu-latest
     environment:
       name: github-pages

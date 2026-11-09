@@ -1,8 +1,13 @@
 /dist/
-/node_modules/
+node_modules/
 /.astro/
 /.astro-public/
 /vendor/
 /venv/
 /.bundle/
+__pycache__/
+*.py[cod]
+/src/data/publications.yml.bak
 .DS_Store
+
+*/node_modules/
